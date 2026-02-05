@@ -1,30 +1,32 @@
 <?php
-// --- Список разрешённых доменов ---
+header('Content-Type: application/json; charset=utf-8');
+
 $allowedOrigins = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://nutrition-n.test',
-    'https://mysite.com'
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+  'https://bodyflow-app.vercel.app'
 ];
 
-// --- Определяем Origin ---
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+// если запрос пришёл из браузера
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+  $origin = $_SERVER['HTTP_ORIGIN'];
 
-if ($origin && in_array($origin, $allowedOrigins, true)) {
+  if (in_array($origin, $allowedOrigins, true)) {
     header("Access-Control-Allow-Origin: $origin");
+  } else {
+    // если хочешь максимально просто — можно разрешить всем
+    header('Access-Control-Allow-Origin: *');
+  }
+} else {
+  // запрос не из браузера (например, сервер-сервер)
+  header('Access-Control-Allow-Origin: *');
 }
 
-// Разрешённые методы
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
-// Разрешённые заголовки
-header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
-
-// Для ответов JSON
-header("Content-Type: application/json; charset=utf-8");
-
-// Обрабатываем предварительный OPTIONS-запрос
+// preflight
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit;
+  http_response_code(200);
+  exit;
 }

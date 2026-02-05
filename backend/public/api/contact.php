@@ -1,22 +1,12 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+require_once __DIR__ . '/cors.php';
 
-/* ---------- CORS ---------- */
-header('Access-Control-Allow-Origin: http://localhost:3000');
-header('Access-Control-Allow-Headers: Content-Type');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-  exit;
-}
+require_once __DIR__ . '/libs/PHPMailer/src/Exception.php';
+require_once __DIR__ . '/libs/PHPMailer/src/PHPMailer.php';
+require_once __DIR__ . '/libs/PHPMailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-// PHPMailer без composer
-require_once __DIR__ . '/../libs/PHPMailer/src/Exception.php';
-require_once __DIR__ . '/../libs/PHPMailer/src/PHPMailer.php';
-require_once __DIR__ . '/../libs/PHPMailer/src/SMTP.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   http_response_code(405);

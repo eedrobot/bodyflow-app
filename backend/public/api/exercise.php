@@ -1,8 +1,7 @@
 <?php
 // backend/public/api/exercise.php
+require_once __DIR__ . '/cors.php';
 require_once __DIR__ . '/db.php';
-
-header('Content-Type: application/json; charset=utf-8');
 
 function jsonFail(int $code, array $payload) {
   http_response_code($code);
