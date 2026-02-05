@@ -1,6 +1,8 @@
 # BodyFlow 🥗💪  
 **Nutrition & Meal Planning Web Service**
 
+🔗 **Live Demo:** https://bodyflow-app.vercel.app
+
 BodyFlow is a full-stack web application for nutrition planning and food analysis.  
 The service helps users explore food products, nutrients, and build balanced meal plans.
 
