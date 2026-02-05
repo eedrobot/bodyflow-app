@@ -1,0 +1,72 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.wrapper {
+	max-width: 1200px;
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 2rem;
+	justify-items: center;
+	margin: 0 auto;
+	padding: 2rem 2rem 4rem 2rem;
+	.title {
+		margin: 20px 0;
+		text-align: left;
+		span {
+			font-size: $fs-secondary;
+			color: $color-green;
+		}
+	}
+	.description {
+		grid-area: description;
+		text-align: left;
+		margin-bottom: 20px;
+		font-size: $fs-middle;
+		color: $color-navy-d;
+		position: relative;
+		line-height: 1.5rem;
+		transition: transform 0.2s ease-out;
+		ul {
+			li{
+				padding: 0.5rem;
+				line-height: 1.5rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 991.98px) {
+	.wrapper {
+		.title {
+			font-size: $fs-primary;
+			line-height: 3rem;
+		}	  
+	  }
+}
+
+@media (max-width: 767.98px) {
+	.wrapper {
+		.title {
+			justify-self: start;
+			text-align: left;
+		}
+		.description {
+			justify-self: start;
+			text-align: left;
+		}	  
+	  }
+}
+
+@media (max-width: 575.98px) {
+	.wrapper {
+	  padding: 0 1rem 0 1rem;
+	  .title {
+		line-height: 2rem;
+		font-size: $fs-secondary;
+	  }
+	  .description {
+		margin-top: 1rem;
+	  }	
+
+	}
+}

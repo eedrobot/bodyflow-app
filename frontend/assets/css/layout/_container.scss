@@ -1,0 +1,18 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.container {
+	min-height: 100vh;
+	background: $color-main;
+	overflow: hidden;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 65px auto min-content;
+    grid-template-areas: 
+        "header"
+		"main"
+		"footer";
+	.main {
+		grid-area: main;
+	}
+}

@@ -1,0 +1,303 @@
+{
+    "pages": {
+        "title": {
+          "home": "Home",
+          "workout": "Workout",
+          "nutrition": "Nutrition",
+          "contact": "Contacts",
+          "privacy": "Privacy policy"
+        }
+      },
+      "general": {
+        "lang": "Language",
+        "description": {
+          "desc_1": "Automatic calorie calculation and a personalized meal plan",
+          "desc_2": "for weight loss, maintenance, or gain"
+        },
+        "description_mobile":{
+          "descm_1" : "Online BMI and macronutrient calculator: calculate your body mass index, daily intake of calories, proteins, fats, carbs, and water.",
+          "descm_2" : "Discover the composition of foods, monitor your nutrition, and choose effective exercises for health, weight loss, and fitness maintenance."
+        }
+      },
+      "auth": {
+        "login": "Login",
+        "logout": "Logout",
+        "register": "Register"
+      },
+    "calculation": {
+      "title_calc": {
+         "title_1": "5-Day Meal Plan",
+          "title_2": "with Macros"
+      },
+      "male": "Male",
+      "female": "Female",
+      "birth": "Date of birth",
+      "height": "Height (cm)",
+      "weight": "Weight (kg)",
+      "activity": "Activity level",
+      "calculate": "Calculate",
+      "sedentary": "Sedentary (little or no exercise)",
+      "light": "Light activity (light exercise/sports 1–3 days/week)",
+      "moderate": "Moderate activity (moderate exercise/sports 3–5 days/week)",
+      "active": "Very active (hard exercise/sports 6–7 days/week)",
+      "extra_active": "Extra active (very hard exercise/sports & physical job, or training twice a day)",
+      "notation": "The data is used only for calculations, is not stored without your consent, and is not shared with third parties"
+    },
+    "result": {
+      "title": "Calculation Results",
+      "description": "The calculation is based on the data you provided and generally accepted formulas. You can change the parameters at any time",
+      "loading": "Calculating...",
+      "age": "Age",
+      "age_txt": "years old",
+      "bmi": "BMI",
+      "bmr": "BMR",
+      "cal": "Calorie & Macros",
+      "cal_day": "Kcal/day",
+      "protein": "Protein, g",
+      "fat": "Fat, g",
+      "crabs": "Crabs, g",
+      "loss": "White loss",
+      "maintenance": "Weight maintenance",
+      "gain": "Weight gain",
+      "water": "Daily water intake",
+      "water_txt": "liters",
+      "menu_btn": "Get a 5-Day Meal Plan"
+    },
+    "bmiStatus": {
+      "underweight": "Your BMI indicates underweight",
+      "normal": "Your BMI indicates normal weight",
+      "overweight": "Your BMI indicates overweight",
+      "obesity": "Your BMI indicates obesity"
+    },
+    "error": {
+        "empty": "Please enter value.",
+        "general": "An error occurred while fetching data."
+      },
+    "nutrition": {
+        "title": "Nutrition",
+        "description": "A table of foods with calories, proteins, fats, and carbs (CPCF) helps plan your diet and monitor your nutrition",
+        "search": "Search product...",
+        "product": "Product",
+        "proteins": "Proteins",
+        "fats": "Fats",
+        "carbs": "Carbs",
+        "calories": "Calories",
+        "no_products": "No products found",
+        "enter_product": "Enter product name"
+    },
+    "workout": {
+        "title": "Workout",
+        "description": "A catalog of exercises for all fitness levels: workouts for weight loss, muscle gain, and maintaining fitness. Choose effective exercises for home and gym.",
+        "muscles": {
+          "muscles": "Muscles",
+          "anterior_deltoid": "Shoulders (front)",
+          "biceps_brachii": "Biceps",
+          "biceps_femoris": "Hamstrings",
+          "brachialis": "Brachialis",
+          "gastrocnemius": "Calves",
+          "gluteus_maximus": "Glutes",
+          "latissimus_dorsi": "Latissimus dorsi",
+          "obliquus_externus_abdominis": "Obliques",
+          "pectoralis_major": "Chest",
+          "quadriceps_femoris": "Quadriceps",
+          "rectus_abdominis": "Abs",
+          "serratus_anterior": "Serratus anterior",
+          "soleus": "Soleus",
+          "trapezius": "Trapezius",
+          "triceps_brachii": "Triceps" 
+        },
+        "equipment": {
+          "equipment": "Equipment",
+          "barbell": "Barbell",
+          "bench": "Bench",
+          "dumbbell": "Dumbbell",
+          "gym_mat": "Gym mat",
+          "incline_bench": "Incline bench",
+          "kettlebell": "Kettlebell",
+          "pull_up_bar": "Pull-up bar",
+          "resistance_band": "Resistance band",
+          "sz_bar": "SZ-Bar",
+          "swiss_ball": "Swiss ball",
+          "bodyweight": "Bodyweight",
+          "none": "None"
+        },
+        "categories": {
+          "categories": "Categories",
+          "abs": "Abs",
+          "arms": "Arms",
+          "back": "Back",
+          "calves": "Calves",
+          "cardio": "Cardio",
+          "chest": "Chest",
+          "legs": "Legs",
+          "shoulders": "Shoulders"
+        },
+        "exercise": {
+          "title": "Description",
+          "muscles_main": "Main muscles",
+          "muscles_secondary": "Secondary muscles",
+          "video": "Video"
+        }
+      },
+    "product": {
+      "nutritional_value": "Nutritional value (per 100 grams)",
+      "day_norm_percent": "% of daily value",
+      "amount": "Amount per 100 g",
+      "daily": "Daily value",
+      "nutrient": "Nutrient",
+      "daily_norm": "Daily norm"
+    },
+    "menu": {
+      "day_1": "Day 1",
+      "day_2": "Day 2",
+      "day_3": "Day 3",
+      "day_4": "Day 4",
+      "day_5": "Day 5",
+      "breakfast": "Breakfast",
+      "lunch": "Lunch",
+      "dinner": "Dinner",
+       "total": "Total",
+      "kcal": "Kcal",
+      "protein": "Protein",
+      "fat": "Fat",
+      "carb": "Carbs",
+      "gram": "g",
+      "menu_notation": "The meal plan is for informational purposes only and is intended for a healthy adult. If you have medical conditions or restrictions, consultation with a specialist is recommended. All values and calculations are approximate.",
+      "save_menu": "Save Meal Plan",
+      "btn_default": "Get a 5-day meal plan",
+      "btn_open": "Open meal plan",
+      "btn_close": "Close meal plan",
+      "btn_loading": "Generating your meal plan...",
+      "save_menu_title": "To save the meal plan, sign in or create an account",
+      "save_menu_descr": "Registration will give you access to saving, history, and editing meal plans."
+    },
+    "contact": {
+      "title": "Contacts",
+      "description": "Write to us if you have any questions about the BodyFlow service, calorie and macro calculations, or the website functionality. We carefully review all inquiries.",
+       "info": "Business details",
+       "feedback": "Contact us",
+        "labels": {
+          "fop": "Sole proprietor",
+          "country": "Country",
+          "city": "City",
+          "email": "E-mail"
+        },
+        "values": {
+          "fop": "Cherneha S.",
+          "country": "Ukraine",
+          "city": "Odesa"
+        }
+    },
+    "form": {
+      "name": "First name",
+      "surname": "Last name",
+      "phone": "Phone",
+      "email": "E-mail",
+      "country": "Country",
+      "city": "City",
+      "password": "Password",
+      "theme": "Subject",
+      "message": "Message",
+      "privacy": {
+        "text": "By clicking the \"Send\" button, you confirm that you have read the",
+        "link": "privacy policy."
+      },
+      "send": "Send"
+    },
+    "seo": {
+      "home": {
+        "title": "Calorie & Macro Calculator with a 5-Day Meal Plan — Online Calculation",
+        "description": "Automatic calculation of calories, macros, BMI, and daily water intake. A ready-made 5-day meal plan for weight loss, maintenance, or gain.",
+        "keywords": "5-day meal plan, macro-based meal plan, online meal plan, ready-made meal plan, calorie calculator online, personalized nutrition plan, online nutrition plan, weight loss meal plan, daily calorie intake, macro targets, macro balance, macro-based nutrition plan, body mass index calculation"
+      },
+      "nutrition": {
+        "title": "Food Composition & Nutrition Table — Calories, Proteins, Fats, Carbs",
+        "description": "Discover the composition and caloric value of foods: a nutrition table with proteins, fats, carbohydrates, and calories. Find healthy foods for weight loss, muscle gain, and balanced nutrition.",
+        "keywords": "food composition, calorie table, product macros, food calorie content, proteins fats carbs, foods for weight loss, foods for muscle gain, healthy eating"
+      },
+      "product": {
+        "title": "{name} Calories & Nutrient Profile — Proteins, Fats, Vitamins, Minerals",
+        "description": "{name} detailed composition: calories, proteins, fats, carbohydrates, water, minerals, and vitamins. Explore the nutrient profile for balanced nutrition and better health.",
+        "keywords": "product calories, macros, food composition, nutrients, proteins fats carbs, vitamins, minerals, water in foods, calories per 100g, healthy nutrition"
+      },
+      "workout": {
+        "title": "Exercise Database Online — Workouts for Health and Fitness",
+        "description": "A catalog of exercises for all fitness levels: workouts for weight loss, muscle gain, and maintaining fitness. Choose effective exercises for home and gym.",
+        "keywords": "exercises, workouts online, weight loss exercises, fitness, home workouts, muscle gain exercises, posture exercises, exercise database, healthy lifestyle"
+      },
+      "exercise": {
+        "title": "Exercise Database Online — Workouts for Health and Fitness",
+        "description": "A catalog of exercises for all fitness levels: workouts for weight loss, muscle gain, and maintaining fitness. Choose effective exercises for home and gym.",
+        "keywords": "exercises, workouts online, weight loss exercises, fitness, home workouts, muscle gain exercises, posture exercises, exercise database, healthy lifestyle"
+      }, 
+      "contact": {
+        "title": "BodyFlow Contacts — Support and Feedback",
+        "description": "Contact the BodyFlow service. Get in touch with support and ask questions about nutrition and workouts.",
+        "keywords": "BodyFlow contacts, BodyFlow support, BodyFlow customer service, BodyFlow feedback, contact BodyFlow, nutrition questions, workout questions, fitness support, online nutrition consultation"
+      }
+    },
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "privacy": {
+    "title": "Privacy Policy",
+
+    "intro": "This Privacy Policy (the \"Policy\") describes how ETTEX (\"We\", \"Our Company\", \"Website\") collects, uses, protects, and discloses users’ personal data (\"User\", \"You\") when you use our website https://catalog.ettex.kyiv.ua. We take the confidentiality of your data seriously and are committed to protecting your information.",
+
+    "s1_title": "Collection of Personal Data",
+    "s1_1_title": "Types of data collected:",
+    "s1_1_text": "We may collect the following personal data when you use our online platform:",
+    "s1_1_li1": "Identification information (first name, last name, address, phone number, email address).",
+    "s1_1_li2": "Payment information (e.g., payment details, credit card numbers).",
+    "s1_1_li3": "Technical information (IP address, browser type, access time, page URLs, cookies).",
+    "s1_1_li4": "Information about your activity on the platform (orders, reviews, on-site behavior).",
+
+    "s1_2_title": "Methods of data collection:",
+    "s1_2_text": "We collect your data through:",
+    "s1_2_li1": "Registration and completing forms on our online platform.",
+    "s1_2_li2": "Using our services, such as purchasing goods, participating in promotions, and leaving reviews.",
+    "s1_2_li3": "Using our mobile applications and other ways of interacting with our services.",
+
+    "s2_title": "Purpose of Using Personal Data",
+    "s2_1_title": "We use your personal data for the following purposes:",
+    "s2_1_li1": "To fulfill agreements with you (order processing, delivery of goods, compensation payments).",
+    "s2_1_li2": "To improve our services (user activity analysis, enhancing website functionality).",
+    "s2_1_li3": "To communicate with you (order status updates, important changes on the platform).",
+    "s2_1_li4": "To personalize user experience (recommendations, special offers).",
+    "s2_2_text": "We do not use your data for other purposes without your explicit consent.",
+
+    "s3_title": "Protection of Personal Data",
+    "s3_1_title": "Information security:",
+    "s3_1_text": "We take all necessary technical and organizational measures to ensure the security of your personal data. In particular, we use secure connections (SSL), encryption systems, and password-protected access to maintain confidentiality of your information.",
+    "s3_2_title": "Data retention:",
+    "s3_2_text": "Your personal data is stored only for as long as necessary to fulfill our obligations to you or to comply with legal requirements.",
+
+    "s4_title": "Disclosure of Personal Data",
+    "s4_1_text": "We do not sell, transfer, or disclose your personal data to third parties, except in cases described in this Privacy Policy.",
+    "s4_2_title": "We may share your personal data with:",
+    "s4_2_li1": "Our partners and service providers who help us fulfill orders or provide services (e.g., delivery companies, payment systems).",
+    "s4_2_li2": "When required by law, court orders, or government authorities.",
+
+    "s5_title": "Cookies and Other Technologies",
+    "s5_1_title": "Use of cookies:",
+    "s5_1_text": "Our website uses cookies to improve your experience on the online platform, analyze traffic, and tailor content to your interests.",
+    "s5_2_title": "Choice:",
+    "s5_2_text": "You can configure your browser to refuse cookies; however, this may limit certain features of the website.",
+
+    "s6_title": "Your Rights",
+    "s6_1_title": "Access to data:",
+    "s6_1_text": "You have the right to request information about what personal data we store and to request correction or deletion of that data.",
+    "s6_2_title": "Withdrawal of consent:",
+    "s6_2_text": "You may withdraw your consent to the processing of personal data at any time by sending a notice to our email address", 
+
+    "s7_title": "Changes to the Privacy Policy",
+    "s7_1_text": "We may update this Privacy Policy from time to time.",
+    "s7_2_text": "All changes take effect when they are published on our website. We recommend reviewing this Policy periodically.",
+
+    "s8_title": "Contact Information",
+    "s8_text": "If you have any questions or requests regarding this Privacy Policy, please contact us using the following details:",
+    "s8_email_label": "Email:"
+  }
+
+  }

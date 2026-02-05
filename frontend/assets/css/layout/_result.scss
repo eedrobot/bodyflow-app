@@ -1,0 +1,197 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.results {
+    grid-area: results;
+    display: grid;
+    gap: 1rem;
+        grid-template-columns: 1fr;
+        width: 80%;
+    // grid-template-columns: repeat(auto-fit, minmax(450px, 80%));
+    grid-auto-rows: min-content;
+    justify-content: center;
+    position: relative;
+    .result-title {
+        color: $color-green;
+        font-weight: 700;
+    }
+    .result-description {
+        color: $color-navy-d;
+        font-size: $fs-middle;
+        line-height: 1.5rem;
+    }
+    .result-box {
+        background: $color-white;
+        border-radius: 1rem;
+        padding: 1.2rem;
+        box-shadow: $b-sh;
+        text-align: center;
+        h3 {
+            font-weight: 700;
+        }
+        &.result-box-btn {
+            cursor: pointer;
+            background: $color-lgreen;
+            box-shadow: none;
+            padding: 0;
+        }
+        .result-goals {
+            @include flex(row, center, space-between);
+            flex-wrap: wrap;
+            padding: 30px 1.2rem;
+        }
+        .result-box-item {
+            width: 50%;
+            @include flex(row, center, space-between);
+            h3 {
+                color: $color-green;
+                margin-bottom: 0.5rem;
+                font-size: $fs-secondary;
+                font-weight: 700;
+                padding: 0 10px;
+            }
+            p {
+                font-size: $fs-primary;
+                padding: 20px 0;
+                font-weight: bold;
+                span {
+                    color: $color-green;
+                    font-size: $fs-middle;
+                    font-weight: normal;
+                }
+            }
+            small {
+                padding: 15px 0;
+            }
+            & .result-box-txt,
+            & .result-box-img {
+                width: 50%;
+                height: 70%;
+                img {
+                    height: 100px;
+                    max-height: 100%;
+                }
+            }
+            .result-box-txt {
+                @include flex(column, stretch, center);
+                span {
+                    color: $color-green;
+                }
+            }
+        }
+        .result-box-item:not(:last-child) {
+            @include border-sides((right), $color-mg-2);
+        }
+        &.result-calories {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(60px, 1fr));
+            grid-template-rows: max-content;
+            .result-calories-container {
+                @include flex(column, stretch, start);
+                padding: 0 10px;
+
+                div {
+                    margin: 5px 0;
+
+                    &:not(:first-child) {
+                        font-weight: 500;
+                    }
+
+                    &:first-child {
+                        @include flex(row, start, center);
+                        height: 70px;
+                        line-height: 2rem;
+                        color: $color-green;
+                    }
+                }
+
+                &:not(:last-child) {
+                    @include border-sides((right), $color-mg-2);
+                }
+
+                &.result-title {
+                    align-items: start;
+
+                    > div:first-child {
+                        font-size: $fs-secondary;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+        &.box-flex {
+            @include flex(row, center, space-between);
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {      
+    .results {
+        .result-box {
+            .result-box-item {
+                h3 {
+                    font-size: $fs-middle;
+                    line-height: 2rem;
+                }
+            }
+            .result-calories-container {
+                line-height: 3rem;
+                margin: 0;
+            }
+            .result-calories-container.result-title > div:not(:first-child) {
+                font-size: $fs-middle;
+            }
+        }
+    }
+}    
+
+@media (max-width: 575.98px) {
+    .results {
+        width: 100%;
+        margin-top: 2rem;
+        h2 {
+            font-size: $fs-middle;
+        }
+        .result-box {
+            .result-box-item {
+                width: 100%;
+                padding: 1.5rem 0;
+            }
+            .result-box-item:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px solid $color-mg-2;
+            }
+            &.result-calories {
+                .result-calories-container{
+                    justify-content:start;
+                    padding: 0 0;
+                    div:first-child {
+                        word-break: break-word;
+                        font-size: $fs-small;
+                        align-items: start;
+                        margin-bottom: 0;
+                        height: 50px;
+                        line-height: 1.5rem;
+                    }
+                    div:not(:first-child){
+                        font-size: $fs-small;
+                    }
+                    &.result-title {
+                        div:not(:first-child) {
+                            font-size: $fs-small;
+                            align-items: start;
+                            margin-bottom: 0;
+                            margin: 5px 0;
+                        }
+                    }
+                }
+            }
+            .result-goals {
+                button {
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}

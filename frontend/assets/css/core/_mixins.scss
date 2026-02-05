@@ -1,0 +1,21 @@
+@use "./variables" as *;
+
+@mixin flex($direction: row, $ai: center, $jc: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $ai;
+    justify-content: $jc;
+}
+@mixin border-sides($sides, $color: $color-mg) {
+    @each $side in $sides {
+      @if $side == top {
+        border-top: 1px solid $color;
+      } @else if $side == bottom {
+        border-bottom: 1px solid $color;
+      } @else if $side == left {
+        border-left: 1px solid $color;
+      } @else if $side == right {
+        border-right: 1px solid $color;
+      }
+    }
+  }

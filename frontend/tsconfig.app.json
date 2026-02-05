@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "app.vue",
+    "nuxt.config.ts",
+    "pages/**/*.vue",
+    "components/**/*.vue",
+    "plugins/**/*.ts",
+    "utils/**/*.ts"
+  ]
+}

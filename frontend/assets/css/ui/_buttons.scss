@@ -1,0 +1,36 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.btn {
+	flex: 1;
+	min-width: 189px;
+	padding: 0.7rem;
+	border: none;
+	border-radius: $b-r;
+	background: $color-mg;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: $fs-one;
+	max-height: 40.4px;
+	transition: all ease-in-out 0.2s;
+	&:hover {
+		background: $color-navy;
+		color: $color-white;
+	}
+	&.active {
+		background: $color-sb;
+		color: $color-white;
+	}
+	&.bright {
+		background: linear-gradient(241deg,rgba(251, 164, 33, 1) 0%, rgba(232, 115, 9, 1) 100%);
+		color: $color-white;
+		&:hover {
+			background: $color-sb;
+		}
+	}
+}
+@media (max-width: 575.98px) {
+	.btn {
+		width: 100%;
+	}
+}

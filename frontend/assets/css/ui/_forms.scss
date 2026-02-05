@@ -1,0 +1,60 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.content-form {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    grid-area: form;
+    margin: 0 0;
+        label {
+            @include flex(column, stretch, stretch);
+            font-weight: 600;
+            margin: 20px 0;
+            & input,
+            & select,
+            & textarea {
+                margin-top: 0.4rem;
+                padding: 0.5rem 1rem;
+                @include border-sides(top bottom left right);
+                border-radius: $b-r;
+                font-size: $fs-middle;
+            }
+            textarea {
+                height: 20vh;
+            }
+        }
+        .form-input-inline {
+            @include flex(row, center, start);
+            .label-agree {
+                font-size: $fs-small;
+                color: $color-dg;
+                font-weight: 400;
+                a {
+                    color: $color-sb;
+                }
+            }
+            input {
+                margin-right: 5px;
+            }
+        }
+}
+
+@media (max-width: 991.98px) {
+    .content-form {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .content-form {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 50px;
+        label {
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+}

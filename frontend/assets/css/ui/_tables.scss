@@ -1,0 +1,97 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+ .subcategory {
+      @include border-sides(left right);
+      h3 {
+        padding: 20px 0 20px 10px;
+        @include border-sides(bottom);
+        font-weight: 700;
+      }
+      
+      &:not(:last-child) {
+        @include border-sides(top);
+      }
+      table {
+      width: 100%;
+      border-collapse: collapse;
+      
+      tbody {
+        tr {
+          transition: all ease 0.3s; 
+          color: $color-dg;
+          cursor: pointer;
+          &:hover {
+            background: $color-sb;
+            color: $color-white;
+          }
+        }
+      }
+      th,
+      td {
+        @include border-sides(top bottom left right);
+        padding: 10px;
+        text-align: left;
+      }
+  
+      // убираем внешние границы
+      tr:first-child th {
+        border-top: none;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      th:first-child,
+      td:first-child {
+        border-left: none;
+        color: $color-black;
+      }
+      th:last-child,
+      td:last-child {
+        border-right: none;
+      }
+  
+      th {
+        font-weight: 700;
+      }
+      }
+      &:last-child {
+      border-radius: 0 0 $b-r $b-r;
+      @include border-sides(top bottom left right);
+      margin-bottom: 15px;
+      }
+  }
+
+  @media (max-width: 575.98px) {
+        .subcategory {
+          
+          table, thead, tbody, th, td, tr {
+            display: block;
+            font-size: $fs-small;
+            }
+          
+            thead {
+            display: none;
+            }
+          
+            tr {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            padding: 10px;
+            background: #fff;
+            }
+          
+            td {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            }
+          
+            td::before {
+            content: attr(data-label);
+            font-weight: 600;
+            color: #555;
+            }
+        }
+	  }  

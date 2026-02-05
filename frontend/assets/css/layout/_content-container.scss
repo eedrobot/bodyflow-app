@@ -1,0 +1,16 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.content-container {
+	background: $color-white-tr;
+	padding: 2rem;
+	border-radius: $b-r;
+	box-shadow: $b-sh;
+	margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+	  .content-container {
+		padding: 1rem;
+      }
+    }
