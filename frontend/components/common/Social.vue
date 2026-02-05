@@ -1,7 +1,7 @@
 <template>
     <div class = "social">
          <div class = "social-email">
-        <a href="body.flow.service@gmail.com">body.flow.service@gmail.com</a>
+        <a href="support@bodyflow.com.ua">support@bodyflow.com.ua</a>
         </div>
         <div class="social-links">
             <a class="social-link instagram" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
