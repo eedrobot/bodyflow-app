@@ -1,75 +1,100 @@
-# Nuxt Minimal Starter
+# BodyFlow 🥗💪  
+**Nutrition & Meal Planning Web Service**
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+BodyFlow is a full-stack web application for nutrition planning and food analysis.  
+The service helps users explore food products, nutrients, and build balanced meal plans.
 
-## Setup
+The project is built as a modern **Vue 3 / Nuxt 3 (SSR)** frontend with a **PHP API backend**, designed with scalability, SEO, and clean architecture in mind.
 
-Make sure to install dependencies:
+---
 
-```bash
-# npm
+## ✨ Key Features
+
+- 📊 Food products and categories with nutritional data  
+- 🍽 Meal plan generation  
+- 🌍 Multi-language support (RU / EN / UA)  
+- ⚡ Server-Side Rendering (SSR) for better SEO  
+- 🧩 Modular and scalable architecture  
+- 🎨 Custom UI and design system  
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **Vue 3**
+- **Nuxt 3 (SSR)**
+- Pinia (state management)
+- Nuxt i18n (multi-language routing)
+- SCSS (custom design system)
+
+### Backend
+- **PHP API**
+- REST-style endpoints
+- JSON responses
+
+---
+
+## 📂 Project Structure
+
+bodyflow-app/
+├── frontend/   # Nuxt 3 SSR application
+└── backend/    # PHP API
+
+## Environment Variables
+
+The frontend requires an API base URL.
+
+Create a .env file inside the frontend folder:
+
+NUXT_PUBLIC_API_BASE=http://nutrition-n.test/api
+
+
+See .env.example for reference.
+
+🚀 Frontend Setup
+
+Install dependencies:
+
+cd frontend
 npm install
 
-# pnpm
-pnpm install
 
-# yarn
-yarn install
+Run development server:
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
 
-# pnpm
-pnpm dev
 
-# yarn
-yarn dev
+The app will be available at:
 
-# bun
-bun run dev
-```
+http://localhost:3000
 
-## Production
+🔧 Backend Setup
 
-Build the application for production:
+The backend is a PHP-based API.
 
-```bash
-# npm
-npm run build
+Place the backend folder into your local PHP server environment
+(OpenServer, XAMPP, MAMP, or similar)
 
-# pnpm
-pnpm build
+Configure your local domain (e.g. nutrition-n.test)
 
-# yarn
-yarn build
+Ensure the API is accessible via:
 
-# bun
-bun run build
-```
+http://nutrition-n.test/api
 
-Locally preview production build:
+🌐 Deployment
 
-```bash
-# npm
-npm run preview
+Frontend: Vercel (Nuxt 3 SSR)
 
-# pnpm
-pnpm preview
+Backend: Any PHP-compatible hosting or VPS
 
-# yarn
-yarn preview
+The frontend communicates with the backend via the NUXT_PUBLIC_API_BASE environment variable.
 
-# bun
-bun run preview
-```
+📌 Project Status
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+BodyFlow is an actively developed project.
+New features, UI improvements, and optimizations are continuously added.
+
+👩‍💻 Author
+
+BodyFlow — personal full-stack project focused on nutrition, health, and modern web technologies.
