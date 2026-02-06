@@ -75,14 +75,14 @@ export default defineNuxtConfig({
     ],
     pages: {
       products: {
-        ru: '/продукты',
-        uk: '/продукти',
+        ru: '/produkty',
+        uk: '/produkty',
         en: '/products'
       },
 
       'products-slug': {
         ru: '/produkty/[slug]',
-        uk: '/producty/[slug]',
+        uk: '/produkty/[slug]',
         en: '/products/[slug]'
       },
 
