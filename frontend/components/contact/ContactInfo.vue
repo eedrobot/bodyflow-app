@@ -35,7 +35,7 @@
 const { t } = useI18n()
 
 const contactInfo = [
-  { id: 1, labelKey: 'contact.labels.fop', valueKey: 'contact.values.fop' },
+//   { id: 1, labelKey: 'contact.labels.fop', valueKey: 'contact.values.fop' },
   { id: 2, labelKey: 'contact.labels.country', valueKey: 'contact.values.country' },
   { id: 3, labelKey: 'contact.labels.city', valueKey: 'contact.values.city' },
   { id: 4, labelKey: 'contact.labels.email', value: 'support@bodyflow.com.ua', type: "email" },

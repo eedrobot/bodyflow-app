@@ -7,15 +7,15 @@ export const menuPages = [
     icon: '/icons/house-solid.svg'
   },
   {
-    key: 'nutrition',
-    titleKey: 'pages.title.nutrition',
-    routeName: 'nutrition',     // совпадает с i18n.pages.nutrition
+    key: 'products',
+    titleKey: 'pages.title.products',
+    routeName: 'products',
     icon: '/icons/utensils-solid.svg'
   },
    {
     key: 'contact',
     titleKey: 'pages.title.contact',
-    routeName: 'contact',     // совпадает с i18n.pages.nutrition
+    routeName: 'contact',
     icon: '/icons/file-contract-solid.svg'
   }
   // сюда можно добавить ещё пункты, если нужно

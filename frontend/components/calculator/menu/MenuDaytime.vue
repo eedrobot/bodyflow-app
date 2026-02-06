@@ -74,7 +74,7 @@ const router = useRouter()
 const localePath = useLocalePath()
 
 const visibleProducts = computed(() =>
-  (props.meal?.products || []).filter(p => props.smartRound(p.solvedGram) > 0)
+  (props.meal?.products || []).filter(p => props.smartRound(p.solvedGram) > 5)
 )
 
 const productName = (product) => {

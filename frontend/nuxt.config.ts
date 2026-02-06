@@ -74,21 +74,21 @@ export default defineNuxtConfig({
       { code: 'uk', iso: 'uk-UA', file: 'uk.json' }
     ],
     pages: {
-      nutrition: {
-        ru: '/pitanie',
-        uk: '/harchuvannya',
-        en: '/nutrition'
+      products: {
+        ru: '/продукты',
+        uk: '/продукти',
+        en: '/products'
       },
 
-      'nutrition-slug': {
-        ru: '/pitanie/[slug]',
-        uk: '/harchuvannya/[slug]',
-        en: '/nutrition/[slug]'
+      'products-slug': {
+        ru: '/produkty/[slug]',
+        uk: '/producty/[slug]',
+        en: '/products/[slug]'
       },
 
       contact: {
         ru: '/kontakty',
-        uk: '/kontakti',
+        uk: '/kontakty',
         en: '/contacts'
       },
 

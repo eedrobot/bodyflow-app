@@ -74,6 +74,68 @@
             }
             .result-box-txt {
                 @include flex(column, stretch, center);
+                 &.tooltip {
+                    position: relative;
+                    cursor: help;
+
+                    &::after {
+                        content: attr(data-tooltip);
+                        position: absolute;
+                        left: 50%;
+                        bottom: calc(100% + 12px);
+                        transform: translateX(-50%);
+
+                        width: 100%;
+                        padding: 1rem 0.7rem;
+                        border-radius: $b-r;
+                        font-size: $fs-small;
+                        line-height: 1.3;
+                        text-align: center;
+                        white-space: normal;
+
+                        background: $color-white;
+                        color: $color-dg;
+                        box-shadow: $b-sh;
+
+                        opacity: 0;
+                        visibility: hidden;
+                        pointer-events: none;
+                        transition: 0.18s ease;
+                        z-index: 50;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        top: -12px;
+                        transform: translateX(-50%);
+
+                        border: 8px solid transparent;
+                        border-top-color: $color-green;
+
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: 0.18s ease;
+                        z-index: 51;
+                    }
+
+                    /* desktop */
+                    @media (hover: hover) and (pointer: fine) {
+                        &:hover::after,
+                        &:hover::before {
+                        opacity: 1;
+                        visibility: visible;
+                        }
+                    }
+
+                    /* mobile */
+                    &.is-open::after,
+                    &.is-open::before {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
                 span {
                     color: $color-green;
                 }
@@ -157,10 +219,19 @@
             .result-box-item {
                 width: 100%;
                 padding: 1.5rem 0;
-            }
-            .result-box-item:not(:last-child) {
-                border-right: none;
-                border-bottom: 1px solid $color-mg-2;
+                .result-box-txt {
+                    &.tooltip {
+                        &::after {
+                            width: 100%;
+                            left: -1rem;
+                            transform: none;
+                        }
+                    }
+                }
+                &:not(:last-child) {
+                    border-right: none;
+                    border-bottom: 1px solid $color-mg-2;
+                }
             }
             &.result-calories {
                 .result-calories-container{

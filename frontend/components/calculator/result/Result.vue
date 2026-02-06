@@ -24,7 +24,12 @@
           </div>
 
           <div class="result-box-item">
-            <div class="result-box-txt">
+            <div 
+            class="result-box-txt tooltip"
+              :class="{ 'is-open': openedTip === 'bmi' }"
+              :data-tooltip="t('tips.bmi')"
+              @click.stop="toggleTip('bmi')"
+              >
               <h3>{{ t('result.bmi') }}</h3>
               <p>{{ store.BMI }}</p>
             </div>
@@ -41,18 +46,29 @@
         <div class="result-box box-flex">
 
           <div class="result-box-item">
-            <div class="result-box-txt">
+           <div
+              class="result-box-txt tooltip"
+              :class="{ 'is-open': openedTip === 'bmr' }"
+              :data-tooltip="t('tips.bmr')"
+              @click.stop="toggleTip('bmr')"
+            >
               <h3>{{ t('result.bmr') }}</h3>
               <p>{{ store.BMR }}</p>
               <span>{{ t('result.cal_day') }}</span>
             </div>
+
             <div class="result-box-img">
               <img src="@/public/fire.svg" alt="burn" />
             </div>
           </div>
 
           <div class="result-box-item">
-            <div class="result-box-txt">
+            <div 
+            class="result-box-txt tooltip"
+              :class="{ 'is-open': openedTip === 'water' }"
+              :data-tooltip="t('tips.water')"
+              @click.stop="toggleTip('water')"
+            >
               <h3>{{ t('result.water') }}</h3>
               <p>{{ store.water_norm }}</p>
               <span>{{ t('result.water_txt') }}</span>
@@ -104,10 +120,29 @@
 
   
   <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BmiDonut from './BmiDonut.vue'
 
 const { t } = useI18n()
 const store = useCalculatorStore()
+
+const openedTip = ref(null)
+
+const toggleTip = (key) => {
+  openedTip.value = openedTip.value === key ? null : key
+}
+
+const closeTips = () => {
+  openedTip.value = null
+}
+
+onMounted(() => {
+  document.addEventListener('click', closeTips)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', closeTips)
+})
 
 </script>
   
@@ -130,11 +165,6 @@ const store = useCalculatorStore()
         "results";
     padding: 4rem 2rem 1rem 2rem;
     }
-    // .calc-loading {
-    //   .calc-loading__text {
-    //     color: $color-navy;
-    //     font-size: $fs-middle;
-    //   }
 
 
      /* ИМТ диаграмма */

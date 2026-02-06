@@ -15,7 +15,7 @@
     <nav class="nav-header">
       <ul>
         <li v-for="page in menuPages" :key="page.key">
-          <NuxtLink :to="localePath(page.routeName)">
+          <NuxtLink :to="localePath(page.routeName)"> 
             {{ $t(page.titleKey) }}
           </NuxtLink>
         </li>
