@@ -120,20 +120,6 @@ const filteredCategories = computed(() => {
     margin-right: 10px;
 }
 
-.subcategory {
-  table {
-    tbody {
-      tr {
-        cursor: auto;
-      }
-      &:hover {
-        background: transparent;
-        color: $color-black;
-      }
-    }
-  }
-}
-
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.3s ease;

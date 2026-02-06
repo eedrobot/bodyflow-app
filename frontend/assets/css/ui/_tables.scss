@@ -20,10 +20,12 @@
         tr {
           transition: all ease 0.3s; 
           color: $color-dg;
-          cursor: pointer;
-          &:hover {
-            background: $color-sb;
-            color: $color-white;
+          &.clickable {
+            cursor: pointer;
+            &:hover {
+              background: $color-sb;
+              color: $color-white;
+            }
           }
         }
       }

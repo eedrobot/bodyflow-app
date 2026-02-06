@@ -38,6 +38,7 @@
                 v-for="product in productsByCategories[cat.category_id][langKey]"
                 :key="product.product_id"
                 @click="goToProduct(product)"
+                class = "clickable"
               >
                 <td :data-label="$t('nutrition.product')">
                   {{ product.translations?.[langKey] || product.translations?.ru || '' }}

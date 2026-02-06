@@ -20,6 +20,7 @@
             :key="product.product_id"
             role="button"
             tabindex="0"
+            class = "clickable"
             @click="goToProduct(product)"
           >
             <td>{{ productName(product) }}</td>
