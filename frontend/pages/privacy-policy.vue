@@ -73,8 +73,8 @@
           <p class="privacy-p">6.2. {{ t('privacy.s6_2_title') }}</p>
           <p class="privacy-p">
             {{ t('privacy.s6_2_text') }}
-            <a class="privacy-link" href="mailto:body.flow.service@gmail.com">
-                body.flow.service@gmail.com
+            <a class="privacy-link" href="mailto:support@bodyflow.com.ua">
+                support@bodyflow.com.ua
             </a>     
           </p>
 
@@ -88,8 +88,8 @@
           <p class="privacy-p">{{ t('privacy.s8_text') }}</p>
           <p class="privacy-p">
             <strong>{{ t('privacy.s8_email_label') }}</strong>
-            <a class="privacy-link" href="mailto:body.flow.service@gmail.com">
-                body.flow.service@gmail.com
+            <a class="privacy-link" href="mailto:support@bodyflow.com.ua">
+                support@bodyflow.com.ua
             </a>
           </p>
 
