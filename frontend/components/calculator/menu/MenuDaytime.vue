@@ -98,7 +98,7 @@ const goToProduct = (product) => {
 
   if (!slug) return
 
-  const path = localePath({ name: 'nutrition-slug', params: { slug } })
+  const path = localePath({ name: 'products-slug', params: { slug } })
   router.push(path)
 }
 </script>
