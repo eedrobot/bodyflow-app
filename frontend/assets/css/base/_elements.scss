@@ -1,16 +1,21 @@
 @use "../core/variables" as *;
 @use "../core/mixins" as *;
 
+:root { color-scheme: light; }
+
 * {
     box-sizing: border-box;
 }
+html { color-scheme: light; }
 body {
 	font-family: "Encode Sans", sans-serif;
 	font-size: $fs-one;
+	background: $color-main;
 }
 input,
 textarea, 
 select {
+	background: $color-white;
     border: 0;
     outline: 0;
 }
@@ -65,3 +70,5 @@ footer {
 		min-width: 150px;
 	}
 }
+
+@media (forced-colors: active) { * { forced-color-adjust: none; } }
