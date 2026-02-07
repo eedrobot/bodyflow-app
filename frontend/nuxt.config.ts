@@ -37,6 +37,9 @@ export default defineNuxtConfig({
   siteUrl: 'https://bodyflow.com.ua',
   autoLastmod: true,
 
+  index: false,
+  sitemapName: 'sitemap.xml',
+
   async urls() {
     // ---------- СТАТИЧЕСКИЕ СТРАНИЦЫ ----------
     const staticPages = [
