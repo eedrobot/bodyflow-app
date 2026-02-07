@@ -79,7 +79,7 @@
         "general": "An error occurred while fetching data."
       },
     "nutrition": {
-        "title": "Nutrition",
+        "title": "Products",
         "description": "A table of foods with calories, proteins, fats, and carbs (CPCF) helps plan your diet and monitor your nutrition",
         "search": "Search product...",
         "product": "Product",

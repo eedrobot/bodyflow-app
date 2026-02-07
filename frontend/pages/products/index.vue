@@ -2,7 +2,7 @@
   <div class="products-comp" ref="bgRef">
     <div class="wrapper">
 
-      <h1 class="title">{{ t('nutrition.title') }}</h1>
+      <h1 class="title">{{ t('nutrition.title') }}</h1> 
       <div class="description">{{ t('nutrition.description') }}</div>
 
       <Loader :isLoading ="nutritionStore.isLoading" />

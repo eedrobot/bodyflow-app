@@ -201,8 +201,12 @@
                 line-height: 3rem;
                 margin: 0;
             }
-            .result-calories-container.result-title > div:not(:first-child) {
-                font-size: $fs-middle;
+            .result-calories-container {
+                &.result-title {
+                    div:not(:first-child) {
+                        font-size: $fs-middle;
+                    }
+                }
             }
         }
     }
@@ -211,7 +215,7 @@
 @media (max-width: 575.98px) {
     .results {
         width: 100%;
-        margin-top: 2rem;
+        margin-top: 3rem;
         h2 {
             font-size: $fs-middle;
         }
@@ -249,6 +253,10 @@
                         font-size: $fs-small;
                     }
                     &.result-title {
+                        div:first-child {
+                            font-size: $fs-one;
+                            text-align: left;
+                        }
                         div:not(:first-child) {
                             font-size: $fs-small;
                             align-items: start;

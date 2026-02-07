@@ -31,6 +31,59 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
   ],
 
+ sitemap: {
+  siteUrl: 'https://bodyflow.com.ua',
+  autoLastmod: true,
+
+  async urls() {
+    // ---------- СТАТИЧЕСКИЕ СТРАНИЦЫ ----------
+    const staticPages = [
+      {
+        loc: '/produkty',
+        hreflang: [
+          { lang: 'ru', url: '/produkty' },
+          { lang: 'uk', url: '/produkty' },
+          { lang: 'en', url: '/products' },
+        ],
+        priority: 0.9,
+      },
+      {
+        loc: '/kontakty',
+        hreflang: [
+          { lang: 'ru', url: '/kontakty' },
+          { lang: 'uk', url: '/kontakty' },
+          { lang: 'en', url: '/contacts' },
+        ],
+        priority: 0.7,
+      },
+      {
+        loc: '/politika-konfidenciinosti',
+        hreflang: [
+          { lang: 'ru', url: '/politika-konfidencialnosti' },
+          { lang: 'uk', url: '/politika-konfidenciinosti' },
+          { lang: 'en', url: '/privacy-policy' },
+        ],
+        priority: 0.4,
+      },
+    ]
+
+    // ---------- ДИНАМИЧЕСКИЕ ПРОДУКТЫ ----------
+    const res = await fetch('https://api.bodyflow.com.ua/products')
+    const products = await res.json()
+
+    const productPages = products.map((p: any) => ({
+      loc: `/produkty/${p.slug.uk}`,
+      hreflang: [
+        { lang: 'ru', url: `/produkty/${p.slug.ru}` },
+        { lang: 'uk', url: `/produkty/${p.slug.uk}` },
+        { lang: 'en', url: `/products/${p.slug.en}` },
+      ],
+      priority: 0.8,
+    }))
+
+    return [...staticPages, ...productPages]
+  }
+},
   // -------------------------------
   //  ГЛОБАЛЬНЫЕ СТИЛИ
   // -------------------------------

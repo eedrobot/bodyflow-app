@@ -106,7 +106,7 @@ async function selectSuggestion(item) {
     return
   }
 
-  router.push(localePath({ name: 'nutrition-slug', params: { slug } }))
+  router.push(localePath({ name: 'products-slug', params: { slug } }))
 }
 
 function handleClickOutside(event) {

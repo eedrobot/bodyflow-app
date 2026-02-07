@@ -1,12 +1,12 @@
 @use "../core/variables" as *;
 @use "../core/mixins" as *;
 
-:root { color-scheme: light; }
+:root, html { color-scheme: light; }
 
 * {
     box-sizing: border-box;
 }
-html { color-scheme: light; }
+
 body {
 	font-family: "Encode Sans", sans-serif;
 	font-size: $fs-one;
