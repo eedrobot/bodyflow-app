@@ -6,7 +6,6 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  // ✅ ДОБАВИТЬ ЭТО
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://nutrition-n.test/api',
@@ -15,14 +14,12 @@ export default defineNuxtConfig({
 
   imports: {
     presets: [
-      {
-        from: 'vue-i18n',
-        imports: ['useI18n'],
-      },
+      { from: 'vue-i18n', imports: ['useI18n'] },
     ],
   },
 
   modules: [
+    '@nuxtjs/sitemap',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/fonts',
@@ -31,73 +28,59 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
   ],
 
- sitemap: {
+  sitemap: {
   siteUrl: 'https://bodyflow.com.ua',
   autoLastmod: true,
 
   async urls() {
     // ---------- СТАТИЧЕСКИЕ СТРАНИЦЫ ----------
     const staticPages = [
-      {
-        loc: '/produkty',
-        hreflang: [
-          { lang: 'ru', url: '/produkty' },
-          { lang: 'uk', url: '/produkty' },
-          { lang: 'en', url: '/products' },
-        ],
-        priority: 0.9,
-      },
-      {
-        loc: '/kontakty',
-        hreflang: [
-          { lang: 'ru', url: '/kontakty' },
-          { lang: 'uk', url: '/kontakty' },
-          { lang: 'en', url: '/contacts' },
-        ],
-        priority: 0.7,
-      },
-      {
-        loc: '/politika-konfidenciinosti',
-        hreflang: [
-          { lang: 'ru', url: '/politika-konfidencialnosti' },
-          { lang: 'uk', url: '/politika-konfidenciinosti' },
-          { lang: 'en', url: '/privacy-policy' },
-        ],
-        priority: 0.4,
-      },
+      // products
+      { loc: '/produkty', priority: 0.9 },
+      { loc: '/uk/produkty', priority: 0.9 },
+      { loc: '/en/products', priority: 0.9 },
+
+      // contact
+      { loc: '/kontakty', priority: 0.7 },
+      { loc: '/uk/kontakty', priority: 0.7 },
+      { loc: '/en/contacts', priority: 0.7 },
+
+      // privacy
+      { loc: '/politika-konfidencialnosti', priority: 0.4 },
+      { loc: '/uk/politika-konfidenciinosti', priority: 0.4 },
+      { loc: '/en/privacy-policy', priority: 0.4 },
     ]
 
     // ---------- ДИНАМИЧЕСКИЕ ПРОДУКТЫ ----------
-    const res = await fetch('https://api.bodyflow.com.ua/products')
-    const products = await res.json()
+    try {
+      const res = await fetch('https://api.bodyflow.com.ua/products')
+      const products = await res.json()
 
-    const productPages = products.map((p: any) => ({
-      loc: `/produkty/${p.slug.uk}`,
-      hreflang: [
-        { lang: 'ru', url: `/produkty/${p.slug.ru}` },
-        { lang: 'uk', url: `/produkty/${p.slug.uk}` },
-        { lang: 'en', url: `/products/${p.slug.en}` },
-      ],
-      priority: 0.8,
-    }))
+      if (!Array.isArray(products)) return staticPages
 
-    return [...staticPages, ...productPages]
+      const productPages = products
+        .filter((p: any) => p?.slug?.ru && p?.slug?.uk && p?.slug?.en)
+        .flatMap((p: any) => ([
+          { loc: `/produkty/${p.slug.ru}`, priority: 0.8 },
+          { loc: `/uk/produkty/${p.slug.uk}`, priority: 0.8 },
+          { loc: `/en/products/${p.slug.en}`, priority: 0.8 },
+        ]))
+
+      return [...staticPages, ...productPages]
+    } catch {
+      return staticPages
+    }
   }
 },
-  // -------------------------------
-  //  ГЛОБАЛЬНЫЕ СТИЛИ
-  // -------------------------------
+
   css: [
     '@/assets/css/main.scss'
   ],
 
-  // -------------------------------
-  //  VITE + SCSS
-  // -------------------------------
   vite: {
     resolve: {
       alias: {
-        '@': '/.'   // ← это фикс для Windows
+        '@': '/.' // фикс для Windows
       }
     },
     css: {
@@ -112,9 +95,6 @@ export default defineNuxtConfig({
     }
   },
 
-  // -------------------------------
-  //  i18n
-  // -------------------------------
   i18n: {
     strategy: 'prefix_except_default',
     customRoutes: 'config',
@@ -127,31 +107,12 @@ export default defineNuxtConfig({
       { code: 'uk', iso: 'uk-UA', file: 'uk.json' }
     ],
     pages: {
-      products: {
-        ru: '/produkty',
-        uk: '/produkty',
-        en: '/products'
-      },
-
-      'products-slug': {
-        ru: '/produkty/[slug]',
-        uk: '/produkty/[slug]',
-        en: '/products/[slug]'
-      },
-
-      contact: {
-        ru: '/kontakty',
-        uk: '/kontakty',
-        en: '/contacts'
-      },
-
-      'privacy-policy': {
-        ru: '/politika-konfidencialnosti',
-        uk: '/politika-konfidenciinosti',
-        en: '/privacy-policy'
-      }
+      products: { ru: '/produkty', uk: '/produkty', en: '/products' },
+      'products-slug': { ru: '/produkty/[slug]', uk: '/produkty/[slug]', en: '/products/[slug]' },
+      contact: { ru: '/kontakty', uk: '/kontakty', en: '/contacts' },
+      'privacy-policy': { ru: '/politika-konfidencialnosti', uk: '/politika-konfidenciinosti', en: '/privacy-policy' }
     },
-    ignoreRoutes: ['/api']
+    ignoreRoutes: ['/api', '/sitemap.xml', '/robots.txt']
   },
 
   components: true
