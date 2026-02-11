@@ -30,9 +30,6 @@ const { t, locale } = useI18n()
 
 const nutritionStore = useNutritionData()
 
-const config = useRuntimeConfig()
-console.log('apiBase =', config.public.apiBase)
-
 const { categoriesData } = storeToRefs(nutritionStore)
 
 useSeo({
