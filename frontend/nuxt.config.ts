@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
 
   ssr: true,
-  nitro: {
+
+    nitro: {
     preset: 'vercel'
   },
 
@@ -13,7 +14,7 @@ export default defineNuxtConfig({
 
 runtimeConfig: {
   public: {
-    apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000'
+    apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://nutrition-n.test/api'
   }
 },
 

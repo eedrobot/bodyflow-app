@@ -93,7 +93,9 @@
       <label for="agree-privacy" class="label-agree">
         <span>
           {{ t('form.privacy.text') }}
-          <NuxtLink to="/privacy-policy">{{ t('pages.title.privacy') }}</NuxtLink>
+          <NuxtLink :to="localePath('privacy-policy')">
+            {{ t('pages.title.privacy') }}
+          </NuxtLink>
         </span>
       </label>
     </div>
@@ -124,6 +126,8 @@
 <script setup>
 const { t } = useI18n()
 const contact = useContactFormStore()
+
+const localePath = useLocalePath()
 
 function onBlur(field) {
   contact.touched[field] = true
