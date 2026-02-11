@@ -11,9 +11,9 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
- runtimeConfig: {
+runtimeConfig: {
   public: {
-    apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://api.bodyflow.com.ua'
+    apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000'
   }
 },
 

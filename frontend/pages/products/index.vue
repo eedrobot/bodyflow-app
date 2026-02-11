@@ -40,7 +40,7 @@ useSeo({
 })
 
 // Загружаем только категории
-await nutritionStore.getCategoriesData(locale.value)
+await nutritionStore.getCategoriesData()
 await nutritionStore.getProductsData(1)
 
 const bgRef = ref(null)
