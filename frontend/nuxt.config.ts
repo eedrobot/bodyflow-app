@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 
  runtimeConfig: {
   public: {
-    apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://bodyflow.com.ua/api'
+    apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://api.bodyflow.com.ua'
   }
 },
 
