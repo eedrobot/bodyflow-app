@@ -11,11 +11,11 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  runtimeConfig: {
-    public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://nutrition-n.test/api',
-    }
-  },
+ runtimeConfig: {
+  public: {
+    apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://bodyflow.com.ua/api'
+  }
+},
 
   imports: {
     presets: [

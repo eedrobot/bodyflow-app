@@ -23,6 +23,16 @@
             textarea {
                 height: 20vh;
             }
+            input[aria-invalid="true"],
+            textarea[aria-invalid="true"] {
+                    border-color: #b00020;
+                }
+            .field-error {
+                display: block;
+                margin-top: 0.35rem;
+                font-size: 0.85rem;
+                color: #b00020;
+            }
         }
         .form-input-inline {
             @include flex(row, center, start);

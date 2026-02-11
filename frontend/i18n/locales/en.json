@@ -207,7 +207,18 @@
         "text": "By clicking the \"Send\" button, you confirm that you have read the",
         "link": "privacy policy."
       },
-      "send": "Send"
+      "send": "Send",
+       "errors": {
+          "required": "This field is required",
+          "name_min": "Name is too short (minimum 2 characters)",
+          "name_max": "Name is too long (maximum 60 characters)",
+          "email": "Please enter a valid email address",
+          "email_max": "Email is too long (maximum 120 characters)",
+          "subject_max": "Subject is too long (maximum 120 characters)",
+          "message_min": "Message is too short (minimum 10 characters)",
+          "message_max": "Message is too long (maximum 2000 characters)",
+          "consent": "You must agree to the privacy policy"
+        }
     },
     "seo": {
       "home": {
