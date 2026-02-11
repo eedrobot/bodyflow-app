@@ -41,40 +41,36 @@ export const useNutritionData = defineStore('nutrition', {
       this.expandedCategory = null
     },
 
-async getCategoriesData() {
-  const { $i18n } = useNuxtApp()
-  const lang = $i18n.locale.value
+   async getCategoriesData() {
+    const { $i18n } = useNuxtApp()
+    const lang = $i18n.locale.value
 
-  const now = Date.now()
-  const TTL = 24 * 60 * 60 * 1000
+    const now = Date.now()
+    const TTL = 24 * 60 * 60 * 1000
 
-  if (this.lastLang !== lang) {
-    this.clearAllDataOnLangChange(lang)
-  }
+    if (this.lastLang !== lang) {
+      this.clearAllDataOnLangChange(lang)
+    }
 
-  if (this.categoriesData.length && this.categoriesDataLoadedAt && (now - this.categoriesDataLoadedAt < TTL)) {
-    return this.categoriesData
-  }
+    if (this.categoriesData.length && this.categoriesDataLoadedAt && (now - this.categoriesDataLoadedAt < TTL)) {
+      return this.categoriesData
+    }
 
-  this.isLoading = true
-  try {
-    const data = await getCategoriesDataFromApi(lang)
-
-    // ✅ ВСТАВИТЬ ВОТ ЭТО
-    const parsed = typeof data === 'string' ? JSON.parse(data) : data
-    this.categoriesData = parsed
-
-    this.categoriesDataLoadedAt = now
-    this.lastLang = lang
-    this.errorKey = ''
-    return parsed
-  } catch (err) {
-    this.errorKey = 'error.general'
-    throw err
-  } finally {
-    this.isLoading = false
-  }
-},
+    this.isLoading = true
+    try {
+      const data = await getCategoriesDataFromApi(lang)
+      this.categoriesData = data
+      this.categoriesDataLoadedAt = now
+      this.lastLang = lang
+      this.errorKey = ''
+      return data
+    } catch (err) {
+      this.errorKey = 'error.general'
+      throw err
+    } finally {
+      this.isLoading = false
+    }
+  },
 
     async getProductsData(category_id) {
   const { $i18n } = useNuxtApp()
