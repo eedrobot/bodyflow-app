@@ -34,38 +34,51 @@ runtimeConfig: {
     'pinia-plugin-persistedstate/nuxt',
   ],
 
-  sitemap: {
+sitemap: {
   siteUrl: 'https://bodyflow.com.ua',
   autoLastmod: true,
 
-  index: false,
-  sitemapName: 'sitemap.xml',
+  index: true,
+  sitemapName: 'sitemap_index.xml',
 
   async urls() {
-    // ---------- СТАТИЧЕСКИЕ СТРАНИЦЫ ----------
+    const config = useRuntimeConfig()
+    const apiBase = config.public.apiBase || 'https://api.bodyflow.com.ua'
+
+    // статические (добавь главные!)
     const staticPages = [
-      // products
+      { loc: '/', priority: 1.0 },
+      { loc: '/uk', priority: 1.0 },
+      { loc: '/en', priority: 1.0 },
+
       { loc: '/produkty', priority: 0.9 },
       { loc: '/uk/produkty', priority: 0.9 },
       { loc: '/en/products', priority: 0.9 },
 
-      // contact
       { loc: '/kontakty', priority: 0.7 },
       { loc: '/uk/kontakty', priority: 0.7 },
       { loc: '/en/contacts', priority: 0.7 },
 
-      // privacy
       { loc: '/politika-konfidencialnosti', priority: 0.4 },
       { loc: '/uk/politika-konfidenciinosti', priority: 0.4 },
       { loc: '/en/privacy-policy', priority: 0.4 },
     ]
 
-    // ---------- ДИНАМИЧЕСКИЕ ПРОДУКТЫ ----------
     try {
-      const res = await fetch('https://api.bodyflow.com.ua/products')
+      const url = `${apiBase.replace(/\/$/, '')}/products`
+      const res = await fetch(url, { headers: { accept: 'application/json' } })
+
+      if (!res.ok) {
+        console.error('[sitemap] products fetch failed:', res.status, res.statusText, url)
+        return staticPages
+      }
+
       const products = await res.json()
 
-      if (!Array.isArray(products)) return staticPages
+      if (!Array.isArray(products)) {
+        console.error('[sitemap] products is not array:', typeof products)
+        return staticPages
+      }
 
       const productPages = products
         .filter((p: any) => p?.slug?.ru && p?.slug?.uk && p?.slug?.en)
@@ -75,8 +88,11 @@ runtimeConfig: {
           { loc: `/en/products/${p.slug.en}`, priority: 0.8 },
         ]))
 
+      console.log('[sitemap] urls generated:', staticPages.length + productPages.length)
+
       return [...staticPages, ...productPages]
-    } catch {
+    } catch (e: any) {
+      console.error('[sitemap] exception:', e?.message || e)
       return staticPages
     }
   }
