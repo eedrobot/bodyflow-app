@@ -218,6 +218,18 @@
           "message_min": "Message is too short (minimum 10 characters)",
           "message_max": "Message is too long (maximum 2000 characters)",
           "consent": "You must agree to the privacy policy"
+        },
+        "serverErrors": {
+          "spam": "Suspicious activity detected",
+          "too_many_requests": "Too many attempts. Please try again later.",
+          "bad_request": "Invalid request",
+          "method_not_allowed": "Method not allowed",
+          "mail_error": "Mail sending error. Please try again later.",
+          "invalid_json": "Invalid data format",
+          "invalid_email": "Invalid email address",
+          "missing_fields": "Required fields are missing",
+          "network": "Network error. Please check your connection.",
+          "unknown": "An unknown error occurred"
         }
     },
     "seo": {

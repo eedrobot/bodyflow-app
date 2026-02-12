@@ -11,11 +11,11 @@ export const useContactFormStore = defineStore('contactForm', {
       subject: '',
       message: '',
       consent: false,
-      company: '',   // honeypot
-      ts: Date.now() // антиспам по времени
+      company: '',     // honeypot
+      ts: Date.now(),  // антиспам по времени (старт заполнения)
     },
 
-    // ✅ теперь тут ХРАНИМ КОДЫ (например: 'required', 'email', 'message_min')
+    // храним КОДЫ ошибок для i18n
     errors: {
       name: '',
       email: '',
@@ -34,9 +34,10 @@ export const useContactFormStore = defineStore('contactForm', {
 
     isLoading: false,
     status: 'idle', // idle | success | error
-
-    // ✅ общий серверный код ошибки (например: 'too_many_requests', 'mail_error')
     serverErrorCode: '',
+
+    // чтобы success не "сбрасывался" моментально
+    _successTimer: null,
   }),
 
   getters: {
@@ -48,10 +49,25 @@ export const useContactFormStore = defineStore('contactForm', {
     },
     hasServerError(state) {
       return !!state.serverErrorCode
-    }
+    },
   },
 
   actions: {
+    // --------------------------
+    // helpers
+    // --------------------------
+    _clearSuccessTimer() {
+      if (this._successTimer) {
+        clearTimeout(this._successTimer)
+        this._successTimer = null
+      }
+    },
+
+    restartTimer() {
+      // перезапуск антиспам-таймера при первом рендере или после reset
+      this.form.ts = Date.now()
+    },
+
     resetErrors() {
       Object.keys(this.errors).forEach((k) => (this.errors[k] = ''))
     },
@@ -67,10 +83,11 @@ export const useContactFormStore = defineStore('contactForm', {
       this.form.message = ''
       this.form.consent = false
       this.form.company = ''
-      this.form.ts = Date.now()
+      this.restartTimer()
     },
 
     resetAll() {
+      this._clearSuccessTimer()
       this.status = 'idle'
       this.serverErrorCode = ''
       this.resetErrors()
@@ -82,7 +99,9 @@ export const useContactFormStore = defineStore('contactForm', {
       Object.keys(this.touched).forEach((k) => (this.touched[k] = true))
     },
 
-    // ✅ выставляем КОДЫ, без t()
+    // --------------------------
+    // validation (возвращаем codes)
+    // --------------------------
     validateField(field) {
       const v = String(this.form[field] ?? '').trim()
 
@@ -128,10 +147,7 @@ export const useContactFormStore = defineStore('contactForm', {
       return !this.hasErrors
     },
 
-    // аккуратно превращаем ответ сервера в "код"
-    // (если сервер не отдаёт код, маппим по http status / тексту)
     normalizeServerError({ status, data }) {
-      // если сервер начнёт отдавать { error_code: 'too_many_requests' } — поддержим
       if (data?.error_code) return data.error_code
 
       if (status === 429) return 'too_many_requests'
@@ -139,7 +155,6 @@ export const useContactFormStore = defineStore('contactForm', {
       if (status === 405) return 'method_not_allowed'
       if (status === 500) return 'mail_error'
 
-      // запасной вариант: если пришёл текст
       const msg = String(data?.error || '').toLowerCase()
       if (msg.includes('too many')) return 'too_many_requests'
       if (msg.includes('invalid json')) return 'invalid_json'
@@ -150,11 +165,19 @@ export const useContactFormStore = defineStore('contactForm', {
       return 'unknown'
     },
 
+    // --------------------------
+    // submit
+    // --------------------------
     async submit() {
       const config = useRuntimeConfig()
 
+      this._clearSuccessTimer()
       this.status = 'idle'
       this.serverErrorCode = ''
+
+      // если форма открыта давно или store восстановился из persistedstate,
+      // а ts по какой-то причине пустой — восстановим
+      if (!this.form.ts) this.restartTimer()
 
       this.markAllTouched()
       if (!this.validateAll()) return { ok: false }
@@ -172,7 +195,7 @@ export const useContactFormStore = defineStore('contactForm', {
             message: this.form.message.trim(),
             consent: this.form.consent,
             company: this.form.company, // honeypot
-            ts: this.form.ts,           // антиспам время
+            ts: this.form.ts,           // тайминг
           }),
         })
 
@@ -184,12 +207,21 @@ export const useContactFormStore = defineStore('contactForm', {
           return { ok: false, error_code: this.serverErrorCode }
         }
 
+        // ✅ успех: очищаем форму, но даём UI показать success
         this.status = 'success'
-        this.resetAll()
-        return { ok: true }
+        this.serverErrorCode = ''
+        this.resetErrors()
+        this.resetTouched()
+        this.resetForm()
 
+        // через 2.5 сек вернёмся в idle (можешь убрать, если не нужно)
+        this._successTimer = setTimeout(() => {
+          this.status = 'idle'
+          this._successTimer = null
+        }, 2500)
+
+        return { ok: true }
       } catch (e) {
-        // сетевые ошибки / CORS / сервер недоступен
         this.serverErrorCode = 'network'
         this.status = 'error'
         return { ok: false, error_code: this.serverErrorCode }

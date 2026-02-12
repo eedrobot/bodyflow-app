@@ -129,6 +129,9 @@ const contact = useContactFormStore()
 
 const localePath = useLocalePath()
 
+// ✅ тайминг: время старта заполнения формы
+if (!contact.form.ts) contact.form.ts = Date.now()
+
 function onBlur(field) {
   contact.touched[field] = true
   contact.validateField(field)
@@ -140,11 +143,12 @@ function onChangeConsent() {
 }
 
 async function onSubmit() {
-  // подстраховка для ts (антиспам по времени)
+  // ✅ если вдруг по какой-то причине ts слетел — восстановим
   if (!contact.form.ts) contact.form.ts = Date.now()
   await contact.submit()
 }
 </script>
+
 
 <style lang="scss" scoped>
 .content-form {
