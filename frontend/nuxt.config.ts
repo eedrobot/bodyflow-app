@@ -39,7 +39,6 @@ sitemap: {
   autoLastmod: true,
 
   index: true,
-  sitemapName: 'sitemap_index.xml',
 
   async urls() {
     // ✅ В nuxt.config надёжнее брать env напрямую, а не useRuntimeConfig()
