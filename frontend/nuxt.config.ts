@@ -42,10 +42,13 @@ sitemap: {
   sitemapName: 'sitemap_index.xml',
 
   async urls() {
-    const config = useRuntimeConfig()
-    const apiBase = config.public.apiBase || 'https://api.bodyflow.com.ua'
+    // ✅ В nuxt.config надёжнее брать env напрямую, а не useRuntimeConfig()
+    const apiBase =
+      process.env.NUXT_PUBLIC_API_BASE?.trim() || 'https://api.bodyflow.com.ua'
 
-    // статические (добавь главные!)
+    const base = apiBase.replace(/\/$/, '')
+
+    // ✅ Статические страницы
     const staticPages = [
       { loc: '/', priority: 1.0 },
       { loc: '/uk', priority: 1.0 },
@@ -65,37 +68,55 @@ sitemap: {
     ]
 
     try {
-      const url = `${apiBase.replace(/\/$/, '')}/products`
-      const res = await fetch(url, { headers: { accept: 'application/json' } })
+      // ✅ ТВОЙ API требует category_id
+      const url = `${base}/products.php?category_id=1`
+
+      const res = await fetch(url, {
+        headers: { accept: 'application/json' },
+      })
 
       if (!res.ok) {
         console.error('[sitemap] products fetch failed:', res.status, res.statusText, url)
         return staticPages
       }
 
-      const products = await res.json()
+      const json: any = await res.json()
 
-      if (!Array.isArray(products)) {
-        console.error('[sitemap] products is not array:', typeof products)
+      // ✅ Универсально: массив или объект с products/data
+      const products = Array.isArray(json) ? json : (json?.products || json?.data || [])
+
+      if (!Array.isArray(products) || products.length === 0) {
+        console.error('[sitemap] products empty or invalid shape:', typeof json, url)
         return staticPages
       }
 
-      const productPages = products
-        .filter((p: any) => p?.slug?.ru && p?.slug?.uk && p?.slug?.en)
-        .flatMap((p: any) => ([
-          { loc: `/produkty/${p.slug.ru}`, priority: 0.8 },
-          { loc: `/uk/produkty/${p.slug.uk}`, priority: 0.8 },
-          { loc: `/en/products/${p.slug.en}`, priority: 0.8 },
-        ]))
+      // ✅ Поддержка разных форматов slug
+      const getSlug = (p: any, lang: 'ru' | 'uk' | 'en') =>
+        p?.slug?.[lang] ??
+        p?.slug_translations?.[lang] ??
+        p?.slugs?.[lang] ??
+        null
+
+      const productPages = products.flatMap((p: any) => {
+        const ru = getSlug(p, 'ru')
+        const uk = getSlug(p, 'uk')
+        const en = getSlug(p, 'en')
+
+        // если какого-то языка нет — просто не добавляем этот URL
+        const out: any[] = []
+        if (ru) out.push({ loc: `/produkty/${ru}`, priority: 0.8 })
+        if (uk) out.push({ loc: `/uk/produkty/${uk}`, priority: 0.8 })
+        if (en) out.push({ loc: `/en/products/${en}`, priority: 0.8 })
+        return out
+      })
 
       console.log('[sitemap] urls generated:', staticPages.length + productPages.length)
-
       return [...staticPages, ...productPages]
     } catch (e: any) {
       console.error('[sitemap] exception:', e?.message || e)
       return staticPages
     }
-  }
+  },
 },
 
   css: [
@@ -137,7 +158,13 @@ sitemap: {
       contact: { ru: '/kontakty', uk: '/kontakty', en: '/contacts' },
       'privacy-policy': { ru: '/politika-konfidencialnosti', uk: '/politika-konfidenciinosti', en: '/privacy-policy' }
     },
-    ignoreRoutes: ['/api', '/sitemap.xml', '/robots.txt']
+    ignoreRoutes: [
+      '/api',
+      '/robots.txt',
+      '/sitemap.xml',
+      '/sitemap_index.xml',
+      '/__sitemap__/**'
+    ]
   },
 
   components: true
