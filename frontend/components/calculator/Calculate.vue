@@ -5,14 +5,6 @@
 
       <h1 class="title">{{ t('calculation.title_calc.title_1') }}<br /><span>{{ t('calculation.title_calc.title_2') }}</span></h1>
 
-      <!-- MOBILE -->
-      <div class="mobile-description">
-          <div class = "mobile-description-txt">
-             <p>{{ $t('general.description_mobile.descm_1') }}</p>
-             <p>{{ $t('general.description_mobile.descm_2') }}</p>
-          </div>
-      </div>
-
       <!-- DESKTOP CIRCLE DESCRIPTION -->
       <div class="description">
           <ul>
@@ -154,9 +146,6 @@ const calculate = () => {
           grid-area: description;
           text-align: left;
         }
-        .mobile-description {
-            display: none;
-        }
         .gender-toggle {
             @include flex(row, stretch, center);
             flex-wrap: wrap;
@@ -184,18 +173,6 @@ const calculate = () => {
             .title {
               margin: 1rem 350px 2rem 0;
             }
-            .description {
-                display: none;
-            }
-            .mobile-description {
-                display: block;
-                .mobile-description-txt {
-                    width: 45%;
-                    padding: 0 0 2rem 0;
-                    line-height: 1.2rem;
-                    color: $color-dg;
-                }
-            }
         }
     }
   }
@@ -210,14 +187,6 @@ const calculate = () => {
                   span {
                     font-size: $fs-middle;
                   }
-                }
-                .mobile-description{
-                    .mobile-description-txt {
-                        width: 100%;
-                        padding: 3rem 0 0 1rem;
-                        line-height: 1.2rem;
-                        color: $color-dg;
-                    }
                 }
             }
         }
