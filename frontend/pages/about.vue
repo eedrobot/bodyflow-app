@@ -86,11 +86,17 @@
 
                 </div>
             </div>
+            <div class = "btn bright">
+                <NuxtLink :to="localePath('index')">
+                     {{ t('about.button') }}
+                </NuxtLink>
+            </div>
         </div>
     </div>
 </template>
 <script setup>
 const { t } = useI18n()
+const localePath = useLocalePath()
 
 /* ---------- ФОН + ПАРАЛЛАКС ----------- */
 const bgRef = ref(null)
@@ -129,7 +135,8 @@ useSeo({
             grid-template-areas: 
             "title ."
             "description ."
-            "content .";
+            "content ."
+            "button button";
             grid-template-columns: 1fr 1fr;
             justify-items: start;
             padding: 1rem 2rem 4rem 4rem;
@@ -146,7 +153,12 @@ useSeo({
             .content-container {
                 grid-area: content;
             }
-
+            .btn {
+                grid-area: button;
+                justify-self: center;
+                width: 30vw;
+                margin-top: 2rem;
+            }
         }
      }
 
