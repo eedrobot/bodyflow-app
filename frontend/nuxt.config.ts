@@ -70,6 +70,15 @@ export default defineNuxtConfig({
         { loc: '/politika-konfidenciinosti', priority: 0.4 },        // uk default
         { loc: '/ru/politika-konfidencialnosti', priority: 0.4 },    // ru
         { loc: '/en/privacy-policy', priority: 0.4 },                // en
+
+         // terms
+        { loc: '/umovi-vikoristannya', priority: 0.4 },        // uk default
+        { loc: '/ru/uslovia-ispolzovania', priority: 0.4 },    // ru
+        { loc: '/en/terms-of-use', priority: 0.4 },                // en
+
+        { loc: '/pro-nas', priority: 0.8 },        // uk default
+        { loc: '/ru/o-nas', priority: 0.8 },    // ru
+        { loc: '/en/about', priority: 0.8 },                // en
       ]
 
       try {
@@ -190,6 +199,16 @@ export default defineNuxtConfig({
         ru: '/politika-konfidencialnosti',
         en: '/privacy-policy',
       },
+      terms: {
+        uk: '/umovi-vikoristannya',
+        ru: '/uslovia-ispolzovania',
+        en: '/terms-of-use',
+      },
+      about: {
+        uk: '/pro-nas',
+        ru: '/o-nas',
+        en: '/about',
+      }
     },
 
     ignoreRoutes: [

@@ -17,6 +17,12 @@ export const menuPages = [
     titleKey: 'pages.title.contact',
     routeName: 'contact',
     icon: '/icons/file-contract-solid.svg'
+  },
+   {
+    key: 'about',
+    titleKey: 'pages.title.about',
+    routeName: 'about',
+    icon: '/icons/circle-info.svg'
   }
   // сюда можно добавить ещё пункты, если нужно
 ]

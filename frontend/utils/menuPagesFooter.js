@@ -9,6 +9,11 @@ export const menuPagesFooter = [
     key: 'privacy',
     titleKey: 'pages.title.privacy',
     routeName: 'privacy-policy'     // совпадает с i18n.pages.nutrition
+  },
+   {
+    key: 'terms',
+    titleKey: 'pages.title.terms',
+    routeName: 'terms'     // совпадает с i18n.pages.nutrition
   }
   // сюда можно добавить ещё пункты, если нужно
 ]

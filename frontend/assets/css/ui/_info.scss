@@ -1,0 +1,21 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.info-card {
+    grid-area: content;
+    .info-content {
+        .info-p, 
+        .info-ul {
+            line-height: 1.5rem;
+        }
+        .info-ul {
+            li {
+                list-style-type: disc;
+                margin-left: 2rem;
+            }
+        }
+        h2, h3 {
+            padding: 1rem;
+        }
+    }
+}

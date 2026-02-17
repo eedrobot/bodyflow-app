@@ -3,7 +3,7 @@ export function useSeo(options: SeoOptions) {
   const { t, locale } = useI18n()
   const switchLocalePath = useSwitchLocalePath()
 
-  const baseUrl = 'https://mysite.com'
+  const baseUrl = 'https://bodyflow.com.ua'
   const locales = ['ru', 'en', 'uk'] as const
 
   const title = computed(() => {

@@ -5,7 +5,9 @@
           "workout": "Workout",
           "products": "Products",
           "contact": "Contacts",
-          "privacy": "Privacy policy"
+          "privacy": "Privacy policy",
+          "terms": "Terms of use",
+          "about": "About"
         }
       },
       "general": {
@@ -145,6 +147,9 @@
         }
       },
     "product": {
+      "title": "- calorie content and nutritional value",
+      "description_1": "On this page you will find complete information about the product —",
+      "description_2": "its calorie content per 100 g, protein, fat and carbohydrate content, as well as detailed information about vitamins and minerals.",
       "nutritional_value": "Nutritional value (per 100 grams)",
       "day_norm_percent": "% of daily value",
       "amount": "Amount per 100 g",
@@ -268,64 +273,151 @@
       "prev": "Previous",
       "next": "Next"
     },
-    "privacy": {
-    "title": "Privacy Policy",
+   "privacy": {
+      "title": "Privacy Policy",
 
-    "intro": "This Privacy Policy (the \"Policy\") describes how BodyFlow (\"We\", \"Our Company\", \"Website\") collects, uses, protects, and discloses users’ personal data (\"User\", \"You\") when you use our website https://bodyflow.com.ua. We take the confidentiality of your data seriously and are committed to protecting your information.",
+      "intro": "This Privacy Policy (\"Policy\") explains how BodyFlow (https://bodyflow.com.ua) collects, uses, and protects users’ personal data. By using the website and its features (calorie calculator, meal plan generator, personal account), you agree to the terms of this Policy.",
 
-    "s1_title": "Collection of Personal Data",
-    "s1_1_title": "Types of data collected:",
-    "s1_1_text": "We may collect the following personal data when you use our online platform:",
-    "s1_1_li1": "Identification information (first name, last name, address, phone number, email address).",
-    "s1_1_li2": "Payment information (e.g., payment details, credit card numbers).",
-    "s1_1_li3": "Technical information (IP address, browser type, access time, page URLs, cookies).",
-    "s1_1_li4": "Information about your activity on the platform (orders, reviews, on-site behavior).",
+      "s1_title": "1. Information We Collect",
 
-    "s1_2_title": "Methods of data collection:",
-    "s1_2_text": "We collect your data through:",
-    "s1_2_li1": "Registration and completing forms on our online platform.",
-    "s1_2_li2": "Using our services, such as purchasing goods, participating in promotions, and leaving reviews.",
-    "s1_2_li3": "Using our mobile applications and other ways of interacting with our services.",
+      "s1_1_title": "1.1. Information you provide voluntarily:",
+      "s1_1_li1": "Name and email address during registration.",
+      "s1_1_li2": "Data entered into calculators (age, height, weight, activity level, nutrition goals, and related parameters).",
+      "s1_1_li3": "Information stored in your personal account (calculations, meal plans, preferences).",
 
-    "s2_title": "Purpose of Using Personal Data",
-    "s2_1_title": "We use your personal data for the following purposes:",
-    "s2_1_li1": "To fulfill agreements with you (order processing, delivery of goods, compensation payments).",
-    "s2_1_li2": "To improve our services (user activity analysis, enhancing website functionality).",
-    "s2_1_li3": "To communicate with you (order status updates, important changes on the platform).",
-    "s2_1_li4": "To personalize user experience (recommendations, special offers).",
-    "s2_2_text": "We do not use your data for other purposes without your explicit consent.",
+      "s1_2_title": "1.2. Automatically collected information:",
+      "s1_2_li1": "IP address, device type, and browser type.",
+      "s1_2_li2": "Interface language and technical settings.",
+      "s1_2_li3": "Visited pages and time spent on the website.",
+      "s1_2_li4": "Cookies and similar tracking technologies.",
 
-    "s3_title": "Protection of Personal Data",
-    "s3_1_title": "Information security:",
-    "s3_1_text": "We take all necessary technical and organizational measures to ensure the security of your personal data. In particular, we use secure connections (SSL), encryption systems, and password-protected access to maintain confidentiality of your information.",
-    "s3_2_title": "Data retention:",
-    "s3_2_text": "Your personal data is stored only for as long as necessary to fulfill our obligations to you or to comply with legal requirements.",
+      "s2_title": "2. Purpose of Data Processing",
 
-    "s4_title": "Disclosure of Personal Data",
-    "s4_1_text": "We do not sell, transfer, or disclose your personal data to third parties, except in cases described in this Privacy Policy.",
-    "s4_2_title": "We may share your personal data with:",
-    "s4_2_li1": "Our partners and service providers who help us fulfill orders or provide services (e.g., delivery companies, payment systems).",
-    "s4_2_li2": "When required by law, court orders, or government authorities.",
+      "s2_1_li1": "To ensure proper operation of the service.",
+      "s2_1_li2": "To calculate calorie needs and generate personalized nutrition recommendations.",
+      "s2_1_li3": "To store user data in personal accounts.",
+      "s2_1_li4": "To analyze website usage and improve functionality.",
+      "s2_1_li5": "To display advertisements through third-party services (including Google AdSense).",
 
-    "s5_title": "Cookies and Other Technologies",
-    "s5_1_title": "Use of cookies:",
-    "s5_1_text": "Our website uses cookies to improve your experience on the online platform, analyze traffic, and tailor content to your interests.",
-    "s5_2_title": "Choice:",
-    "s5_2_text": "You can configure your browser to refuse cookies; however, this may limit certain features of the website.",
+      "s3_title": "3. Cookies and Advertising",
 
-    "s6_title": "Your Rights",
-    "s6_1_title": "Access to data:",
-    "s6_1_text": "You have the right to request information about what personal data we store and to request correction or deletion of that data.",
-    "s6_2_title": "Withdrawal of consent:",
-    "s6_2_text": "You may withdraw your consent to the processing of personal data at any time by sending a notice to our email address", 
+      "s3_1_text": "BodyFlow uses cookies to ensure proper website functionality, analyze traffic, and display advertisements.",
 
-    "s7_title": "Changes to the Privacy Policy",
-    "s7_1_text": "We may update this Privacy Policy from time to time.",
-    "s7_2_text": "All changes take effect when they are published on our website. We recommend reviewing this Policy periodically.",
+      "s3_2_title": "3.1. Google AdSense",
+      "s3_2_text": "We may use Google AdSense to display advertisements. Google and its partners may use cookies to show ads based on your previous visits to this and other websites.",
+      "s3_2_li1": "Google uses advertising cookies to provide personalized ads.",
+      "s3_2_li2": "Users may opt out of personalized advertising via Google Ads Settings (https://adssettings.google.com).",
+      "s3_2_li3": "Other third-party vendors may also use cookies for advertising purposes.",
 
-    "s8_title": "Contact Information",
-    "s8_text": "If you have any questions or requests regarding this Privacy Policy, please contact us using the following details:",
-    "s8_email_label": "Email:"
-  }
+      "s3_3_text": "You can disable cookies in your browser settings; however, this may affect certain website features.",
+
+      "s4_title": "4. Data Sharing",
+
+      "s4_1_text": "We do not sell or share personal data with third parties except in the following cases:",
+      "s4_1_li1": "Hosting providers and technical contractors supporting website functionality.",
+      "s4_1_li2": "Analytics services (such as Google Analytics).",
+      "s4_1_li3": "When required by applicable law.",
+
+      "s5_title": "5. Data Protection and Retention",
+
+      "s5_1_text": "We implement technical measures to protect personal data, including HTTPS encryption and restricted access to stored information.",
+
+      "s5_2_text": "Data is retained for the duration of the user account or until deletion is requested.",
+
+      "s6_title": "6. User Rights",
+
+      "s6_1_li1": "Request access to your personal data.",
+      "s6_1_li2": "Request correction or deletion of your data.",
+      "s6_1_li3": "Delete your account.",
+
+      "s7_title": "7. Disclaimer",
+
+      "s7_text": "BodyFlow provides nutritional calculations and recommendations for informational purposes only. The content does not constitute medical advice and should not replace professional consultation with a healthcare provider.",
+
+      "s8_title": "8. Changes to This Policy",
+
+      "s8_text": "We may update this Policy from time to time. Updates take effect upon publication on the website.",
+
+      "s9_title": "9. Contact Information",
+      "s9_text": "If you have questions regarding personal data processing, please contact us:",
+      "s9_email_label": "Email:"
+    },
+    "terms": {
+      "title": "Terms of Service",
+
+      "intro": "These Terms of Service (\"Terms\") govern access to and use of the BodyFlow website (https://bodyflow.com.ua). By using the website, you agree to these Terms.",
+
+      "s1_title": "1. Description of Service",
+      "s1_text": "BodyFlow provides online tools for calorie calculation, meal plan generation, and nutritional recommendations. The service is for informational purposes only.",
+
+      "s2_title": "2. Registration and Account",
+      "s2_li1": "Certain features require account registration.",
+      "s2_li2": "You agree to provide accurate and truthful information.",
+      "s2_li3": "You are responsible for maintaining the confidentiality of your login credentials.",
+      "s2_li4": "We may suspend or delete accounts that violate these Terms.",
+
+      "s3_title": "3. Disclaimer of Liability",
+      "s3_text": "All information and calculations provided on the website are for informational purposes only. BodyFlow is not a medical service. You should consult a healthcare professional before making significant dietary changes. We are not responsible for outcomes resulting from the use of the website.",
+
+      "s4_title": "4. Intellectual Property",
+      "s4_text": "All website materials (texts, design, algorithms, logos, graphics) are the property of BodyFlow or used lawfully. Unauthorized reproduction or distribution is prohibited.",
+
+      "s5_title": "5. Acceptable Use",
+      "s5_li1": "You may not use the website for unlawful purposes.",
+      "s5_li2": "You may not attempt to disrupt server operation or gain unauthorized access.",
+      "s5_li3": "Automated data scraping without permission is prohibited.",
+
+      "s6_title": "6. Advertising and Third-Party Services",
+      "s6_text": "The website may display advertisements from third parties (including Google AdSense). We are not responsible for the content of external websites or advertisements.",
+
+      "s7_title": "7. Changes to Terms",
+      "s7_text": "We may update these Terms at any time. Updated versions become effective upon publication.",
+
+      "s8_title": "8. Governing Law",
+      "s8_text": "These Terms are governed by the laws of Ukraine.",
+
+      "s9_title": "9. Contact Information",
+      "s9_text": "If you have questions regarding these Terms, please contact us:",
+      "s9_email_label": "Email:"
+    },
+    "about": {
+      "title": "About BodyFlow",
+
+      "seo_title": "About BodyFlow — Calorie & Macro Calculator and Meal Plan",
+
+      "seo_description": "BodyFlow is an online nutrition service with a calorie and macro calculator, 5-day meal plan generator, and food database with nutrients.",
+
+      "seo_keywords": "calorie calculator online, macro calculator, calorie and macro calculator, 5-day meal plan, weekly meal plan, food database with nutrients, nutrition calculator, weight loss nutrition, muscle gain meal plan, personalized diet plan",
+
+      "intro": "BodyFlow is an online nutrition service that helps you calculate your daily calorie and macronutrient needs, generate a personalized meal plan, and explore detailed nutrient information for foods.",
+
+      "s1_title": "1. What is BodyFlow",
+      "s1_text": "We create simple and accurate tools so you can manage your nutrition without complex spreadsheets or constant manual calculations.",
+
+      "s2_title": "2. What the Service Includes",
+      "s2_li1_b": "Calorie & Macro Calculator",
+      "s2_li1": "calculate calories, protein, fat, and carbohydrates based on your personal data and goals.",
+      "s2_li2_b": "5-Day Meal Plan",
+      "s2_li2": "automatic meal plan generation based on your calculated calorie and macro needs.",
+      "s2_li3_b": "Food Database",
+      "s2_li3": "a comprehensive food database with detailed nutrient information for better planning.",
+
+      "s3_title": "3. How BodyFlow Helps You",
+      "s3_li1": "Understand how many calories you need daily.",
+      "s3_li2": "Create a meal plan without manual calculations.",
+      "s3_li3": "Track nutrients and make informed nutrition choices.",
+      "s3_li4": "Reach your goal: weight loss, muscle gain, or maintenance.",
+
+      "s4_title": "4. Important Notice",
+      "s4_text": "BodyFlow calculations and recommendations are provided for informational purposes only and do not constitute medical advice. If you have medical conditions, consult a qualified healthcare professional.",
+
+      "s5_title": "5. Our Mission",
+      "s5_text": "To make nutrition simple and accessible so you can quickly calculate your needs, generate a meal plan, and move toward your goals.",
+
+      "s6_title": "6. Contact",
+      "s6_text": "If you have questions, ideas, or found an issue — feel free to contact us.",
+
+      "email_label": "Email:"
+    }
 
   }

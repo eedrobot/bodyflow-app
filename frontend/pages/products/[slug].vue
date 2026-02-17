@@ -5,12 +5,16 @@
         <ClientOnly>
           <Loader :isLoading="nutritionStore.isLoading" />
         </ClientOnly>
-        {{ productName }}
+        {{ productName }} <br> <span>{{t('product.title')}}</span>
       </h1>
 
       <div class="category-info" v-if="categoryName">
         {{ categoryName }}
         <span v-if="subCategoryName"> / {{ subCategoryName }}</span>
+      </div>
+
+      <div class = "description">
+        {{t('product.description_1')}}<span>{{ productName }}</span>, {{t('product.description_2')}}
       </div>
 
       <div class="content-container" v-if="nutritionStore.productData">
@@ -164,23 +168,33 @@ useSeo({
 
   .wrapper {
     grid-template-areas:
-      "title"
-      "category"
-      "nutrition";
+      ". title ."
+      ". category ." 
+      ". description ."
+      ". nutrition .";
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: start;
     gap: 0;
 
     .category-info {
       grid-area: category;
-      width: 50vw;
       text-align: left;
       color: $color-dg;
       margin-bottom: 4rem;
       margin-top: 2rem;
     }
     .title {
-      width: 50vw;
+      grid-area: title;
       padding-top: 2rem;
       margin: 0 0;
+    }
+    .description {
+      grid-area: description;
+      width: 30vw;
+      margin-bottom: 2rem;
+      span {
+        text-transform: lowercase;
+      }
     }
     .content-container {
       grid-area: nutrition;
@@ -202,6 +216,12 @@ useSeo({
     background-size: 100% auto, 55% auto, 30% auto;
 
     .wrapper {
+       grid-template-areas:
+      "title ."
+      "category category" 
+      "description description"
+      "nutrition nutrition";
+      grid-template-columns: 1fr 1fr;
       .title {
         justify-self: start;
         margin-left: 1rem;
@@ -209,6 +229,10 @@ useSeo({
       .category-info {
         justify-self: start;
         margin-left: 1rem;
+      }
+      .description {
+        width: 100%;
+        padding: 0 1rem;
       }
       .content-container {
         width: 100%;
