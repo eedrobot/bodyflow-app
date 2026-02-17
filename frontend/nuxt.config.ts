@@ -30,7 +30,12 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     'pinia-plugin-persistedstate/nuxt',
+    'nuxt-gtag'
   ],
+
+gtag: {
+  id: 'G-FTV3YQCED0'
+},
 
   // -------------------------------
   // ✅ SITEMAP
