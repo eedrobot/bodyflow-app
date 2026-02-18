@@ -43,7 +43,8 @@ gtag: {
   sitemap: {
     siteUrl: 'https://bodyflow.com.ua',
     autoLastmod: true,
-    index: true,
+    index: false,
+    sitemapName: 'sitemap.xml',
 
     async urls() {
       const apiBase =
