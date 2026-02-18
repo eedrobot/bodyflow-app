@@ -11,7 +11,7 @@
             <div class = "content-container info-card">
                 <div class = "info-content">
                     <!-- Section 1 -->
-                    <h2 class="info-h2">
+                    <h2>
                         {{ t('about.s1_title') }}
                     </h2>
                     <p class="info-p">
@@ -19,7 +19,7 @@
                     </p>
 
                     <!-- Section 2 -->
-                    <h2 class="info-h2">
+                    <h2>
                         {{ t('about.s2_title') }}
                     </h2>
 
@@ -39,7 +39,7 @@
                     </ul>
 
                     <!-- Section 3 -->
-                    <h2 class="info-h2">
+                    <h2>
                         {{ t('about.s3_title') }}
                     </h2>
 
@@ -51,7 +51,7 @@
                     </ul>
 
                     <!-- Section 4 -->
-                    <h2 class="info-h2">
+                    <h2>
                         {{ t('about.s4_title') }}
                     </h2>
                     <p class="info-p">
@@ -59,7 +59,7 @@
                     </p>
 
                     <!-- Section 5 -->
-                    <h2 class="info-h2">
+                    <h2>
                         {{ t('about.s5_title') }}
                     </h2>
                     <p class="info-p">
@@ -67,7 +67,7 @@
                     </p>
 
                     <!-- Section 6 -->
-                    <h2 class="info-h2">
+                    <h2>
                         {{ t('about.s6_title') }}
                     </h2>
                     <p class="info-p">
@@ -141,15 +141,6 @@ useSeo({
             justify-items: start;
             padding: 1rem 2rem 4rem 4rem;
             gap: 1rem;
-            .title {
-                grid-area: title;
-                justify-self: start;
-                text-align: left;
-            }
-            .description {
-                grid-area: description;
-                text-align: left;
-            }
             .content-container {
                 grid-area: content;
             }
@@ -170,36 +161,32 @@ useSeo({
                 grid-template-areas:
                     "title ."
                     "description ."
-                    "content content";
-                    .info-h2 {
-                        font-weight: 700;
-                    }
+                    "content content"
+                    "button button";
+                h2 {
+                    font-weight: 700;
+                }
+                .btn {
+                    width: 50%;
+                }
             }
     }
 }
 
 @media (max-width: 575.98px) {
   .about-comp {
-    background-size: 100% auto, 50% auto;
+    background-size: 100% auto, 55% auto;
     background-position: bottom -3rem center, top 2vh right;
     .wrapper {
       grid-template-areas:
         "title ."
         "description description"
-        "content content";
+        "content content"
+        "button button";
       padding: 0 1rem 2rem 1rem;
-      .title {
-        margin-top: 3rem;
-      }
-      .description {
-        width: 100%;
-        margin-left: 0;
-      }
-      .content-container {
-        .info-content {
-          max-width: 100%;
+      .btn {
+            width: 100%;
         }
-      }
     }
   }
 }

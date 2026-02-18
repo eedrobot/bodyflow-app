@@ -80,17 +80,11 @@ useParallaxBackground({
 
   .wrapper {
     grid-template-areas:
-      "title"
-      "description"
-      "nutrition";
-
+      ". title ."
+      ". description ."
+      ". nutrition .";
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: min-content min-content auto;
-    .title {
-      width: 50vw;
-    }
-    .description {
-      width: 50vw;
-    }
     .content-container {
       grid-area: nutrition;
       width: 50vw;
@@ -109,17 +103,6 @@ useParallaxBackground({
       "description ."
       "nutrition nutrition";
       grid-template-columns: 1fr 1fr;
-      .title {
-        margin-left: 2rem;
-        text-align: left;
-        justify-self: left;
-      }
-      .description {
-        margin-left: 2rem;
-        width: 100%;
-        text-align: left;
-        justify-self: left;
-      }
       .content-container { width: 100%; }
     }
   }
@@ -136,13 +119,6 @@ useParallaxBackground({
       "description description"
       "nutrition nutrition";
       gap: 1rem;
-       .title {
-        margin-top: 3rem;
-        margin-left: 1rem;
-      }
-      .description {
-        margin-left: 1rem;
-      }
     }
   }
 }

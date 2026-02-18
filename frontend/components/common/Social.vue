@@ -30,14 +30,14 @@
     .social-email {
         margin-bottom: 1rem;
         a {
-            color: $color-green;
+            color: $color-dg;
             &:hover {
                 text-decoration: underline;
             }
         }
     }
     .social-links {
-        @include flex(row, center, center);
+        @include flex(row, center, start);
         .social-link {
             width: 30px;
             height: 30px;

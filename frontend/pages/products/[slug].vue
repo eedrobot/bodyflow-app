@@ -174,7 +174,7 @@ useSeo({
       ". nutrition .";
       grid-template-columns: 1fr 1fr 1fr;
       justify-items: start;
-    gap: 0;
+     gap: 0;
 
     .category-info {
       grid-area: category;
@@ -184,14 +184,11 @@ useSeo({
       margin-top: 2rem;
     }
     .title {
-      grid-area: title;
       padding-top: 2rem;
       margin: 0 0;
     }
     .description {
-      grid-area: description;
       width: 30vw;
-      margin-bottom: 2rem;
       span {
         text-transform: lowercase;
       }
@@ -222,17 +219,8 @@ useSeo({
       "description description"
       "nutrition nutrition";
       grid-template-columns: 1fr 1fr;
-      .title {
-        justify-self: start;
-        margin-left: 1rem;
-      }
-      .category-info {
-        justify-self: start;
-        margin-left: 1rem;
-      }
       .description {
         width: 100%;
-        padding: 0 1rem;
       }
       .content-container {
         width: 100%;

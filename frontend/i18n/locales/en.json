@@ -7,7 +7,8 @@
           "contact": "Contacts",
           "privacy": "Privacy policy",
           "terms": "Terms of use",
-          "about": "About"
+          "about": "About",
+          "imt": "BMI calculator"
         }
       },
       "general": {
@@ -20,6 +21,11 @@
           "descm_1" : "Online BMI and macronutrient calculator: calculate your body mass index, daily intake of calories, proteins, fats, carbs, and water.",
           "descm_2" : "Discover the composition of foods, monitor your nutrition, and choose effective exercises for health, weight loss, and fitness maintenance."
         }
+      },
+      "footer": {
+        "info": "Information",
+        "useful": "Resources",
+        "contacts": "Contacts"
       },
       "auth": {
         "login": "Login",
@@ -419,6 +425,103 @@
 
       "email_label": "Email:",
       "button": "Calculate Calories & Get Your Meal Plan"
-    }
+    },
+  "imt_page": {
+    "meta": {
+      "title": "BMI Calculator Online – Body Mass Index and Healthy Weight",
+      "description": "Calculate your Body Mass Index (BMI) online. Find out whether your weight is within the normal range and get nutrition and calorie recommendations."
+    },
+    "h1": "Body Mass Index (BMI) Calculator Online",
+
+    "intro_p1": "Body Mass Index (BMI) is a simple and quick way to evaluate the relationship between weight and height and determine whether a person falls within a healthy range. With the online BMI calculator, you can get your result in seconds and gain a general understanding of your body weight status.",
+    "intro_p2": "Calculating BMI is the first step toward weight control, weight loss, or muscle gain. However, it is important to understand that BMI alone does not provide a complete picture of your health — it is only a starting point.",
+
+    "sections": {
+      "what": {
+        "title": "What Is Body Mass Index",
+        "p1": "Body Mass Index is a numerical value calculated based on a person’s weight and height. It is widely used worldwide for the preliminary assessment of underweight, normal weight, or overweight status.",
+        "list_1": "evaluate whether weight matches height",
+        "list_2": "identify potential risks of excess weight",
+        "list_3": "understand whether dietary adjustments are needed",
+        "note": "BMI does not take body composition into account (body fat percentage, muscle mass, body type), so the result should be interpreted together with other health indicators."
+      },
+
+      "formula": {
+        "title": "BMI Formula",
+        "p1": "Body Mass Index is calculated using the formula:",
+        "p2": "BMI = weight (kg) / height² (m)",
+        "p3": "For example: if your weight is 70 kg and your height is 1.75 m: 70 / (1.75 × 1.75) = 22.9",
+        "p4": "The resulting value is compared with standard BMI ranges. This formula is used by most online BMI calculators."
+      },
+
+      "table": {
+        "title": "BMI Classification Table",
+        "p1": "According to WHO recommendations, BMI values are interpreted as follows:",
+        "list_1": "Below 18.5 — Underweight",
+        "list_2": "18.5–24.9 — Normal weight",
+        "list_3": "25–29.9 — Overweight",
+        "list_4": "30 and above — Obesity",
+        "note": "These values are general guidelines and apply to most adults."
+      },
+
+      "result": {
+        "title": "What Your Result Means",
+        "p1": "If your BMI falls within the normal range, it means that your weight-to-height ratio is balanced.",
+        "p2": "If your result is above or below the normal range, it may indicate the need to:",
+        "list_1": "review your diet",
+        "list_2": "adjust calorie intake",
+        "list_3": "change your level of physical activity",
+        "note": "However, BMI alone does not answer how many calories you need daily or how to properly structure your nutrition plan."
+      },
+
+      "limits": {
+        "title": "Why BMI Alone Is Not Enough",
+        "p1": "Body Mass Index does not consider:",
+        "list_1": "physical activity level",
+        "list_2": "muscle mass",
+        "list_3": "body fat percentage",
+        "list_4": "individual metabolic differences",
+        "note": "For example, an athlete with high muscle mass may have a BMI above the normal range while having low body fat. That is why calculating daily calorie needs and macronutrient balance is essential for a more accurate assessment."
+      },
+
+      "next": {
+        "title": "How to Move from BMI to a Real Nutrition Plan",
+        "p1": "After determining your BMI, the next logical step is calculating your daily calorie needs.",
+        "p2": "Based on:",
+        "list_1": "age",
+        "list_2": "gender",
+        "list_3": "weight",
+        "list_4": "height",
+        "list_5": "physical activity level",
+        "p3": "you can determine your individual calorie target and optimal balance of protein, fats, and carbohydrates.",
+        "p4": "The BodyFlow service allows you to:",
+        "p5": "calculate macronutrients",
+        "p6": "define your goal (weight loss, maintenance, muscle gain)",
+        "p7": "automatically generate a personalized 5-day meal plan",
+        "p8": "This way, you move from a simple BMI number to a structured and balanced nutrition plan."
+      }
+    },
+
+    "faq": {
+      "title": "Frequently Asked Questions",
+
+      "item_1_q": "What is BMI in simple terms?",
+      "item_1_a": "It is an indicator that helps determine whether a person’s weight matches their height.",
+
+      "item_2_q": "How accurate is BMI?",
+      "item_2_a": "BMI is an approximate indicator and does not account for body composition.",
+
+      "item_3_q": "Is BMI suitable for athletes?",
+      "item_3_a": "For people with high muscle mass, BMI may not be fully accurate.",
+
+      "item_4_q": "What BMI is considered normal?",
+      "item_4_a": "For adults, a BMI between 18.5 and 24.9 is considered normal.",
+
+      "item_5_q": "Can you lose weight by focusing only on BMI?",
+      "item_5_a": "No. Effective weight control requires managing calorie intake and macronutrient balance."
+    },
+
+    "cta": "Calculate BMI & Get Your Meal Plan"
+  }
 
   }

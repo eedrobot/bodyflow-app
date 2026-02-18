@@ -84,6 +84,10 @@ gtag: {
         { loc: '/pro-nas', priority: 0.8 },        // uk default
         { loc: '/ru/o-nas', priority: 0.8 },    // ru
         { loc: '/en/about', priority: 0.8 },                // en
+
+         { loc: '/kalkulyator-imt', priority: 0.9 },        // uk default
+        { loc: '/ru/kalkulyator-imt', priority: 0.9 },    // ru
+        { loc: '/en/bmi-calculator', priority: 0.9 },                // en
       ]
 
       try {
@@ -213,7 +217,12 @@ gtag: {
         uk: '/pro-nas',
         ru: '/o-nas',
         en: '/about',
-      }
+      },
+       imt: {
+        uk: '/kalkulyator-imt',
+        ru: '/kalkulyator-imt',
+        en: '/bmi-calculator',
+      },
     },
 
     ignoreRoutes: [

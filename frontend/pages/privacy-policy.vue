@@ -9,7 +9,7 @@
           <p class="info-p">{{ t('privacy.intro') }}</p>
 
           <!-- 1 -->
-          <h2 class="info-h2">{{ t('privacy.s1_title') }}</h2>
+          <h2>{{ t('privacy.s1_title') }}</h2>
 
           <h3 class="info-h3">{{ t('privacy.s1_1_title') }}</h3>
           <ul class="info-ul">
@@ -27,7 +27,7 @@
           </ul>
 
           <!-- 2 -->
-          <h2 class="info-h2">{{ t('privacy.s2_title') }}</h2>
+          <h2>{{ t('privacy.s2_title') }}</h2>
           <ul class="info-ul">
             <li>{{ t('privacy.s2_1_li1') }}</li>
             <li>{{ t('privacy.s2_1_li2') }}</li>
@@ -37,7 +37,7 @@
           </ul>
 
           <!-- 3 -->
-          <h2 class="info-h2">{{ t('privacy.s3_title') }}</h2>
+          <h2>{{ t('privacy.s3_title') }}</h2>
 
           <p class="info-p">{{ t('privacy.s3_1_text') }}</p>
 
@@ -52,7 +52,7 @@
           <p class="info-p">{{ t('privacy.s3_3_text') }}</p>
 
           <!-- 4 -->
-          <h2 class="info-h2">{{ t('privacy.s4_title') }}</h2>
+          <h2>{{ t('privacy.s4_title') }}</h2>
 
           <p class="info-p">{{ t('privacy.s4_1_text') }}</p>
           <ul class="info-ul">
@@ -62,13 +62,13 @@
           </ul>
 
           <!-- 5 -->
-          <h2 class="info-h2">{{ t('privacy.s5_title') }}</h2>
+          <h2>{{ t('privacy.s5_title') }}</h2>
 
           <p class="info-p">{{ t('privacy.s5_1_text') }}</p>
           <p class="info-p">{{ t('privacy.s5_2_text') }}</p>
 
           <!-- 6 -->
-          <h2 class="info-h2">{{ t('privacy.s6_title') }}</h2>
+          <h2>{{ t('privacy.s6_title') }}</h2>
           <ul class="info-ul">
             <li>{{ t('privacy.s6_1_li1') }}</li>
             <li>{{ t('privacy.s6_1_li2') }}</li>
@@ -76,15 +76,15 @@
           </ul>
 
           <!-- 7 -->
-          <h2 class="info-h2">{{ t('privacy.s7_title') }}</h2>
+          <h2>{{ t('privacy.s7_title') }}</h2>
           <p class="info-p">{{ t('privacy.s7_text') }}</p>
 
           <!-- 8 -->
-          <h2 class="info-h2">{{ t('privacy.s8_title') }}</h2>
+          <h2>{{ t('privacy.s8_title') }}</h2>
           <p class="info-p">{{ t('privacy.s8_text') }}</p>
 
           <!-- 9 -->
-          <h2 class="info-h2">{{ t('privacy.s9_title') }}</h2>
+          <h2>{{ t('privacy.s9_title') }}</h2>
           <p class="info-p">{{ t('privacy.s9_text') }}</p>
 
           <p class="info-p">

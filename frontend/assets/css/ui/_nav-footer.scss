@@ -1,0 +1,22 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+ .nav-footer {
+    text-align: left;
+    h3 {
+      text-decoration: underline;
+      margin-bottom: 1rem;
+    }
+    .footer-menu {
+    text-align: left;
+    li {
+        margin-bottom: 1rem;
+        a {
+            color: $color-dg;
+            &:hover {
+              text-decoration: underline;
+            }
+        }
+    }
+}
+  }

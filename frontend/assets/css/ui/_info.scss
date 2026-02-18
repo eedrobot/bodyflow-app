@@ -8,14 +8,47 @@
         .info-ul {
             line-height: 1.5rem;
         }
+        .info-p {
+            &.formula {
+                font-weight: 700;
+                letter-spacing: 0.2px;
+            }
+        }
         .info-ul {
             li {
                 list-style-type: disc;
                 margin-left: 2rem;
             }
+            &.compact {
+                margin: 8px 0 0;
+            }
         }
         h2, h3 {
             padding: 1rem;
+        }
+        .note {
+            margin-top: 10px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.92;
+            &.soft {
+                margin-top: 12px;
+                .note-p {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .info-card {
+        .info-content {
+            max-width: 100%;
         }
     }
 }

@@ -71,17 +71,6 @@ useSeo({
         justify-items: start;
         padding: 1rem 2rem 4rem 4rem;
         gap: 1rem;
-        .title {
-            grid-area: title;
-            justify-self: start;
-            // text-align: right;
-            text-align: left;
-            // margin: 1rem 450px 0 0;
-        }
-        .description {
-          grid-area: description;
-          text-align: left;
-        }
         .contact-container {
           width: 100%;
           grid-area: contact;
@@ -116,7 +105,7 @@ useSeo({
 
 @media (max-width: 575.98px) {
   .contact-comp {
-    background-size: 100% auto, 50% auto;
+    background-size: 100% auto, 55% auto;
     background-position: bottom -3rem center, top 2vh right;
     .wrapper {
       grid-template-areas:
@@ -124,18 +113,6 @@ useSeo({
         "description description"
         "contact contact";
       padding: 0 1rem 2rem 1rem;
-      .title {
-        margin-top: 3rem;
-      }
-      .description {
-        width: 100%;
-        margin-left: 0;
-      }
-      .contact-container {
-        .contact-info {
-          max-width: 100%;
-        }
-      }
     }
   }
 }

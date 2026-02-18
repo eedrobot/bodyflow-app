@@ -2,31 +2,48 @@
   <footer class = "footer">
     <div class="footer-content">
       <FooterMenu class = "footer-menu"/>
-      <div class = "footer-copyright">
-        &copy;2026 BodyFlow
+      <FooterUseful class = "footer-useful"/>
+      <div class = "footer-social">
+        <h3>{{ t('footer.contacts') }}:</h3>
+        <Social class = "footer-social"/>
       </div>
-      <Social class = "footer-social"/>
+    </div>
+    <div class = "footer-copyright">
+      <FooterCopyright class = "copyright-info" />
     </div>
   </footer>
 </template>
 
 <script setup>
   import FooterMenu from './FooterMenu.vue'
+  import FooterUseful from './FooterUseful.vue'
   import Social from '../Social.vue'
+  import FooterCopyright from './FooterCopyright.vue'
+
+  const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
   .footer {
     padding: 0 4rem;
+    color: $color-green;
+    font-weight: 600;
     .footer-content {
-      @include flex(row, center, space-between);
-      // display: grid;
-      // grid-template-columns: 1fr 1fr 1fr;
-      // align-items: center;
-      padding: 1rem 2rem;
+      @include flex(row, start, space-between);
+      padding: 2rem;
       text-align: center;
-      font-weight: 600;
-      color: $color-green;
+      h3 {
+        text-decoration: underline;
+        margin-bottom: 1rem;
+      }
+      .footer-social {
+        text-align: left;
+      }
+    }
+    .footer-copyright {
+      @include border-sides(top, $color-white);
+      padding: 1rem 0;
+      color: $color-dg;
     }
   }
 
@@ -41,10 +58,11 @@
     .footer-content {
       @include flex(column, start, center);
       gap: 12px;
-       .footer-social { order: 2; }
+       .footer-social { order: 3; }
         .footer-menu { order: 1; }
-        .footer-copyright { 
-          order: 3; 
+        .footer-useful { order: 2; }
+        .copyright-info { 
+          order: 4; 
           width: 100%;
           padding: 1rem 0;
           align-self: center;
