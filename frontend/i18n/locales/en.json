@@ -8,18 +8,22 @@
           "privacy": "Privacy policy",
           "terms": "Terms of use",
           "about": "About",
-          "imt": "BMI calculator"
+          "imt": "BMI calculator",
+          "kbju": "Calorie & Macro Calculator"
         }
       },
       "general": {
         "lang": "Language",
         "description": {
           "desc_1": "Automatic calorie calculation and a personalized meal plan",
-          "desc_2": "for weight loss, maintenance, or gain"
+          "desc_2": "for weight loss, maintenance, or gain."
         },
-        "description_mobile":{
-          "descm_1" : "Online BMI and macronutrient calculator: calculate your body mass index, daily intake of calories, proteins, fats, carbs, and water.",
-          "descm_2" : "Discover the composition of foods, monitor your nutrition, and choose effective exercises for health, weight loss, and fitness maintenance."
+       "description_1": {
+          "desc_1": "Before creating a meal plan, it is recommended to determine:",
+          "desc_1_link": "Body Mass Index (BMI)",
+          "desc_1_1": "— to assess whether your weight matches your height.",
+          "desc_2_link": "Daily calorie intake and macronutrients",
+          "desc_2_1": "— for accurate meal planning."
         }
       },
       "footer": {
@@ -487,6 +491,7 @@
       "next": {
         "title": "How to Move from BMI to a Real Nutrition Plan",
         "p1": "After determining your BMI, the next logical step is calculating your daily calorie needs.",
+        "p1_link": "calculating your daily calorie needs.",
         "p2": "Based on:",
         "list_1": "age",
         "list_2": "gender",
@@ -522,6 +527,105 @@
     },
 
     "cta": "Calculate BMI & Get Your Meal Plan"
+  },
+  "kbsu_page": {
+    "meta": {
+      "title": "Calorie and Macro Calculator Online – Daily Intake Calculation",
+      "description": "Calorie and macro calculator online. Calculate your daily calorie needs, protein, fat and carb intake for weight loss, maintenance or muscle gain."
+    },
+
+    "h1": "Calorie and Macro Calculator Online",
+
+    "intro_p1": "The calorie and macro calculator helps you accurately estimate your daily calorie needs and optimal protein, fat and carbohydrate intake based on your goal. Whether you want to lose weight, maintain your current shape or gain muscle — proper calculation is the foundation of results.",
+
+    "intro_p2": "Online calorie calculation allows you to create a calorie deficit or surplus, control nutrition and build a balanced diet without extreme dieting.",
+
+    "sections": {
+
+      "what": {
+        "title": "What Are Calories and Macros",
+        "p1": "Calories represent energy intake, while macros — protein, fat and carbohydrates — determine how your body uses that energy.",
+        "list_1": "calories — total daily energy intake",
+        "list_2": "protein — muscle support and recovery",
+        "list_3": "fat — hormone balance and vitamin absorption",
+        "list_4": "carbohydrates — primary energy source",
+        "note": "The balance of calories and macros determines the effectiveness of weight loss, maintenance or muscle gain. To understand your starting point before calculating calories, it is recommended to determine your",
+        "note_link": "body mass index (BMI)"
+      },
+
+      "formula": {
+        "title": "How Daily Calorie Needs Are Calculated",
+        "p1": "Daily calorie intake is calculated using the Mifflin–St Jeor formula, which considers weight, height, age and gender.",
+        "p2": "BMR × activity factor = TDEE",
+        "p3": "BMR is your basal metabolic rate, and TDEE is your total daily energy expenditure.",
+        "p4": "TDEE is used to determine whether you need a calorie deficit for weight loss or a surplus for muscle gain."
+      },
+
+      "table": {
+        "title": "Macros for Different Goals",
+        "p1": "Macro ratios vary depending on your goal:",
+        "list_1": "Weight loss — 10–20% calorie deficit and higher protein intake",
+        "list_2": "Maintenance — balanced calorie intake",
+        "list_3": "Muscle gain — moderate calorie surplus",
+        "list_4": "Body recomposition — controlled carbs and higher protein",
+        "note": "Personalized calculations are always more accurate than generic recommendations."
+      },
+
+      "result": {
+        "title": "What You Get After Calculation",
+        "p1": "After calculation, you receive your daily calorie target and exact macro breakdown.",
+        "p2": "This helps you:",
+        "list_1": "create a sustainable calorie deficit",
+        "list_2": "avoid overeating",
+        "list_3": "track progress effectively",
+        "note": "Without calculating calories, it is difficult to predict changes in body weight."
+      },
+
+      "limits": {
+        "title": "Why a Calculator Alone Is Not Enough",
+        "p1": "A calorie calculator provides an estimate and does not account for:",
+        "list_1": "individual metabolism",
+        "list_2": "medical conditions",
+        "list_3": "sleep and stress levels",
+        "list_4": "food quality",
+        "note": "Therefore, it is important not only to know the numbers but also to apply them correctly in your diet. For a more accurate assessment of your body condition, it is recommended to additionally calculate your",
+        "note_link": "body mass index (BMI)",
+        "note_1": "and consider it together with your daily calorie needs."
+      },
+
+      "next": {
+        "title": "From Numbers to a Real Meal Plan",
+        "p1": "After calculating your calorie needs, the next step is building a practical meal plan.",
+        "p2": "Based on your calculated macros:",
+        "list_1": "foods are selected",
+        "list_2": "portions are calculated",
+        "list_3": "a balanced daily menu is created",
+        "p3": "This makes it easier to reach your goal without restrictive dieting.",
+        "p4": "BodyFlow allows you to:",
+        "p5": "automatically generate a 5-day meal plan",
+        "p6": "adjust the diet to your goal",
+        "p7": "get a ready-to-use nutrition plan",
+        "p8": "This way you move from simple calorie numbers to a structured personal menu."
+      }
+    },
+
+    "faq": {
+      "title": "Frequently Asked Questions",
+
+      "item_1_q": "How many calories do I need to lose weight?",
+      "item_1_a": "A calorie deficit of about 10–20% below your daily needs is typically recommended.",
+
+      "item_2_q": "How do I calculate macros?",
+      "item_2_a": "Macros are calculated based on your weight, height, age, gender and activity level.",
+
+      "item_3_q": "Do I have to count calories?",
+      "item_3_a": "Calorie tracking significantly improves consistency and results.",
+
+      "item_4_q": "How much protein do I need daily?",
+      "item_4_a": "Most people benefit from 1.6–2.2 grams of protein per kilogram of body weight."
+    },
+
+    "cta": "Calculate calories & Get Your Meal Plan"
   }
 
   }

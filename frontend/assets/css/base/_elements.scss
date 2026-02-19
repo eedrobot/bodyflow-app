@@ -23,7 +23,7 @@ a{
     text-decoration: none;
 }
 p {
-	padding: 0.5rem;
+	padding: 0.5rem 0;
 }
 h1 {
 	font-family: "Montserrat", sans-serif;
@@ -59,7 +59,7 @@ footer {
 	box-shadow: inset 0 4px 6px rgba(0,0,0,0.2);
 	background: $color-lgreen;
 	color: $color-navy;
-   }
+}
 
 @media (max-width: 575.98px) {
 	h2, h3 {

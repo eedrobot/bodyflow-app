@@ -85,9 +85,13 @@ gtag: {
         { loc: '/ru/o-nas', priority: 0.8 },    // ru
         { loc: '/en/about', priority: 0.8 },                // en
 
-         { loc: '/kalkulyator-imt', priority: 0.9 },        // uk default
+        { loc: '/kalkulyator-imt', priority: 0.9 },        // uk default
         { loc: '/ru/kalkulyator-imt', priority: 0.9 },    // ru
         { loc: '/en/bmi-calculator', priority: 0.9 },                // en
+
+        { loc: '/kalkulyator-kaloriy-i-bzhv', priority: 0.9 },        // uk default
+        { loc: '/ru/kalkulyator-kalorij-i-bju', priority: 0.9 },    // ru
+        { loc: '/en/calorie-macro-calculator', priority: 0.9 },                // en
       ]
 
       try {
@@ -223,6 +227,11 @@ gtag: {
         ru: '/kalkulyator-imt',
         en: '/bmi-calculator',
       },
+       kbju: {
+        uk: '/kalkulyator-kaloriy-i-bzhv',
+        ru: '/kalkulyator-kalorij-i-bju',
+        en: '/calorie-macro-calculator',
+      }
     },
 
     ignoreRoutes: [

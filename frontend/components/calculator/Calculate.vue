@@ -7,9 +7,18 @@
 
       <!-- DESKTOP CIRCLE DESCRIPTION -->
       <div class="description">
+        <p>{{ $t('general.description.desc_1')}} {{ $t('general.description.desc_2')}}</p>
+        <p>{{ $t('general.description_1.desc_1')}}
           <ul>
-            <li> {{ $t('general.description.desc_1')}} {{ $t('general.description.desc_2')}}</li>
+            <li>
+              <NuxtLink :to="localePath('imt')">{{ $t('general.description_1.desc_1_link')}}</NuxtLink>
+              {{ $t('general.description_1.desc_1_1')}}</li>
+            <li>
+              <NuxtLink :to = "localePath('kbju')">{{ $t('general.description_1.desc_2_link')}}</NuxtLink>
+              {{ $t('general.description_1.desc_2_1')}}</li>
           </ul>
+        </p>
+          
       </div>
 
       <!-- FORM -->
@@ -82,7 +91,7 @@ import { useParallaxBackground } from '@/composables/useParallaxBackground'
 import Notation from '@/components/common/Notation.vue'
 
 const { t } = useI18n()
-
+const localePath = useLocalePath()
 
 const store = useCalculatorStore()
 const selectedGender = ref('male')
@@ -145,6 +154,20 @@ const calculate = () => {
         .description {
           grid-area: description;
           text-align: left;
+          p:not(:first-child) {
+            font-size: $fs-small;
+             ul {
+              li{
+                list-style-type: disc;
+                margin: 0 1rem;
+                padding: 0;
+                a {
+                  color: inherit;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
         }
         .gender-toggle {
             @include flex(row, stretch, center);

@@ -70,7 +70,11 @@
         <!-- NEXT -->
         <article class="info-content">
           <h2>{{ t('imt_page.sections.next.title') }}</h2>
-          <p class="info-p">{{ t('imt_page.sections.next.p1') }}</p>
+          <p class="info-p">{{ t('imt_page.sections.next.p1') }}
+            <NuxtLink :to="localePath('kbju')">
+                {{ t('imt_page.sections.next.p1_link') }}
+            </NuxtLink>
+          </p>
           <p class="info-p">{{ t('imt_page.sections.next.p2') }}</p>
 
           <ul class="info-ul" v-if="nextList.length">
@@ -198,7 +202,7 @@ useSeo({
       "button button";
     grid-template-columns: 1fr 1fr;
     justify-items: start;
-    padding: 1rem 2rem 4rem 4rem;
+    padding: 1rem 4rem 4rem 4rem;
     gap: 1rem;
 
     .content-container {
@@ -259,6 +263,7 @@ useSeo({
         "content content"
         "faq faq"
         "button button";
+    grid-template-columns: 1fr 1fr;
       padding: 0 1rem 2rem 1rem;
       .btn {
         width: 100%;

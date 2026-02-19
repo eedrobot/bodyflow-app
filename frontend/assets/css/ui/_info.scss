@@ -9,9 +9,14 @@
             line-height: 1.5rem;
         }
         .info-p {
+            padding: 0.5rem 0;
             &.formula {
                 font-weight: 700;
                 letter-spacing: 0.2px;
+            }
+            a {
+                text-decoration: underline;
+                color: inherit;
             }
         }
         .info-ul {
@@ -24,15 +29,14 @@
             }
         }
         h2, h3 {
-            padding: 1rem;
+            padding: 1rem 0;
         }
         .note {
             margin-top: 10px;
-            padding: 12px 14px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 14px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            @include border-sides(left, $color-dg);
+            font-size: $fs-small;
             line-height: 1.6;
             opacity: 0.92;
             &.soft {
@@ -40,6 +44,10 @@
                 .note-p {
                     margin-bottom: 8px;
                 }
+            }
+            a {
+                text-decoration: underline;
+                color: inherit;
             }
         }
     }

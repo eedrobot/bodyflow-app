@@ -139,7 +139,7 @@ useSeo({
             "button button";
             grid-template-columns: 1fr 1fr;
             justify-items: start;
-            padding: 1rem 2rem 4rem 4rem;
+            padding: 1rem 4rem 4rem 4rem;
             gap: 1rem;
             .content-container {
                 grid-area: content;

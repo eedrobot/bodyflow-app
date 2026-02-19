@@ -69,7 +69,7 @@ useSeo({
         "contact contact";
         grid-template-columns: 1fr 1fr;
         justify-items: start;
-        padding: 1rem 2rem 4rem 4rem;
+        padding: 1rem 4rem 4rem 4rem;
         gap: 1rem;
         .contact-container {
           width: 100%;
