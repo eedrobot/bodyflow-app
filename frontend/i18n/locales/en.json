@@ -9,13 +9,15 @@
           "terms": "Terms of use",
           "about": "About",
           "imt": "BMI calculator",
-          "kbju": "Calorie & Macro Calculator"
+          "kbju": "Calorie & Macro Calculator",
+          "menu": "Meal Plan"
         }
       },
       "general": {
         "lang": "Language",
         "description": {
-          "desc_1": "Automatic calorie calculation and a personalized meal plan",
+          "desc_1": "Automatic calorie calculation and a personalized",
+          "desc_1_link": "meal plan",
           "desc_2": "for weight loss, maintenance, or gain."
         },
        "description_1": {
@@ -405,6 +407,9 @@
       "s1_text": "We create simple and accurate tools so you can manage your nutrition without complex spreadsheets or constant manual calculations.",
 
       "s2_title": "2. What the Service Includes",
+      "s2_li0_b": "Body Mass Index (BMI) Calculator",
+      "s2_li0": "helps determine whether your weight corresponds to your height and assess your starting point before calculating calories.",
+
       "s2_li1_b": "Calorie & Macro Calculator",
       "s2_li1": "calculate calories, protein, fat, and carbohydrates based on your personal data and goals.",
       "s2_li2_b": "5-Day Meal Plan",
@@ -413,7 +418,8 @@
       "s2_li3": "a comprehensive food database with detailed nutrient information for better planning.",
 
       "s3_title": "3. How BodyFlow Helps You",
-      "s3_li1": "Understand how many calories you need daily.",
+      "s3_li1": "Determine how many calories you need by using the calculator and first assessing your",
+      "s3_li1_link": "Body Mass Index (BMI).",
       "s3_li2": "Create a meal plan without manual calculations.",
       "s3_li3": "Track nutrients and make informed nutrition choices.",
       "s3_li4": "Reach your goal: weight loss, muscle gain, or maintenance.",
@@ -422,7 +428,9 @@
       "s4_text": "BodyFlow calculations and recommendations are provided for informational purposes only and do not constitute medical advice. If you have medical conditions, consult a qualified healthcare professional.",
 
       "s5_title": "5. Our Mission",
-      "s5_text": "To make nutrition simple and accessible so you can quickly calculate your needs, generate a meal plan, and move toward your goals.",
+      "s5_text": "Make nutrition simple and convenient: so you can quickly calculate your daily requirements, get a personalized",
+      "s5_text_link": "meal plan online",
+      "s5_text_1": "and move toward your goal.",
 
       "s6_title": "6. Contact",
       "s6_text": "If you have questions, ideas, or found an issue — feel free to contact us.",
@@ -502,7 +510,8 @@
         "p4": "The BodyFlow service allows you to:",
         "p5": "calculate macronutrients",
         "p6": "define your goal (weight loss, maintenance, muscle gain)",
-        "p7": "automatically generate a personalized 5-day meal plan",
+        "p7": "automatically generate a",
+        "p7_link": "personalized 5-day meal plan",
         "p8": "This way, you move from a simple BMI number to a structured and balanced nutrition plan."
       }
     },
@@ -604,7 +613,8 @@
         "p4": "BodyFlow allows you to:",
         "p5": "automatically generate a 5-day meal plan",
         "p6": "adjust the diet to your goal",
-        "p7": "get a ready-to-use nutrition plan",
+        "p7": "get a ready-to-use",
+        "p7_link": "meal plan",
         "p8": "This way you move from simple calorie numbers to a structured personal menu."
       }
     },
@@ -626,6 +636,106 @@
     },
 
     "cta": "Calculate calories & Get Your Meal Plan"
+  },
+  "menu_page": {
+    "meta": {
+      "title": "Personalized Meal Plan Online with Calories and Macros",
+      "description": "Create a personalized meal plan online based on your calories, macronutrients and goal. Automatic 5-day meal plan without dieting or manual calculations."
+    },
+
+    "h1": "Personalized Meal Plan Online Based on Calories and Goals",
+
+    "intro_p1": "A personalized meal plan online is an automatically generated nutrition plan that takes into account your daily calorie intake, macronutrient balance and chosen goal: weight loss, maintenance or muscle gain, calculated using the ",
+    "intro_p1_link": "calorie and macro calculator.",
+
+    "intro_p2": "The BodyFlow system creates a ready-to-use 5-day meal plan based on your age, weight, height and activity level. You get a structured nutrition plan without manual calorie tracking.",
+
+    "sections": {
+
+      "what": {
+        "title": "What Is a Personalized Meal Plan",
+        "p1": "A personalized meal plan is a diet created based on your individual calorie and macronutrient calculation.",
+        "list_1": "BMI consideration",
+        "list_2": "daily calorie calculation",
+        "list_3": "macronutrient balance",
+        "list_4": "goal adaptation",
+        "note": "Before creating a meal plan, it is recommended to determine your",
+        "note_link": "Body Mass Index (BMI)"
+      },
+
+      "formula": {
+        "title": "How the Automatic Meal Plan Is Generated",
+        "p1": "First, the system calculates your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE).",
+        "p2": "TDEE adjusted to your goal = individual calorie target",
+        "p3": "Calories are then distributed between proteins, fats and carbohydrates.",
+        "p4": "Based on this data, foods are selected and a balanced meal plan is generated."
+      },
+
+      "table": {
+        "title": "Meal Plans for Different Goals",
+        "p1": "The nutrition plan adapts depending on your goal:",
+        "list_1": "Weight loss — controlled calorie deficit",
+        "list_2": "Maintenance — energy balance",
+        "list_3": "Muscle gain — moderate calorie surplus",
+        "list_4": "Recomposition — higher protein control",
+        "note": "An individualized plan is more effective than generic diets."
+      },
+
+      "result": {
+        "title": "What You Get",
+        "p1": "After entering your data, you receive a ready-to-use 5-day meal plan.",
+        "p2": "This allows you to:",
+        "list_1": "save time",
+        "list_2": "avoid random dieting",
+        "list_3": "track your progress",
+        "note": "The meal plan is built according to your personal calorie target."
+      },
+
+      "limits": {
+        "title": "Why Auto-Generated Plans Are Better Than Generic Diets",
+        "p1": "Standard meal plans do not consider individual factors such as:",
+        "list_1": "weight and height",
+        "list_2": "activity level",
+        "list_3": "goal",
+        "list_4": "metabolism",
+        "note": "For accurate results, it is important to first calculate your",
+        "note_link": "daily calorie intake and macronutrients",
+        "note_1": "and use them to structure your nutrition."
+      },
+
+      "next": {
+        "title": "How to Create Your Personalized Meal Plan",
+        "p1": "To get your automatic meal plan, simply enter your personal data.",
+        "p2": "The system automatically:",
+        "list_1": "calculates calories",
+        "list_2": "determines macronutrients",
+        "list_3": "generates a 5-day meal plan",
+        "p3": "You instantly receive a ready-made nutrition plan.",
+        "p4": "BodyFlow allows you to:",
+        "p5": "create a meal plan online",
+        "p6": "adapt it to your goal",
+        "p7": "recalculate when parameters change",
+        "p8": "This way you move from calculations to a practical, personalized nutrition plan."
+      }
+    },
+
+    "faq": {
+      "title": "Frequently Asked Questions",
+
+      "item_1_q": "Does the meal plan work for different goals?",
+      "item_1_a": "Yes. The nutrition plan is generated for weight loss, maintenance or muscle gain.",
+
+      "item_2_q": "How many days does the plan include?",
+      "item_2_a": "The system generates a ready 5-day meal plan.",
+
+      "item_3_q": "Is activity level considered?",
+      "item_3_a": "Yes, calorie calculations are based on your physical activity level.",
+
+      "item_4_q": "Do I need to track calories manually?",
+      "item_4_a": "No. The system automatically calculates calories and macronutrients."
+    },
+
+    "cta": "Create Your Personalized Meal Plan"
   }
 
   }

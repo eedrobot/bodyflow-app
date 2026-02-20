@@ -88,7 +88,11 @@
             <ul class="info-ul compact">
               <li>{{ t('imt_page.sections.next.p5') }}</li>
               <li>{{ t('imt_page.sections.next.p6') }}</li>
-              <li>{{ t('imt_page.sections.next.p7') }}</li>
+              <li>{{ t('imt_page.sections.next.p7') }}
+                <NuxtLink :to="localePath('menu')">
+                    {{ t('imt_page.sections.next.p7_link') }}
+                </NuxtLink>
+              </li>
             </ul>
             <p class="info-p note-p">{{ t('imt_page.sections.next.p8') }}</p>
           </div>

@@ -92,6 +92,10 @@ gtag: {
         { loc: '/kalkulyator-kaloriy-i-bzhv', priority: 0.9 },        // uk default
         { loc: '/ru/kalkulyator-kalorij-i-bju', priority: 0.9 },    // ru
         { loc: '/en/calorie-macro-calculator', priority: 0.9 },                // en
+        
+        { loc: '/personalne-menu-online', priority: 0.9 },        // uk default
+        { loc: '/ru/personalnoe-menu-online', priority: 0.9 },
+        { loc: '/en/personalized-meal-plan', priority: 0.9 },                // en
       ]
 
       try {
@@ -231,6 +235,11 @@ gtag: {
         uk: '/kalkulyator-kaloriy-i-bzhv',
         ru: '/kalkulyator-kalorij-i-bju',
         en: '/calorie-macro-calculator',
+      },
+      menu: {
+        uk: '/personalne-menu-online',
+        ru: '/personalnoe-menu-online',
+        en: '/personalized-meal-plan',
       }
     },
 

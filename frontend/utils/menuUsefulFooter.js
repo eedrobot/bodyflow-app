@@ -9,6 +9,11 @@ export const menuUsefulFooter = [
     key: 'kbju',
     titleKey: 'pages.title.kbju',
     routeName: 'kbju'
+  },
+    {
+    key: 'menu',
+    titleKey: 'pages.title.menu',
+    routeName: 'menu'
   }
 
 ]

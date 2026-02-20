@@ -7,8 +7,12 @@
 
       <!-- DESKTOP CIRCLE DESCRIPTION -->
       <div class="description">
-        <p>{{ $t('general.description.desc_1')}} {{ $t('general.description.desc_2')}}</p>
-        <p>{{ $t('general.description_1.desc_1')}}
+        <p>{{ $t('general.description.desc_1')}}
+            <NuxtLink :to="localePath('menu')">
+                {{ t('general.description.desc_1_link') }}
+            </NuxtLink>
+           {{ $t('general.description.desc_2')}}</p>
+        <p>{{ $t('general.description_1.desc_1')}}</p>
           <ul>
             <li>
               <NuxtLink :to="localePath('imt')">{{ $t('general.description_1.desc_1_link')}}</NuxtLink>
@@ -17,7 +21,6 @@
               <NuxtLink :to = "localePath('kbju')">{{ $t('general.description_1.desc_2_link')}}</NuxtLink>
               {{ $t('general.description_1.desc_2_1')}}</li>
           </ul>
-        </p>
           
       </div>
 
@@ -134,7 +137,6 @@ const calculate = () => {
     background-repeat: no-repeat;
     background-position: top right;
     background-size: 65% auto;
-    height: calc(100vh + 65px + 65px); 
 
     .wrapper {
         grid-auto-rows: auto;
@@ -156,18 +158,19 @@ const calculate = () => {
           text-align: left;
           p:not(:first-child) {
             font-size: $fs-small;
-             ul {
+          }
+           ul {
               li{
                 list-style-type: disc;
                 margin: 0 1rem;
                 padding: 0;
+                font-size: $fs-small;
                 a {
                   color: inherit;
                   text-decoration: underline;
                 }
               }
             }
-          }
         }
         .gender-toggle {
             @include flex(row, stretch, center);

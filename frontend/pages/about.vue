@@ -25,7 +25,15 @@
 
                     <ul class="info-ul">
                         <li>
-                        <strong>{{ t('about.s2_li1_b') }}</strong>
+                            <strong>{{ t('about.s2_li0_b') }}</strong>
+                            — {{ t('about.s2_li0') }}
+                        </li>
+                        <li>
+                            <strong>
+                                <NuxtLink :to="localePath('kbju')">
+                                    {{ t('about.s2_li1_b') }}
+                                </NuxtLink>
+                            </strong>
                         — {{ t('about.s2_li1') }}
                         </li>
                         <li>
@@ -44,7 +52,11 @@
                     </h2>
 
                     <ul class="info-ul">
-                        <li>{{ t('about.s3_li1') }}</li>
+                        <li>{{ t('about.s3_li1') }}
+                            <NuxtLink :to="localePath('imt')">
+                               {{ t('about.s3_li1_link') }}
+                            </NuxtLink>
+                        </li>
                         <li>{{ t('about.s3_li2') }}</li>
                         <li>{{ t('about.s3_li3') }}</li>
                         <li>{{ t('about.s3_li4') }}</li>
@@ -64,6 +76,10 @@
                     </h2>
                     <p class="info-p">
                         {{ t('about.s5_text') }}
+                        <NuxtLink :to="localePath('menu')">
+                            {{ t('about.s5_text_link') }}
+                        </NuxtLink>
+                        {{ t('about.s5_text_1') }}
                     </p>
 
                     <!-- Section 6 -->
