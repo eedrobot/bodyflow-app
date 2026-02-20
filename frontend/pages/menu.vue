@@ -194,7 +194,7 @@ useSeo({
 .menu-comp {
   position: relative;
   z-index: 1;
-  background-image: url('@/public/img/green-bg-1.png'), url('@/public/img/menu-page.png');
+  background-image: url('@/public/img/green-bg-1.png'), url('@/public/img/menu_page.png');
   background-repeat: no-repeat no-repeat;
   background-position: center 100vh, top right;
   background-size: 100% auto, 65% auto;
