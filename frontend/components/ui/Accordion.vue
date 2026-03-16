@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion">
+  <div class="accordion" :class = "variant">
     <div
       v-for="item in props.items"
       :key="item.category_id"
@@ -24,7 +24,7 @@
       <!-- body -->
       <Transition name="slide">
         <div
-          v-if="activeIndex === item.category_id"
+          v-show="activeIndex === item.category_id"
           class="accordion-body active"
         >
           <slot name="body" :item="item">
@@ -40,6 +40,7 @@
 <script setup>
 const props = defineProps({
   items: { type: Array, required: true },
+  variant: {type: String, default: ''}
 })
 
 const emit = defineEmits(['toggle'])
@@ -106,6 +107,12 @@ const toggle = (id) => {
             }
         }
 		}
+    &.accordion-faq {
+      .accordion-body {
+         padding: 12px 15px; 
+        @include border-sides(top left right, $color-mg);
+      }
+    }
 	}
 
 .slide-enter-active,

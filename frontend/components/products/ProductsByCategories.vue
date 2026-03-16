@@ -37,12 +37,16 @@
               <tr
                 v-for="product in productsByCategories[cat.category_id][langKey]"
                 :key="product.product_id"
-                @click="goToProduct(product)"
                 class = "clickable"
               >
                 <td :data-label="$t('nutrition.product')">
-                  {{ product.translations?.[langKey] || product.translations?.ru || '' }}
+                  <NuxtLink :to="getProductPath(product)" class="product-link">
+                    {{ product.translations?.[langKey] || product.translations?.ru || '' }}
+                  </NuxtLink>
                 </td>
+                <!-- <td :data-label="$t('nutrition.product')">
+                  {{ product.translations?.[langKey] || product.translations?.ru || '' }}
+                </td> -->
                 <td :data-label="$t('result.protein')">{{ round(product.proteins) }}</td>
                 <td :data-label="$t('result.fat')">{{ round(product.fats) }}</td>
                 <td :data-label="$t('result.crabs')">{{ round(product.carbs) }}</td>
@@ -121,7 +125,7 @@ const toggleCategory = async (category_id) => {
 const round = (value, digits = 2) =>
   value == null || value === '' ? '0.00' : Number(value).toFixed(digits)
 
-const goToProduct = (product) => {
+const getProductPath = (product) => {
   const lang = langKey.value
 
   const slug =
@@ -130,10 +134,9 @@ const goToProduct = (product) => {
     product?.slug_translations?.ru ||
     ''
 
-  if (!slug) return
+  if (!slug) return '#'
 
-  const path = localePath({ name: 'products-slug', params: { slug } })
-  router.push(path)
+  return localePath({ name: 'products-slug', params: { slug } })
 }
 </script>
 
