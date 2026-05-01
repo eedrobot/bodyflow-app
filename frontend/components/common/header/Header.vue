@@ -91,6 +91,16 @@ header {
     }
   }
 }
+
+@media (max-width: 1199.98px) {
+  header {
+    .nav-header {
+      ul li {
+        margin-right: 10px;
+      }
+    }
+  }
+}
 @media (max-width: 991.98px) {
   header {
     .nav-header {
