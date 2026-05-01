@@ -1,10 +1,10 @@
-export function useSeo(options: SeoOptions) {
+export function useSeo(options = {}) {
   const route = useRoute()
   const { t, locale } = useI18n()
   const switchLocalePath = useSwitchLocalePath()
 
   const baseUrl = 'https://bodyflow.com.ua'
-  const locales = ['ru', 'en', 'uk'] as const
+  const locales = ['ru', 'en', 'uk']
 
   const title = computed(() => {
     if (options.title) return unref(options.title)
@@ -29,29 +29,31 @@ export function useSeo(options: SeoOptions) {
     return v || '/og/default.png'
   })
 
-  const canonical = computed(() => baseUrl + route.fullPath)
+  const canonical = computed(() => baseUrl + route.path)
   const currentLang = computed(() => locale.value)
 
   const schema = computed(() => (options.schema ? unref(options.schema) : null))
 
   useHead({
-    title, // ✅ computed ок
+    title,
 
     htmlAttrs: { lang: currentLang },
 
-    link: [
-      { rel: 'canonical', href: canonical },
+    link: computed(() => [
+      { rel: 'canonical', href: canonical.value },
+
       ...locales.map(code => ({
         rel: 'alternate',
         hreflang: code,
-        href: computed(() => baseUrl + switchLocalePath(code)),
+        href: baseUrl + switchLocalePath(code)
       })),
+
       {
         rel: 'alternate',
         hreflang: 'x-default',
-        href: computed(() => baseUrl + switchLocalePath('en')),
-      },
-    ],
+        href: baseUrl + switchLocalePath('en')
+      }
+    ]),
 
     meta: [
       { name: 'description', content: description },
@@ -59,7 +61,7 @@ export function useSeo(options: SeoOptions) {
 
       { property: 'og:title', content: title },
       { property: 'og:description', content: description },
-      { property: 'og:type', content: 'website' },
+      { property: 'og:type', content: 'article' },
       { property: 'og:url', content: canonical },
       { property: 'og:image', content: image },
 

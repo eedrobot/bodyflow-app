@@ -4,9 +4,11 @@
           "home": "Home",
           "workout": "Workout",
           "products": "Products",
+          "blog": "Blog",
           "contact": "Contacts",
           "privacy": "Privacy policy",
           "terms": "Terms of use",
+          "offer": "Public Offer",
           "about": "About",
           "imt": "BMI calculator",
           "kbju": "Calorie & Macro Calculator",
@@ -15,6 +17,7 @@
       },
       "general": {
         "lang": "Language",
+        "back": "Back",
         "description": {
           "desc_1": "Automatic calorie calculation and a personalized",
           "desc_1_link": "meal plan",
@@ -45,18 +48,98 @@
       },
       "male": "Male",
       "female": "Female",
+      "gender": "Sex",
       "birth": "Date of birth",
       "height": "Height (cm)",
       "weight": "Weight (kg)",
       "activity": "Activity level",
+      "goal": "Selected goal",
       "calculate": "Calculate",
       "sedentary": "Sedentary (little or no exercise)",
       "light": "Light activity (light exercise/sports 1–3 days/week)",
       "moderate": "Moderate activity (moderate exercise/sports 4–5 days/week)",
       "active": "Very active (hard exercise/sports 6–7 days/week)",
       "extra_active": "Extra active (very hard exercise/sports & physical job, or training twice a day)",
-      "notation": "The data is used only for calculations, is not stored without your consent, and is not shared with third parties"
+      "notation": "The data is used only for calculations, is not stored without your consent, and is not shared with third parties",
+      "extra_block_open": "Get a personalized report →"
     },
+    "advanced-calculation": {
+        "title": "Advanced Body Composition Analysis",
+        "description": "Find out your estimated body fat percentage, metabolic age and risk level, adjust your calorie intake, and receive a personal report with all key indicators, a 5-day meal plan, and a forecast of results according to your goal.",
+        "title_1": "What You’ll Get",
+        "cards": [
+          "Body Fat & Composition Analysis",
+          "Personalized Nutrition Plan with Calorie & Macro Calculation",
+          "Target Weight Progress Forecast",
+          "Practical Recommendations for Sustainable Results"
+        ],
+        "cards_txt": [
+          "Estimated body fat percentage, muscle mass, and fat mass based on anthropometric measurements",
+          "Personalized calorie and macronutrient recommendations tailored to your goal",
+          "Projected weight change based on your selected goal and recommended calorie intake",
+          "Additional nutrition guidance and adjustments to help you achieve lasting results"
+        ],
+        "title_form": "Additional Measurements",
+        "description_form": "Choose your goal and optionally add measurements for a more accurate calculation. Without them, the result will be less precise.",
+        "weight": "Target weight (kg)",
+        "waist": "Waist circumference (cm)",
+        "neck": "Neck circumference (cm)",
+        "hip": "Hip circumference (cm)",
+        "note_form": "Measure on exhale without pulling the tape too tight.",
+        "adv_block_title": "Get a personalized report",
+        "adv_block_descr": "with an advanced body composition analysis, a balanced 5-day meal plan, weight change прогноз, and personalized recommendations to achieve your goal",
+        "modal_title": "Data Confirmation",
+        "modal_descr": "Please check that the entered data is correct. If you notice an error, click ‘Back’.",
+        "modal_close": "Back",
+        "modal_ok": "OK"
+      },
+      "adv_result": {
+        "title": "Your calculation results are ready",
+        "description": "Your personalized plan has already been created. Get the full report with detailed analysis and recommendations in a convenient format.",
+        "tariff_1": {
+          "title": "BodyFlow Personal Report",
+          "description": "Your personalized PDF report will be sent to your email after payment",
+          "email_title": "E-mail for receiving the report",
+          "name_title": "Your name",
+          "btn": "Get the full report",
+          "item_1": "Generated based on your data",
+          "item_2": "No subscription required",
+          "item_3": "No hidden fees",
+          "item_4": "Your data is protected"
+        },
+        "tariff_content": {
+          "title": "What the report includes",
+          "title_1": "Body analysis",
+          "descr_1": "Body mass index, body fat percentage, body composition, and recommended daily water intake.",
+          "title_2": "Metabolism",
+          "descr_2": "Calculation of metabolic age and risk level, as well as basal metabolic rate, daily calorie needs, and individual macronutrient balance based on your activity level and goal.",
+          "title_3": "Personal meal plan",
+          "descr_3": "A ready-to-use 5-day meal plan generated according to your calculated indicators and goal.",
+          "title_4": "Forecast",
+          "descr_4": "A forecast of weight change dynamics and personalized recommendations to achieve your goal."
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+
+          "item_1_q": "When will I receive my report?",
+          "item_1_a": "The PDF report is sent automatically to your email immediately after successful payment. If you do not see the email within a few minutes, please check your Spam folder or contact support.",
+
+          "item_2_q": "Is the payment secure?",
+          "item_2_a": "Yes. Payments are processed through a secure payment system. BodyFlow does not store your bank card details.",
+
+          "item_3_q": "Can I get a refund?",
+          "item_3_a": "Since the report is generated individually based on your data and delivered immediately after payment, refunds are only possible in case of a technical error or if the report was not delivered. If you experience any issues, please contact us and we will be happy to assist you.",
+
+          "item_4_q": "What if I entered incorrect information?",
+          "item_4_a": "If you notice an error in the entered data before payment, simply go back and perform a new calculation. If the mistake is discovered after payment, please contact support and we will review the situation.",
+
+          "item_5_q": "Is my data stored?",
+          "item_5_a": "Your data is used solely to generate your personalized report and is not shared with third parties.",
+
+          "item_6_q": "Is this plan suitable for people with medical conditions?",
+          "item_6_a": "The service provides informational recommendations. If you have chronic health conditions or medical restrictions, we recommend consulting a healthcare professional."
+        }
+      },
     "result": {
       "title": "Calculation Results",
       "description": "The calculation is based on the data you provided and generally accepted formulas. You can change the parameters at any time",
@@ -169,6 +252,14 @@
       "nutrient": "Nutrient",
       "daily_norm": "Daily norm"
     },
+    "blog": {
+      "title": "Blog about nutrition, health, and balance",
+      "description": "Practical materials to help you better understand your body, diet, and daily habits.",
+      "read_link": "Read article →.",
+      "categories": {
+        "nutrition": "Nutrition"
+      }
+    },
     "menu": {
       "day_1": "Day 1",
       "day_2": "Day 2",
@@ -191,7 +282,8 @@
       "btn_close": "Close meal plan",
       "btn_loading": "Generating your meal plan...",
       "save_menu_title": "To save the meal plan, sign in or create an account",
-      "save_menu_descr": "Registration will give you access to saving, history, and editing meal plans."
+      "save_menu_descr": "Registration will give you access to saving, history, and editing meal plans.",
+      "menu_locked": "A 5-day meal plan is available in your personal report"
     },
     "contact": {
       "title": "Contacts",
@@ -265,6 +357,11 @@
         "description": "{name} detailed composition: calories, proteins, fats, carbohydrates, water, minerals, and vitamins. Explore the nutrient profile for balanced nutrition and better health.",
         "keywords": "product calories, macros, food composition, nutrients, proteins fats carbs, vitamins, minerals, water in foods, calories per 100g, healthy nutrition"
       },
+      "blog": {
+        "title": "Nutrition, Health & Lifestyle Blog | BodyFlow",
+        "description": "Practical articles on nutrition, healthy habits, fitness, and balanced lifestyle. Learn how to improve your diet and well-being.",
+        "keywords": "nutrition blog, healthy eating, diet tips, calories, macros, fitness, healthy lifestyle, habits, wellness, balanced diet"
+      },
       "workout": {
         "title": "Exercise Database Online — Workouts for Health and Fitness",
         "description": "A catalog of exercises for all fitness levels: workouts for weight loss, muscle gain, and maintaining fitness. Choose effective exercises for home and gym.",
@@ -285,113 +382,216 @@
       "prev": "Previous",
       "next": "Next"
     },
-   "privacy": {
-      "title": "Privacy Policy",
+  "privacy": {
+    "title": "Privacy Policy",
 
-      "intro": "This Privacy Policy (\"Policy\") explains how BodyFlow (https://bodyflow.com.ua) collects, uses, and protects users’ personal data. By using the website and its features (calorie calculator, meal plan generator, personal account), you agree to the terms of this Policy.",
+    "intro": "This Privacy Policy (hereinafter referred to as the \"Policy\") defines the procedures for the collection, use, storage, and protection of personal data of users of the BodyFlow service (https://bodyflow.com.ua), operated by sole proprietor Serhii Cherneha (hereinafter referred to as \"BodyFlow\", \"Service\" or the \"Website\"). By using the Website and its functionality, including calculators, meal plan generation, personal account features, and paid digital products, you agree to the terms of this Policy.",
 
-      "s1_title": "1. Information We Collect",
+    "s1_title": "1. What data we collect",
 
-      "s1_1_title": "1.1. Information you provide voluntarily:",
-      "s1_1_li1": "Name and email address during registration.",
-      "s1_1_li2": "Data entered into calculators (age, height, weight, activity level, nutrition goals, and related parameters).",
-      "s1_1_li3": "Information stored in your personal account (calculations, meal plans, preferences).",
+    "s1_1_title": "1.1. Data you provide voluntarily:",
+    "s1_1_li1": "Name and email address during registration or order placement.",
+    "s1_1_li2": "Data entered into calculators and website forms (age, height, weight, activity level, nutrition goals, and other parameters).",
+    "s1_1_li3": "Information stored in your personal account (calculations, menus, settings, order history).",
+    "s1_1_li4": "Data required to generate a personal PDF report, including indicators used to calculate BMI, body composition, calories and macronutrients, water intake, metabolic age, metabolic risk, weight forecast, and a personalized meal plan.",
 
-      "s1_2_title": "1.2. Automatically collected information:",
-      "s1_2_li1": "IP address, device type, and browser type.",
-      "s1_2_li2": "Interface language and technical settings.",
-      "s1_2_li3": "Visited pages and time spent on the website.",
-      "s1_2_li4": "Cookies and similar tracking technologies.",
+    "s1_2_title": "1.2. Data collected automatically:",
+    "s1_2_li1": "IP address, device type, and browser type.",
+    "s1_2_li2": "Interface language and technical settings.",
+    "s1_2_li3": "Pages of the website you visit and the time spent on the website.",
+    "s1_2_li4": "Cookies and similar technologies.",
 
-      "s2_title": "2. Purpose of Data Processing",
+    "s2_title": "2. Purposes of data processing",
+    "s2_1_li1": "Ensuring the proper operation of the service.",
+    "s2_1_li2": "Calculating indicators and generating personalized nutrition recommendations.",
+    "s2_1_li3": "Creating and delivering a personal PDF report.",
+    "s2_1_li4": "Storing data in the user's personal account.",
+    "s2_1_li5": "Analyzing website usage and improving its functionality.",
+    "s2_1_li6": "Processing orders, payments, and providing access to purchased digital products.",
 
-      "s2_1_li1": "To ensure proper operation of the service.",
-      "s2_1_li2": "To calculate calorie needs and generate personalized nutrition recommendations.",
-      "s2_1_li3": "To store user data in personal accounts.",
-      "s2_1_li4": "To analyze website usage and improve functionality.",
-      "s2_1_li5": "To display advertisements through third-party services (including Google AdSense).",
+    "s3_title": "3. Payments and financial data",
+    "s3_text": "When ordering paid services, including the purchase of a personal PDF report, payment data is processed through third-party payment services.",
+    "s3_li1": "BodyFlow does not store or process full bank card details, including card number, CVV/CVC code, and expiration date.",
+    "s3_li2": "All payment data is processed directly by payment providers in accordance with their rules and privacy policies.",
+    "s3_li3": "We may receive limited payment-related information, such as payment status, amount, currency, transaction identifier, and the buyer's email address, if necessary to fulfill the order.",
 
-      "s3_title": "3. Cookies and Advertising",
+    "s4_title": "4. Data processing for personalized reports",
+    "s4_text": "To generate a personal report, BodyFlow processes the data you provide through the website regarding body parameters, lifestyle, activity level, goals, and other indicators.",
+    "s4_li1": "This data is used solely for calculating indicators, generating meal plans, providing recommendations, and creating the PDF report.",
+    "s4_li2": "The results are generated automatically based on the data you provide and the service's internal algorithms.",
+    "s4_li3": "Such calculations are for informational purposes only and do not constitute a medical opinion, diagnosis, or treatment.",
 
-      "s3_1_text": "BodyFlow uses cookies to ensure proper website functionality, analyze traffic, and display advertisements.",
+    "s5_title": "5. Legal grounds for data processing",
+    "s5_li1": "Your consent to the processing of personal data when using the website and its functionality.",
+    "s5_li2": "The necessity to perform a contract or provide a service, including when ordering and paying for a personal PDF report.",
+    "s5_li3": "Our legitimate interest in ensuring the security, stable operation, and development of the service.",
 
-      "s3_2_title": "3.1. Google AdSense",
-      "s3_2_text": "We may use Google AdSense to display advertisements. Google and its partners may use cookies to show ads based on your previous visits to this and other websites.",
-      "s3_2_li1": "Google uses advertising cookies to provide personalized ads.",
-      "s3_2_li2": "Users may opt out of personalized advertising via Google Ads Settings (https://adssettings.google.com).",
-      "s3_2_li3": "Other third-party vendors may also use cookies for advertising purposes.",
+    "s6_title": "6. Cookies and advertising",
 
-      "s3_3_text": "You can disable cookies in your browser settings; however, this may affect certain website features.",
+    "s6_1_text": "The BodyFlow website uses cookies to ensure website functionality, analyze traffic, save user preferences, and display advertising.",
 
-      "s4_title": "4. Data Sharing",
+    "s6_2_title": "6.1. Google AdSense",
+    "s6_2_text": "We may use Google AdSense to display advertisements. Google and its partners may use cookies to show ads based on your previous visits to this and other websites.",
+    "s6_2_li1": "Google uses advertising cookies to display personalized ads.",
+    "s6_2_li2": "Users can disable personalized advertising in Google's ad settings (https://adssettings.google.com).",
+    "s6_2_li3": "Other advertising providers may also use cookies.",
 
-      "s4_1_text": "We do not sell or share personal data with third parties except in the following cases:",
-      "s4_1_li1": "Hosting providers and technical contractors supporting website functionality.",
-      "s4_1_li2": "Analytics services (such as Google Analytics).",
-      "s4_1_li3": "When required by applicable law.",
+    "s6_3_text": "You can change your cookie settings in your browser; however, this may affect the operation of certain website features.",
 
-      "s5_title": "5. Data Protection and Retention",
+    "s7_title": "7. Transfer of data to third parties",
+    "s7_1_text": "We do not sell your personal data to third parties. Data may only be transferred in cases necessary for the operation of the service:",
+    "s7_1_li1": "To hosting providers, technical contractors, and infrastructure services.",
+    "s7_1_li2": "To payment services for processing order payments.",
+    "s7_1_li3": "To web analytics and advertising services (for example, Google Analytics and Google AdSense).",
+    "s7_1_li4": "In cases expressly provided for by the laws of Ukraine.",
 
-      "s5_1_text": "We implement technical measures to protect personal data, including HTTPS encryption and restricted access to stored information.",
+    "s8_title": "8. Data protection and storage",
+    "s8_1_text": "We apply the necessary technical and organizational measures to protect data, including the use of HTTPS connections, restricted access to information, and basic security measures to protect user accounts and orders.",
+    "s8_2_text": "Data is stored for the duration of the account's existence or until it is deleted by the user. Data related to purchased reports and payments may be stored longer if necessary for order fulfillment, access to purchase history, accounting, or compliance with legal requirements.",
 
-      "s5_2_text": "Data is retained for the duration of the user account or until deletion is requested.",
+    "s9_title": "9. User rights",
+    "s9_li1": "To obtain information about your personal data.",
+    "s9_li2": "To request correction, updating, or deletion of your data.",
+    "s9_li3": "To withdraw consent to data processing in cases where processing is based on consent.",
+    "s9_li4": "To delete your account or contact us regarding data deletion, unless this conflicts with our legal obligations to retain such data.",
 
-      "s6_title": "6. User Rights",
+    "s10_title": "10. Medical disclaimer",
+    "s10_text": "The BodyFlow service, all calculations, recommendations, meal plans, and personal PDF reports are provided for informational purposes only. They do not constitute medical advice, diagnosis, treatment, or an individual doctor's prescription and do not replace consultation with a qualified medical professional or dietitian.",
 
-      "s6_1_li1": "Request access to your personal data.",
-      "s6_1_li2": "Request correction or deletion of your data.",
-      "s6_1_li3": "Delete your account.",
+    "s11_title": "11. Transfer of data outside Ukraine",
+    "s11_text": "Certain technical services used to operate BodyFlow, including hosting, analytics, data storage, or payment infrastructure, may process data on servers located outside Ukraine. By using the website, you agree to such transfer of data to the extent necessary for the operation of the service.",
 
-      "s7_title": "7. Disclaimer",
+    "s12_title": "12. Changes to the Policy",
+    "s12_text": "We may update this Privacy Policy. The updated version becomes effective from the moment it is published on the website unless otherwise stated additionally.",
 
-      "s7_text": "BodyFlow provides nutritional calculations and recommendations for informational purposes only. The content does not constitute medical advice and should not replace professional consultation with a healthcare provider.",
+    "s13_title": "13. Contact information",
+    "s13_text": "If you have any questions regarding the processing of personal data, access, correction, or deletion of information, you may contact us:",
+    "s13_email_label": "Email:"
+  },
+  "terms": {
+    "title": "Terms of Use",
 
-      "s8_title": "8. Changes to This Policy",
+    "intro": "These Terms of Use (hereinafter referred to as the \"Terms\") govern access to the BodyFlow website (https://bodyflow.com.ua), owned and operated by sole proprietor Serhii Cherneha (hereinafter referred to as \"BodyFlow\", \"Website\" or the \"Service\"), the use of its functionality, as well as the ordering and use of paid digital products of the Service. By using the website, registering, placing an order, or purchasing digital products of BodyFlow, you agree to these Terms.",
 
-      "s8_text": "We may update this Policy from time to time. Updates take effect upon publication on the website.",
+    "s1_title": "1. Service description",
+    "s1_text": "BodyFlow provides online tools for calculating nutrition and body metrics, generating meal plans, storing results in a personal account, and offering the ability to purchase personalized digital products, including PDF reports with customized calculations and recommendations. All materials and results of the service are provided for informational purposes only.",
 
-      "s9_title": "9. Contact Information",
-      "s9_text": "If you have questions regarding personal data processing, please contact us:",
-      "s9_email_label": "Email:"
-    },
-    "terms": {
-      "title": "Terms of Service",
+    "s2_title": "2. Registration and account",
+    "s2_li1": "Registration may be required to access certain features of the service.",
+    "s2_li2": "The user agrees to provide accurate, up-to-date, and complete information.",
+    "s2_li3": "You are responsible for maintaining the confidentiality of your account credentials and for all actions performed under your account.",
+    "s2_li4": "We reserve the right to temporarily restrict, suspend, or delete an account in case of violation of these Terms, abuse of the service, or security threats.",
 
-      "intro": "These Terms of Service (\"Terms\") govern access to and use of the BodyFlow website (https://bodyflow.com.ua). By using the website, you agree to these Terms.",
+    "s3_title": "3. Paid services and digital products",
+    "s3_text": "The website may offer paid services and digital products, including personalized PDF reports. The description, content, pricing, and availability of such products are defined on the relevant pages of the website at the time of ordering.",
+    "s3_li1": "After successful payment, the user receives access to the purchased digital product in the format provided by the service.",
+    "s3_li2": "The personal PDF report is generated automatically based on the data provided by the user.",
+    "s3_li3": "The user is responsible for the accuracy of the data provided for generating the personal report.",
+    "s3_li4": "BodyFlow reserves the right to change the list, pricing, functionality, or format of paid products without prior notice unless otherwise stated on the website.",
 
-      "s1_title": "1. Description of Service",
-      "s1_text": "BodyFlow provides online tools for calorie calculation, meal plan generation, and nutritional recommendations. The service is for informational purposes only.",
+    "s4_title": "4. Payment",
+    "s4_li1": "Payment for paid services and digital products is processed through third-party payment services available on the website.",
+    "s4_li2": "Payment is considered completed once the transaction is successfully confirmed by the payment provider.",
+    "s4_li3": "BodyFlow does not store full payment card details of users.",
+    "s4_li4": "In case of technical errors, payment failures, or lack of access to a paid product, the user may contact support.",
 
-      "s2_title": "2. Registration and Account",
-      "s2_li1": "Certain features require account registration.",
-      "s2_li2": "You agree to provide accurate and truthful information.",
-      "s2_li3": "You are responsible for maintaining the confidentiality of your login credentials.",
-      "s2_li4": "We may suspend or delete accounts that violate these Terms.",
+    "s5_title": "5. Refund policy",
+    "s5_text": "Since personalized PDF reports and other digital products provided by BodyFlow constitute digital content delivered electronically, refunds are generally not provided after access has been granted or the product has been delivered, unless otherwise required by applicable law of Ukraine.",
+    "s5_li1": "Refunds may be considered in cases of confirmed technical errors on the part of the service.",
+    "s5_li2": "Refunds are not provided if the product was generated based on incorrect or incomplete data entered by the user.",
+    "s5_li3": "Each refund request is reviewed individually.",
 
-      "s3_title": "3. Disclaimer of Liability",
-      "s3_text": "All information and calculations provided on the website are for informational purposes only. BodyFlow is not a medical service. You should consult a healthcare professional before making significant dietary changes. We are not responsible for outcomes resulting from the use of the website.",
+    "s6_title": "6. Limitation of liability and medical disclaimer",
+    "s6_text": "All information, calculations, recommendations, meal plans, and personal reports provided through BodyFlow are for informational purposes only.",
+    "s6_li1": "BodyFlow is not a medical institution and does not provide medical services.",
+    "s6_li2": "The materials of the service do not constitute medical advice, diagnosis, treatment, or a doctor's prescription.",
+    "s6_li3": "Before making changes to your diet, physical activity, or lifestyle, you should consult a qualified medical professional or specialist.",
+    "s6_li4": "We are not responsible for any consequences resulting from the use of the website’s materials, recommendations, or digital products.",
+    "s6_li5": "The accuracy of the results depends on the correctness of the data entered by the user.",
 
-      "s4_title": "4. Intellectual Property",
-      "s4_text": "All website materials (texts, design, algorithms, logos, graphics) are the property of BodyFlow or used lawfully. Unauthorized reproduction or distribution is prohibited.",
+    "s7_title": "7. Intellectual property",
+    "s7_text": "All materials on the website, including texts, design, structure, software code, algorithms, logos, images, tables, reports, and other elements, are the property of BodyFlow or are used legally.",
+    "s7_li1": "It is prohibited to copy, distribute, sell, publish, or otherwise use website materials without prior written permission from BodyFlow.",
+    "s7_li2": "The purchase of a digital product grants the user only the right to personal use of such product.",
+    "s7_li3": "It is prohibited to transfer, resell, publicly distribute, or use purchased PDF reports for commercial purposes without written permission from BodyFlow.",
 
-      "s5_title": "5. Acceptable Use",
-      "s5_li1": "You may not use the website for unlawful purposes.",
-      "s5_li2": "You may not attempt to disrupt server operation or gain unauthorized access.",
-      "s5_li3": "Automated data scraping without permission is prohibited.",
+    "s8_title": "8. Acceptable use",
+    "s8_li1": "It is prohibited to use the website for illegal, fraudulent, or harmful purposes.",
+    "s8_li2": "It is prohibited to interfere with the operation of the server, website, or API, or to attempt unauthorized access.",
+    "s8_li3": "Automated data collection from the website without prior written permission is prohibited.",
+    "s8_li4": "It is prohibited to use the service in a way that may disrupt its stability or security.",
 
-      "s6_title": "6. Advertising and Third-Party Services",
-      "s6_text": "The website may display advertisements from third parties (including Google AdSense). We are not responsible for the content of external websites or advertisements.",
+    "s9_title": "9. Advertising and third-party services",
+    "s9_text": "The website may contain third-party advertising and may use third-party services, including payment, analytics, and advertising tools. We are not responsible for the content, policies, availability, or operation of third-party websites and services.",
 
-      "s7_title": "7. Changes to Terms",
-      "s7_text": "We may update these Terms at any time. Updated versions become effective upon publication.",
+    "s10_title": "10. Service availability",
+    "s10_text": "We strive to ensure continuous operation of the website; however, we do not guarantee that the service will be uninterrupted, error-free, or free of technical issues. BodyFlow reserves the right to temporarily modify, restrict, or suspend certain features of the website for technical, security, or organizational reasons.",
 
-      "s8_title": "8. Governing Law",
-      "s8_text": "These Terms are governed by the laws of Ukraine.",
+    "s11_title": "11. Changes to the Terms",
+    "s11_text": "We may update these Terms at any time. The updated version becomes effective upon publication on the website unless otherwise stated. Continued use of the website after changes means you accept the updated Terms.",
 
-      "s9_title": "9. Contact Information",
-      "s9_text": "If you have questions regarding these Terms, please contact us:",
-      "s9_email_label": "Email:"
-    },
+    "s12_title": "12. Governing law",
+    "s12_text": "These Terms are governed by and interpreted in accordance with the laws of Ukraine.",
+
+    "s13_title": "13. Age restrictions",
+    "s13_text": "The service is intended for adult users. If the user is under 18 years old, use of the service is allowed only with the consent of a parent or legal guardian.",
+
+    "s14_title": "14. Contact information",
+    "s14_text": "For questions regarding the use of the service, payments, digital products, or other matters related to BodyFlow, you may contact us:",
+    "s14_email_label": "Email:"
+  },
+  "offer": {
+    "title": "Public Offer",
+
+    "intro": "This document is an official offer (public offer) of the BodyFlow service (https://bodyflow.com.ua), operated by sole proprietor Cherneha S. (hereinafter referred to as BodyFlow, Website or the Service) to conclude a service agreement.",
+
+    "s1_title": "1. General provisions",
+    "s1_li1": "This offer is public in accordance with Articles 633, 641, 642 of the Civil Code of Ukraine.",
+    "s1_li2": "Acceptance of this offer is carried out by placing and paying for an order on the website.",
+    "s1_li3": "From the moment of payment, the user is considered to have entered into an agreement with BodyFlow.",
+
+    "s2_title": "2. Subject of the agreement",
+    "s2_li1": "BodyFlow provides access to digital products and services, including a personalized PDF report.",
+    "s2_li2": "The service is provided electronically through the website.",
+
+    "s3_title": "3. Order process",
+    "s3_li1": "The user independently enters the required data.",
+    "s3_li2": "The user is responsible for the accuracy of the provided data.",
+    "s3_li3": "The report is generated automatically.",
+
+    "s4_title": "4. Payment",
+    "s4_li1": "Payments are processed through third-party payment services.",
+    "s4_li2": "The agreement is considered concluded upon successful payment.",
+    "s4_li3": "Access to the product is granted after payment.",
+
+    "s5_title": "5. Service delivery",
+    "s5_li1": "The service is considered provided once access to the PDF is granted.",
+    "s5_li2": "The report is generated automatically.",
+
+    "s6_title": "6. Refund policy",
+    "s6_li1": "Digital products, including personalized PDF reports, are provided in electronic form and are considered consumed once access has been granted.",
+    "s6_li2": "After access to the digital product has been provided, refunds are not available.",
+    "s6_li3": "Refunds are only possible in the case of a technical error that prevents access to or use of the product.",
+    "s6_li4": "To request a refund, the user must contact support and provide details of the issue.",
+    "s6_li5": "Each request is reviewed individually. BodyFlow reserves the right to make the final decision regarding refunds.",
+
+    "s7_title": "7. Liability",
+    "s7_li1": "The service is for informational purposes only.",
+    "s7_li2": "BodyFlow is not a medical institution.",
+    "s7_li3": "We are not responsible for any consequences of use.",
+
+    "s8_title": "8. Intellectual property",
+    "s8_li1": "All materials are the property of BodyFlow.",
+    "s8_li2": "Distribution or resale of reports is prohibited.",
+
+    "s9_title": "9. Final provisions",
+    "s9_li1": "BodyFlow may change the terms of this offer.",
+    "s9_li2": "The current version is always available on the website.",
+
+    "s10_title": "10. Contact information",
+    "s10_text": "For any questions regarding the service, please contact:",
+    "s10_email_label": "Email:"
+  },
     "about": {
       "title": "About BodyFlow",
 
@@ -736,6 +936,99 @@
     },
 
     "cta": "Create Your Personalized Meal Plan"
+  },
+  "pdf": {
+    "goal_labels": {
+      "lost": "weight loss (moderate deficit)",
+      "main": "weight maintenance",
+      "gain": "weight gain (moderate surplus)"
+    },
+    "title": "Personal BodyFlow Report",
+    "description": "Body composition analysis, metabolism insights, and goal achievement strategy",
+    "user": "Name",
+    "date": "Date",
+    "note": "This report is generated automatically based on the provided data. The calculations do not constitute a medical diagnosis.",
+    "data": "Your initial data",
+    "goal": "Selected goal",
+    "note_1": "All further calculations are based on the parameters you provided.",
+    "imt": "Body Mass Index (BMI)",
+    "imt_1": "Your BMI",
+    "imt_2": "Category",
+    "body_comp": "Body Composition",
+    "fatv": "Fat Mass",
+    "musclev": "Lean Mass",
+    "conclusion_1": "The optimal fat mass level for your age and sex is",
+    "bf_zone_low": "The value is below the athletic range. A low body fat level is possible.",
+    "bf_zone_sport": "The value corresponds to the athletic body composition range.",
+    "bf_zone_normal": "The value corresponds to a healthy range for your age and sex.",
+    "bf_zone_excess": "The value exceeds the healthy range. A gradual adjustment of body weight and lifestyle is recommended.",
+    "bf_sport_low_activity": "The value falls within the athletic range. With moderate physical activity, it is important to monitor well-being and ensure adequate nutrition.",
+    "bf_sport_high_activity": "The value corresponds to an athletic level of body composition and aligns with a higher level of physical activity.",
+    "bmr": "Your BMR",
+    "bmr_descr": "This is the amount of energy your body burns at rest.",
+    "main_kcal": "Calories for weight maintenance",
+    "total_water": "Total fluid requirement",
+    "water": "Recommended pure water intake",
+    "water_descr": "Part of your fluid intake comes from food (soups, vegetables, beverages). However, for proper metabolism, it is recommended to drink enough pure water.",
+    "metabolism_risk": "Metabolic Risk Index",
+    "meta_risk_low": "Your body composition indicators correspond to a low metabolic risk.",
+    "meta_risk_normal": "A moderate metabolic risk level related to fat distribution has been identified.",
+    "meta_risk_high": "Indicators suggest an increased metabolic risk. Gradual weight correction is recommended.",
+    "meta_age": "Your metabolic age",
+    "chrono_age": "Your chronological age",
+    "meta_age_lower": "Your metabolic age is lower than your actual age — this indicates good metabolic activity.",
+    "meta_age_higher": "Your metabolic age exceeds your chronological age. Reducing body fat and increasing activity can help lower it.",
+    "goal_analys": "Goal alignment analysis",
+    "menu_note": "The menu is generated according to your calorie target and selected goal.",
+    "weight_forecast": "Weight change forecast",
+    "current_weight": "Current weight",
+    "goal_weight": "Target weight",
+    "goal_termin": "Estimated time to reach goal",
+    "termin_week": "weeks",
+    "weight_note": "A safe rate of weight change is 0.5–1% of body weight per week.",
+    "dynamic_indicators": "Progress dynamics",
+    "dynamic_past": "Before",
+    "dynamic_present": "After",
+    "dynamic_indicator": "Indicator",
+    "strategy": "Strategy for the next 4 weeks",
+    "strategy_1": "Daily calorie intake",
+    "strategy_2": "Minimum daily protein intake",
+    "startegy_3": "Weight check: once per week",
+    "strategy_4": "Repeat analysis in: 28 days",
+    "personal_recomendation": "Personal recommendations",
+
+    "meta_recomend": "Metabolic",
+    "meta_recomend_1": "Ensure protein intake of 1.6–2 g per kg of body weight to preserve muscle mass and maintain stable metabolism",
+    "meta_recomend_2": "Do not reduce fats below 0.8 g per kg to support hormonal balance and nervous system function",
+    "meta_recomend_3": "Follow the calculated calorie target without extreme deficits or surpluses",
+    "meta_recomend_4": "Maintain hydration according to the recommended pure water intake",
+
+    "behavior_rmomendation": "Behavioral",
+    "behavior_rmomend_1": "Sleep at least 7–8 hours per day for recovery and appetite regulation",
+    "behavior_rmomend_2": "Control portion sizes and avoid overeating in the evening",
+    "behavior_rmomend_3": "Track your food intake for at least 2–3 weeks to build awareness",
+    "behavior_rmomend_4": "Weigh yourself once a week and also monitor waist circumference",
+
+    "training_recommendation": "Physical activity",
+    "training_recommendation_1": "Perform strength training at least 3 times per week to maintain muscle mass",
+    "training_recommendation_2": "Strength exercises help strengthen bones and joints and prevent age-related changes",
+    "training_recommendation_3": "Add daily movement (8–10 thousand steps)",
+    "training_recommendation_4": "Combine strength and cardio training for optimal body composition",
+
+    "strategy_recomendation": "Strategic",
+    "strategy_recomend_1": "Recalculate calories if weight changes by more than 3 kg",
+    "strategy_recomend_2": "Gradually transition to maintenance after reaching your target weight",
+    "strategy_recomend_3": "Repeat body composition analysis in 4–6 weeks to assess progress",
+    "strategy_recomend_4": "Focus not only on weight, but also on body composition and overall well-being"
+  },
+  "checkout": {
+    "agreement": "I confirm that I have read and agree to the",
+    "offer": "Public Offer",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "submit": "Buy report",
+    "submit_disabled": "To continue, please confirm your agreement with the documents",
+    "error_required": "You must confirm your agreement with the terms before payment"
   }
 
   }
