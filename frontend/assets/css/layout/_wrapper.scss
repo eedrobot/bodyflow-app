@@ -73,6 +73,10 @@
 		margin-top: 3rem;
 		line-height: 2rem;
 		font-size: $fs-secondary;
+		&.info-pages {
+			margin-top: 20px;
+			margin-bottom: 0;
+		}
 		span {
 			font-size: $fs-middle;
 		}

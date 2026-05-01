@@ -66,6 +66,11 @@ gtag: {
         { loc: '/ru/produkty', priority: 0.9 },   // ru
         { loc: '/en/products', priority: 0.9 },   // en
 
+         // blog
+        { loc: '/blog', priority: 0.9 },      // uk default
+        { loc: '/ru/blog', priority: 0.9 },   // ru
+        { loc: '/en/blog', priority: 0.9 },   // en
+
         // contacts
         { loc: '/kontakty', priority: 0.7 },      // uk default
         { loc: '/ru/kontakty', priority: 0.7 },   // ru
@@ -80,6 +85,11 @@ gtag: {
         { loc: '/umovi-vikoristannya', priority: 0.4 },        // uk default
         { loc: '/ru/uslovia-ispolzovania', priority: 0.4 },    // ru
         { loc: '/en/terms-of-use', priority: 0.4 },                // en
+
+        //offer
+         { loc: '/publichna-oferta', priority: 0.4 },        // uk default
+        { loc: '/ru/publichnaya-oferta', priority: 0.4 },    // ru
+        { loc: '/en/public-offer', priority: 0.4 },                // en
 
         { loc: '/pro-nas', priority: 0.8 },        // uk default
         { loc: '/ru/o-nas', priority: 0.8 },    // ru
@@ -96,6 +106,18 @@ gtag: {
         { loc: '/personalne-menu-online', priority: 0.9 },        // uk default
         { loc: '/ru/personalnoe-menu-online', priority: 0.9 },
         { loc: '/en/personalized-meal-plan', priority: 0.9 },                // en
+
+        { loc: '/analiz-skladu-tila', priority: 0.5 },        // uk default
+        { loc: '/ru/analiz-sostava-tela', priority: 0.5 },
+        { loc: '/en/body-composition-analysis', priority: 0.5 },                // en
+
+        { loc: '/rezultat-rozrahunku', priority: 0.5 },        // uk default
+        { loc: '/ru/rezultat-rascheta', priority: 0.5 },
+        { loc: '/en/calculation-result', priority: 0.5 },
+
+        { loc: '/test', priority: 0.5 },        // uk default
+        { loc: '/ru/test', priority: 0.5 },
+        { loc: '/en/test', priority: 0.5 }
       ]
 
       try {
@@ -188,6 +210,7 @@ gtag: {
     langDir: 'locales/',
     defaultLocale: 'uk',         // ✅ УКРАИНСКИЙ ПО УМОЛЧАНИЮ
     vueI18n: './i18n.config',
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
 
     locales: [
       { code: 'uk', iso: 'uk-UA', file: 'uk.json' },
@@ -206,6 +229,16 @@ gtag: {
         ru: '/produkty/[slug]',
         en: '/products/[slug]',
       },
+      blog: {
+        uk: '/blog',
+        ru: '/blog',
+        en: '/blog',
+      },
+      'blog-slug': {
+        uk: '/blog/[slug]',
+        ru: '/blog/[slug]',
+        en: '/blog/[slug]',
+      },
       contact: {
         uk: '/kontakty',
         ru: '/kontakty',
@@ -220,6 +253,11 @@ gtag: {
         uk: '/umovi-vikoristannya',
         ru: '/uslovia-ispolzovania',
         en: '/terms-of-use',
+      },
+       offer: {
+        uk: '/publichna-oferta',
+        ru: '/publichnaya-oferta',
+        en: '/public-offer',
       },
       about: {
         uk: '/pro-nas',
@@ -240,6 +278,21 @@ gtag: {
         uk: '/personalne-menu-online',
         ru: '/personalnoe-menu-online',
         en: '/personalized-meal-plan',
+      },
+      'advanced-calculate': {
+        uk: '/analiz-skladu-tila',
+        ru: '/analiz-sostava-tela',
+        en: '/body-composition-analysis',
+      },
+      tariffs: {
+        uk: '/rezultat-rozrahunku',
+        ru: '/rezultat-rascheta',
+        en: '/calculation-result',
+      },
+       test: {
+        uk: '/test',
+        ru: '/test',
+        en: '/test',
       }
     },
 

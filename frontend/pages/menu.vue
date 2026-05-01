@@ -1,7 +1,7 @@
 <template>
   <div class="menu-comp" ref="bgRef">
     <div class="wrapper">
-      <h1 class="title">{{ t('menu_page.h1') }}</h1>
+      <h1 class="title info-pages">{{ t('menu_page.h1') }}</h1>
 
       <div class="description">
         <p class="info-p">
@@ -111,7 +111,7 @@
       <div class="content-container faq" v-if="faqItems.length">
         <h2 class="faq-title">{{ t('menu_page.faq.title') }}</h2>
 
-        <Accordion :items="faqItems">
+        <Accordion :items="faqItems" variant = "accordion-faq">
           <template #header="{ item }">
             <h2>{{ item.q }}</h2>
           </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="imt-comp" ref="bgRef">
     <div class="wrapper">
-      <h1 class="title">{{ t('imt_page.h1') }}</h1>
+      <h1 class="title info-pages">{{ t('imt_page.h1') }}</h1>
 
       <div class="description">
         <p class="info-p">{{ t('imt_page.intro_p1') }}</p>
@@ -103,7 +103,7 @@
     <div class="content-container faq" v-if="faqItems.length">
         <h2 class = "faq-title">{{ t('imt_page.faq.title') }}</h2>
 
-        <Accordion :items="faqItems">
+        <Accordion :items="faqItems" variant = "accordion-faq">
             <template #header="{ item }">
             <h2>{{ item.q }}</h2>
             </template>
