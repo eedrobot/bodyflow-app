@@ -23,6 +23,12 @@ export const menuPages = [
     titleKey: 'pages.title.about',
     routeName: 'about',
     icon: '/icons/circle-info.svg'
+  },
+    {
+    key: 'blog',
+    titleKey: 'pages.title.blog',
+    routeName: 'blog',
+    icon: '/icons/blogger-solid.svg'
   }
   // сюда можно добавить ещё пункты, если нужно
 ]
