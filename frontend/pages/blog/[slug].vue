@@ -246,6 +246,13 @@ useSeo({
                     line-height: 1.5rem;
                     font-size: $fs-one;
                 }
+                :deep(ul li),
+                :deep(ol li) {
+                    margin-left: 2rem;
+                    margin-bottom: 1rem;
+                    line-height: 1.5rem;
+                    list-style-type: disc;
+                }
             }
         }
     }
