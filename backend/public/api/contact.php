@@ -1,12 +1,15 @@
 <?php
 require_once __DIR__ . '/cors.php';
-
-require_once __DIR__ . '/libs/src/Exception.php';
-require_once __DIR__ . '/libs/src/PHPMailer.php';
-require_once __DIR__ . '/libs/src/SMTP.php';
+require_once __DIR__ . '/env.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+ini_set('log_errors', '1');
+$logDir = dirname(__DIR__, 2) . '/storage/logs';
+if (is_dir($logDir) || mkdir($logDir, 0755, true)) {
+  ini_set('error_log', $logDir . '/contact_error.log');
+}
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -14,6 +17,79 @@ function respond(int $code, array $payload): void {
   http_response_code($code);
   echo json_encode($payload, JSON_UNESCAPED_UNICODE);
   exit;
+}
+
+$localConfig = [];
+if (is_file(__DIR__ . '/config.local.php')) {
+  $loadedConfig = require __DIR__ . '/config.local.php';
+  if (is_array($loadedConfig)) {
+    $localConfig = $loadedConfig;
+  }
+}
+
+function mailConfigValue(string $key, array $localConfig, string $default = ''): string {
+  $envValue = getenv($key);
+  if ($envValue !== false && trim((string)$envValue) !== '') {
+    return (string)$envValue;
+  }
+
+  if (array_key_exists($key, $localConfig) && trim((string)$localConfig[$key]) !== '') {
+    return (string)$localConfig[$key];
+  }
+
+  return $default;
+}
+
+foreach ([
+  __DIR__ . '/../../vendor/autoload.php',
+  __DIR__ . '/../vendor/autoload.php',
+] as $autoloadPath) {
+  if (is_file($autoloadPath)) {
+    require_once $autoloadPath;
+    break;
+  }
+}
+
+if (!class_exists(PHPMailer::class)) {
+  $phpMailerSrc = null;
+
+  foreach ([
+    __DIR__ . '/libs/src',
+    __DIR__ . '/libs/PHPMailer/src',
+    __DIR__ . '/../libs/PHPMailer/src',
+    __DIR__ . '/../../libs/PHPMailer/src',
+  ] as $candidate) {
+    if (is_file($candidate . '/PHPMailer.php')) {
+      $phpMailerSrc = $candidate;
+      break;
+    }
+  }
+
+  if ($phpMailerSrc === null && is_dir(__DIR__ . '/libs')) {
+    $iterator = new RecursiveIteratorIterator(
+      new RecursiveDirectoryIterator(__DIR__ . '/libs', FilesystemIterator::SKIP_DOTS)
+    );
+
+    foreach ($iterator as $file) {
+      if ($file->isFile() && $file->getFilename() === 'PHPMailer.php') {
+        $phpMailerSrc = $file->getPath();
+        break;
+      }
+    }
+  }
+
+  if ($phpMailerSrc === null) {
+    error_log('MAIL CONFIG ERROR: PHPMailer library not found');
+    respond(500, [
+      'ok' => false,
+      'error' => 'Mail config error',
+      'error_code' => 'mail_config_error'
+    ]);
+  }
+
+  require_once $phpMailerSrc . '/Exception.php';
+  require_once $phpMailerSrc . '/PHPMailer.php';
+  require_once $phpMailerSrc . '/SMTP.php';
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -123,7 +199,29 @@ $subject = str_replace(["\r", "\n"], ' ', $subject);
 // ----------------------------
 // MAIL
 // ----------------------------
-$config = require __DIR__ . '/config.local.php';
+$smtpHost = mailConfigValue('SMTP_HOST', $localConfig);
+$smtpUser = mailConfigValue('SMTP_USER', $localConfig);
+$smtpPass = mailConfigValue('SMTP_PASS', $localConfig);
+$smtpSecure = strtolower(trim(mailConfigValue('SMTP_SECURE', $localConfig, 'ssl')));
+$smtpPortValue = mailConfigValue('SMTP_PORT', $localConfig);
+$smtpPort = (int)($smtpPortValue !== '' ? $smtpPortValue : ($smtpSecure === 'tls' ? 587 : ($smtpSecure === 'none' ? 25 : 465)));
+$toEmail = mailConfigValue('TO_EMAIL', $localConfig, $smtpUser);
+$allowSelfSigned = filter_var(mailConfigValue('SMTP_ALLOW_SELF_SIGNED', $localConfig, 'false'), FILTER_VALIDATE_BOOLEAN);
+
+if ($smtpHost === '' || $smtpUser === '' || $smtpPass === '' || $toEmail === '') {
+  $missing = [];
+  if ($smtpHost === '') $missing[] = 'SMTP_HOST';
+  if ($smtpUser === '') $missing[] = 'SMTP_USER';
+  if ($smtpPass === '') $missing[] = 'SMTP_PASS';
+  if ($toEmail === '') $missing[] = 'TO_EMAIL';
+
+  error_log('MAIL CONFIG ERROR: SMTP env is incomplete. Missing: ' . implode(', ', $missing));
+  respond(500, [
+    'ok' => false,
+    'error' => 'Mail config error',
+    'error_code' => 'mail_config_error'
+  ]);
+}
 
 $mail = new PHPMailer(true);
 
@@ -135,27 +233,37 @@ try {
   };
 
   $mail->isSMTP();
-  $mail->Host       = $config['SMTP_HOST'];
+  $mail->Host       = $smtpHost;
   $mail->SMTPAuth   = true;
-  $mail->Username   = $config['SMTP_USER'];
-  $mail->Password   = $config['SMTP_PASS'];
+  $mail->Username   = $smtpUser;
+  $mail->Password   = $smtpPass;
 
-  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-  $mail->Port       = (int)($config['SMTP_PORT'] ?? 465);
+  if ($smtpSecure === 'tls' || $smtpSecure === 'starttls') {
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+  } elseif ($smtpSecure === 'none' || $smtpSecure === 'off') {
+    $mail->SMTPSecure = '';
+    $mail->SMTPAutoTLS = false;
+  } else {
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+  }
+
+  $mail->Port       = $smtpPort;
   $mail->Timeout    = 15;
 
-  $mail->SMTPOptions = [
-    'ssl' => [
-      'verify_peer' => false,
-      'verify_peer_name' => false,
-      'allow_self_signed' => true,
-    ],
-  ];
+  if ($allowSelfSigned) {
+    $mail->SMTPOptions = [
+      'ssl' => [
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true,
+      ],
+    ];
+  }
 
   $mail->CharSet = 'UTF-8';
 
-  $mail->setFrom($config['SMTP_USER'], 'BodyFlow Support');
-  $mail->addAddress($config['TO_EMAIL'], 'BodyFlow Support');
+  $mail->setFrom($smtpUser, 'BodyFlow Support');
+  $mail->addAddress($toEmail, 'BodyFlow Support');
   $mail->addReplyTo($email, $name);
 
   $mail->Subject = $subject !== '' ? "BodyFlow: $subject" : "BodyFlow: message from contact form";
@@ -170,7 +278,7 @@ try {
   respond(200, ['ok' => true]);
 
 } catch (Exception $e) {
-  error_log('MAIL ERROR: ' . $mail->ErrorInfo);
+  error_log("MAIL ERROR: host={$smtpHost}; port={$smtpPort}; secure={$smtpSecure}; allow_self_signed=" . ($allowSelfSigned ? 'true' : 'false') . '; ' . $mail->ErrorInfo);
   respond(500, [
     'ok' => false,
     'error' => 'Mail error',

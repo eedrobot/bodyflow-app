@@ -18,8 +18,8 @@ require_once __DIR__ . '/db.php';
  */
 
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+ini_set('display_errors', '0');
+ini_set('display_startup_errors', '0');
 error_reporting(E_ALL);
 
 // ✅ Use only $pdo_nutrition
@@ -190,9 +190,9 @@ try {
     echo json_encode($result, JSON_UNESCAPED_UNICODE);
 
 } catch (Throwable $e) {
+    error_log('products query failed: ' . $e->getMessage());
     http_response_code(500);
     echo json_encode([
         'error' => 'Query failed',
-        'message' => $e->getMessage()
     ], JSON_UNESCAPED_UNICODE);
 }
