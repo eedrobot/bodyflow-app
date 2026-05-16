@@ -12,7 +12,7 @@
         <Result />
       </Transition>
 
-      <Transition name="slide-up" appear>
+      <Transition name="slide-up">
         <GetMenuBtn
           :label="buttonLabel"
           :disabled="isBtnLoading"
@@ -23,8 +23,10 @@
       <Transition name="slide-up" appear @after-enter="scrollToMenu">
         <div v-if="showOutputMenu && uiStore.isMenuOpen" id="base-menu">
           <BaseMenu />
+          <AdvCalculator />
         </div>
       </Transition>
+
     </template>
 
     <UpBtn />
@@ -40,6 +42,7 @@ import Calculate from '@/components/calculator/Calculate.vue'
 import Result from '@/components/calculator/result/Result.vue'
 import GetMenuBtn from '@/components/calculator/menu/GetMenuBtn.vue'
 import BaseMenu from '@/components/calculator/menu/BaseMenu.vue'
+import AdvCalculator from '@/components/calculator/AdvCalculator.vue'
 import UpBtn from '@/components/ui/UpBtn.vue'
 import Loader from '@/components/ui/Loader.vue'
 
@@ -131,7 +134,7 @@ useSeo({
   titleKey: 'seo.home.title',
   descriptionKey: 'seo.home.description',
   keywordsKey: 'seo.home.keywords',
-  image: '/seo/home-og.png'
+  image: '/seo/main-og.png'
 })
 </script>
 
@@ -139,6 +142,7 @@ useSeo({
 .page-container {
   display: block;
 }
+
 .global-loading {
   color: $color-navy;
   font-size: $fs-middle;
@@ -166,4 +170,5 @@ useSeo({
   transform: translateY(0);
   opacity: 1;
 }
+
 </style>

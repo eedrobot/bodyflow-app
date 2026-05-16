@@ -8,9 +8,10 @@
 }
 
 body {
-	font-family: "Encode Sans", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: $fs-one;
 	background: $color-main;
+	line-height: 1.3rem;
 }
 input,
 textarea, 
@@ -48,6 +49,7 @@ h4 {
 	font-size: $fs-secondary;
 	font-weight: 700;
 	color: $color-navy;
+	line-height: 1.3;
 }
 
 footer {

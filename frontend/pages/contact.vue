@@ -40,7 +40,7 @@ useSeo({
   titleKey: 'seo.contact.title',
   descriptionKey: 'seo.contact.description',
   keywordsKey: 'seo.contact.keywords',
-  image: '/seo/contact-og.png'
+  image: '/seo/main-og.png'
 });
 
 
@@ -95,9 +95,6 @@ useSeo({
           "info"
           "form";
         grid-template-columns: 1fr;
-        .contact-info {
-          max-width: 80%;
-        }
       }
     }
   }

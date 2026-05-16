@@ -36,7 +36,16 @@ export async function useApiCache({
 
   try {
     const result = await apiFn(...Object.values(params))
-    const data = result instanceof Response ? await result.json() : result
+    if (!(result instanceof Response)) {
+      throw new Error('apiFn must return fetch Response')
+    }
+
+    const data = await result.json()
+
+    if (!result.ok) {
+      const message = data?.error || data?.message || `HTTP ${result.status}`
+      throw new Error(message)
+    }
 
     if (setter) setter(data)
     else store[cacheKey] = data

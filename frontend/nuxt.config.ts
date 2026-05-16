@@ -1,3 +1,5 @@
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+
 export default defineNuxtConfig({
   rootDir: '.',
   srcDir: '.',
@@ -15,6 +17,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://nutrition-n.test/api',
+      siteUrl,
     },
   },
 
@@ -41,13 +44,13 @@ gtag: {
   // ✅ SITEMAP
   // -------------------------------
   sitemap: {
-    siteUrl: 'https://bodyflow.com.ua',
+    siteUrl,
     autoLastmod: true,
     index: true,
 
     async urls() {
       const apiBase =
-        process.env.NUXT_PUBLIC_API_BASE?.trim() || 'https://api.bodyflow.com.ua'
+        process.env.NUXT_PUBLIC_API_BASE?.trim() || 'http://nutrition-n.test/api'
       const base = apiBase.replace(/\/$/, '')
 
       // ✅ ВАЖНО: defaultLocale = uk, значит:
@@ -110,17 +113,44 @@ gtag: {
         { loc: '/analiz-skladu-tila', priority: 0.5 },        // uk default
         { loc: '/ru/analiz-sostava-tela', priority: 0.5 },
         { loc: '/en/body-composition-analysis', priority: 0.5 },                // en
-
-        { loc: '/rezultat-rozrahunku', priority: 0.5 },        // uk default
-        { loc: '/ru/rezultat-rascheta', priority: 0.5 },
-        { loc: '/en/calculation-result', priority: 0.5 },
-
-        { loc: '/test', priority: 0.5 },        // uk default
-        { loc: '/ru/test', priority: 0.5 },
-        { loc: '/en/test', priority: 0.5 }
       ]
 
+      const getBlogPaginationPages = async () => {
+        const blogLocales = [
+          { lang: 'uk', path: '/blog' },
+          { lang: 'ru', path: '/ru/blog' },
+          { lang: 'en', path: '/en/blog' },
+        ]
+
+        const pages = await Promise.all(blogLocales.map(async ({ lang, path }) => {
+          try {
+            const res = await fetch(`${base}/blog/list.php?lang=${lang}&page=1&limit=6`, {
+              headers: { accept: 'application/json' },
+            })
+
+            if (!res.ok) {
+              console.error('[sitemap] blog fetch failed:', lang, res.status, res.statusText)
+              return []
+            }
+
+            const json: any = await res.json()
+            const totalPages = Math.max(1, Number(json?.totalPages || 1))
+
+            return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+              loc: `${path}?page=${index + 2}`,
+              priority: 0.8,
+            }))
+          } catch (e: any) {
+            console.error('[sitemap] blog exception:', lang, e?.message || e)
+            return []
+          }
+        }))
+
+        return pages.flat()
+      }
+
       try {
+        const blogPaginationPages = await getBlogPaginationPages()
         // ✅ ТВОЙ API требует category_id
         const url = `${base}/products.php?category_id=1`
 
@@ -130,7 +160,7 @@ gtag: {
 
         if (!res.ok) {
           console.error('[sitemap] products fetch failed:', res.status, res.statusText, url)
-          return staticPages
+          return [...staticPages, ...blogPaginationPages]
         }
 
         const json: any = await res.json()
@@ -140,7 +170,7 @@ gtag: {
 
         if (!Array.isArray(products) || products.length === 0) {
           console.error('[sitemap] products empty or invalid shape:', typeof json, url)
-          return staticPages
+          return [...staticPages, ...blogPaginationPages]
         }
 
         // ✅ Поддержка разных форматов slug
@@ -166,8 +196,8 @@ gtag: {
           return out
         })
 
-        console.log('[sitemap] urls generated:', staticPages.length + productPages.length)
-        return [...staticPages, ...productPages]
+        console.log('[sitemap] urls generated:', staticPages.length + blogPaginationPages.length + productPages.length)
+        return [...staticPages, ...blogPaginationPages, ...productPages]
       } catch (e: any) {
         console.error('[sitemap] exception:', e?.message || e)
         return staticPages
@@ -210,7 +240,7 @@ gtag: {
     langDir: 'locales/',
     defaultLocale: 'uk',         // ✅ УКРАИНСКИЙ ПО УМОЛЧАНИЮ
     vueI18n: './i18n.config',
-    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    baseUrl: siteUrl,
 
     locales: [
       { code: 'uk', iso: 'uk-UA', file: 'uk.json' },
@@ -289,11 +319,16 @@ gtag: {
         ru: '/rezultat-rascheta',
         en: '/calculation-result',
       },
-       test: {
-        uk: '/test',
-        ru: '/test',
-        en: '/test',
-      }
+      'payment-success': {
+        uk: '/uspishna-oplata',
+        ru: '/uspeshnaya-oplata',
+        en: '/payment-success',
+      },
+      error: {
+        uk: '/pomilka',
+        ru: '/oshibka',
+        en: '/error',
+      },
     },
 
     ignoreRoutes: [

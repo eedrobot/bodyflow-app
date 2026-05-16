@@ -1,16 +1,25 @@
 <template>
     <div class = "button-comp">
         <div class = "wrapper">
-            <button class="btn bright menu-btn" @click="$emit('toggle')">
-            {{ label }}
-            </button>
-        </div>
+            <Button
+                :label="label"
+                :disabled="disabled"
+                @toggle="$emit('toggle')"
+                class="menu-btn"
+            />
+        </div> 
     </div>
 </template>
 
 <script setup>
-    defineProps({ label: String })
-    defineEmits(['toggle'])
+import Button from '@/components/ui/Button.vue'
+
+defineProps({
+  label: { type: String, default: '' },
+  disabled: { type: Boolean, default: false },
+})
+
+defineEmits(['toggle'])
 </script>
 
 <style lang="scss" scoped>
@@ -18,11 +27,6 @@
         background: $color-lgreen;
         .wrapper {
             padding: 2rem 2rem 3rem 2rem;
-            .menu-btn {
-                display: block;
-                width: 37vw;
-                margin: 0 auto;
-            }
         }
     }
 
@@ -30,9 +34,6 @@
         .button-comp {
             .wrapper {
                 padding: 2rem 2rem 3rem 2rem;
-                .menu-btn {
-                    width: 70%;
-                }
             }
         }
     }
@@ -42,10 +43,7 @@
         .button-comp {
             background: $color-beige-l;
             .wrapper {
-                padding: 2rem 2rem 3rem 2rem;
-                .menu-btn {
-                    width: 100%;
-                }
+                padding: 0rem 1rem 4rem 1rem;
             }
         }
     }

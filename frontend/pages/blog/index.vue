@@ -53,6 +53,9 @@ const page = computed({
 })
 
 const totalPages = computed(() => blogStore.totalPages || 1)
+const canonicalPath = computed(() => {
+  return page.value > 1 ? `${route.path}?page=${page.value}` : route.path
+})
 
 await blogStore.getPosts(locale.value, page.value)
 
@@ -87,7 +90,8 @@ useSeo({
   titleKey: 'seo.blog.title',
   descriptionKey: 'seo.blog.description',
   keywordsKey: 'seo.blog.keywords',
-  image: '/seo/blog-og.png'
+  image: '/seo/main-og.png',
+  canonicalPath
 })
 </script>
 

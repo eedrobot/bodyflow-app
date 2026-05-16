@@ -134,7 +134,7 @@ useSeo({
   titleKey: 'about.seo_title',
   descriptionKey: 'about.seo_description',
   keywordsKey: 'about.seo_keywords',
-  image: '/og/about-og.png'
+  image: '/seo/main-og.png'
 })
 </script>
 <style lang="scss" scoped>

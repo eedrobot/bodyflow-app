@@ -58,9 +58,9 @@ const langFlag = (code) =>
   languageStore.languages.find(l => l.code === code)?.flag || ''
 
 function isProductPage() {
-  // route.name в nuxt-i18n может быть типа: 'nutrition-slug___ru'
+  // route.name в nuxt-i18n может быть типа: 'products-slug___ru'
   const name = String(route.name || '')
-  return name.startsWith('nutrition-slug')
+  return name.startsWith('products-slug')
 }
 
 async function selectLang(targetLang) {
@@ -80,7 +80,7 @@ async function selectLang(targetLang) {
 
     if (targetSlug) {
       const path = localePath(
-        { name: 'nutrition-slug', params: { slug: targetSlug } },
+        { name: 'products-slug', params: { slug: targetSlug } },
         targetLang
       )
       await router.push(path)

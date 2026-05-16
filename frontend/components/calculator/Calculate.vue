@@ -25,14 +25,14 @@
       </div>
 
       <!-- FORM -->
-      <form id="calc-form" class="content-container content-form">
+      <form id="calc-form" class="content-container content-form" @submit.prevent>
         
         <div class="gender-toggle">
           <button
             type="button"
             class="btn"
             @click="genderToggle('male')"
-            :class="{ active: selectedGender === 'male' }"
+            :class="{ active: isGenderHydrated && selectedGender === 'male' }"
           >
             {{ t('calculation.male') }}
           </button>
@@ -41,7 +41,7 @@
             type="button"
             class="btn"
             @click="genderToggle('female')"
-            :class="{ active: selectedGender === 'female' }"
+            :class="{ active: isGenderHydrated && selectedGender === 'female' }"
           >
             {{ t('calculation.female') }}
           </button>
@@ -73,9 +73,17 @@
           </select>
         </label>
 
-        <button type="button" id="calculate" @click="calculate" class = "btn bright">
+        <Button
+          :label = "t('calculation.calculate')"
+          :disabled = "false"
+          class = "btn bright"
+          id="calculate"
+          @toggle = "calculate"
+        />
+
+        <!-- <button type="button" id="calculate" @click="calculate" class = "btn bright">
           {{ t('calculation.calculate') }}
-        </button>
+        </button> -->
 
         <Notation>
           {{ t('calculation.notation') }}
@@ -89,15 +97,22 @@
 
 
 <script setup>
-import { ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useParallaxBackground } from '@/composables/useParallaxBackground'
 import Notation from '@/components/common/Notation.vue'
+import Button from '@/components/ui/Button.vue'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
 
 const store = useCalculatorStore()
-const selectedGender = ref('male')
+const selectedGender = computed(() => store.normalizeGender(store.gender))
+const isGenderHydrated = ref(false)
+
+onMounted(() => {
+  store.setGender(store.gender)
+  isGenderHydrated.value = true
+})
 
 /* ---------- ФОН + ПАРАЛЛАКС ----------- */
 const bgRef = ref(null)
@@ -117,12 +132,12 @@ useParallaxBackground({
 
 /* ---------- ФОРМА ----------- */
 const genderToggle = g => {
-  selectedGender.value = g
-  store.gender = g
+  store.setGender(g)
 }
 
 
 const calculate = () => {
+  store.setGender(selectedGender.value)
   store.runAllCalculations()
 }
 
@@ -209,7 +224,7 @@ const calculate = () => {
               padding: 0 1rem 2rem 1rem; 
                 .title {
                   width: 50%;
-                  margin: 1rem 0 0 1rem;
+                  margin: 1rem 0 0 0;
                   span {
                     font-size: $fs-middle;
                   }

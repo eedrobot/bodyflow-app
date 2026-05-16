@@ -1,6 +1,7 @@
 <template>
   <div class="product-comp" ref="bgRef">
     <div class="wrapper">
+       <BackBreadcrumb />
       <h1 class="title">
         <ClientOnly>
           <Loader :isLoading="nutritionStore.isLoading" />
@@ -33,6 +34,7 @@ import ProductMainInfo from '@/components/product/ProductMainInfo.vue'
 import ProductOtherInfo from '@/components/product/ProductOtherInfo.vue'
 import Loader from '@/components/ui/Loader.vue'
 import UpBtn from '@/components/ui/UpBtn.vue'
+import BackBreadcrumb from '@/components/ui/BackBreadcrumb.vue'
 import { useParallaxBackground } from '@/composables/useParallaxBackground'
 
 // ✅ добавили для микроразметки
@@ -41,6 +43,7 @@ import { useHead } from '#imports'
 // --------- ROUTE + LOCALE ----------
 const route = useRoute()
 const { t, locale } = useI18n()
+const localePath = useLocalePath()
 const currentLang = computed(() => locale.value)
 
 // --------- STORE ----------
@@ -65,6 +68,18 @@ const categoryName = computed(() =>
 const subCategoryName = computed(() =>
   nutritionStore.productData?.categories?.[0]?.children?.[0]?.translations?.[currentLang.value] || ''
 )
+
+const alternateProductPaths = computed(() => {
+  const slugs = nutritionStore.productData?.slug_translations || {}
+
+  return ['uk', 'ru', 'en'].reduce((paths, lang) => {
+    const slug = slugs?.[lang]
+    if (slug) {
+      paths[lang] = localePath({ name: 'products-slug', params: { slug } }, lang)
+    }
+    return paths
+  }, {})
+})
 
 // ✅ --------- МИКРОРАЗМЕТКА (JSON-LD) ----------
 const nutrientsFlat = computed(() =>
@@ -149,7 +164,9 @@ useSeo({
       : ''
   ),
 
+  type: 'product',
   image: '/seo/product-og.png',
+  alternatePaths: alternateProductPaths,
 })
 </script>
 
@@ -168,6 +185,7 @@ useSeo({
 
   .wrapper {
     grid-template-areas:
+     ". breadcrumbs ."
       ". title ."
       ". category ." 
       ". description ."
@@ -214,6 +232,7 @@ useSeo({
 
     .wrapper {
        grid-template-areas:
+       "breadcrumbs ."
       "title ."
       "category category" 
       "description description"
