@@ -1,11 +1,7 @@
 <template>
   <div class="article-comp" ref="bgRef">
     <article v-if = "post" class="wrapper">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <NuxtLink :to="localePath('/blog')" class="back">
-          ← {{ t('general.back') }}
-        </NuxtLink>
-      </nav>
+      <BackBreadcrumb />
       <Loader :isLoading="blogStore.isLoading" />
 
         <h1 class="title" itemprop="headline">
@@ -28,10 +24,6 @@
                     :alt="post.cover_alt || post.title"
                     itemprop="image"
                 >
-
-                <!-- <p v-if="post.excerpt" class="blog-article__excerpt" itemprop="description">
-                    {{ post.excerpt }}
-                </p> -->
             </div>
             <div
             class="blog-article__content"
@@ -62,11 +54,14 @@ import { useParallaxBackground } from '@/composables/useParallaxBackground'
 import Accordion from '@/components/ui/Accordion.vue'
 import Loader from '@/components/ui/Loader.vue'
 import UpBtn from '@/components/ui/UpBtn.vue'
+import BackBreadcrumb from '@/components/ui/BackBreadcrumb.vue'
 
 const route = useRoute()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const setI18nParams = useSetI18nParams()
+const config = useRuntimeConfig()
+const baseUrl = String(config.public.siteUrl || 'http://localhost:3000').replace(/\/$/, '')
 
 const blogStore = useBlogStore()
 
@@ -114,7 +109,7 @@ const schemas = [
     '@type': 'Article',
     headline: post.value.title,
     description: post.value.meta_description || post.value.excerpt || '',
-    image: post.value.cover_image || 'https://bodyflow.com.ua/og/default.png',
+    image: post.value.cover_image || `${baseUrl}/seo/main-og.png`,
     author: {
       '@type': 'Organization',
       name: 'BodyFlow'
@@ -125,7 +120,7 @@ const schemas = [
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://bodyflow.com.ua${route.fullPath}`
+      '@id': `${baseUrl}${route.path}`
     }
   }
 ]
@@ -148,7 +143,8 @@ if (faq.length) {
 useSeo({
   title: post.value?.meta_title || post.value?.title || 'BodyFlow Blog',
   description: post.value?.meta_description || post.value?.excerpt || '',
-  image: post.value?.cover_image || '/og/default.png',
+  type: 'article',
+  image: post.value?.cover_image || '/seo/main-og.png',
   schema: schemas
 })
 </script>

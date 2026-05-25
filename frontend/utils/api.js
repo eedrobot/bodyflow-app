@@ -1,34 +1,4 @@
 import { apiFetch } from '@/utils/apiFetch'
-import { wgerFetch } from '@/utils/wgerFetch'
-
-/* ======================================================
-   WGER API (внешний)
-====================================================== */
-
-export function getExerciseImages() {
-  return wgerFetch('/exerciseimage/', {
-    params: { limit: 300 }
-  })
-}
-
-/* ======================================================
-   PHP BACKEND — EXERCISES
-====================================================== */
-
-export function getExercisesDataFromApi(params = {}, lang) {
-  return apiFetch('/exercises-extended.php', {
-    params: {
-      ...params,
-      lang
-    }
-  })
-}
-
-export function getExerciseDataFromApi(id, lang) {
-  return apiFetch('/exercise.php', {
-    params: { id, lang }
-  })
-}
 
 /* ======================================================
    PHP BACKEND — NUTRITION
@@ -55,5 +25,27 @@ export function getProductDataFromApi({ slug, lang = 'ru' }) {
 export function getMenuDataFromApi(days = 5, lang) {
   return apiFetch('/menu.php', {
     params: { days, lang }
+  })
+}
+
+export function solveMenuDataFromApi(payload) {
+  return apiFetch('/solve-menu.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+} 
+
+export function createPaymentFromApi(payload) {
+  return apiFetch('/payments/create.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(payload)
   })
 }

@@ -1,5 +1,30 @@
 import { defineStore } from 'pinia'
 
+function buildApiUrl(path, query = {}) {
+  const config = useRuntimeConfig()
+  const base = config.public.apiBase.replace(/\/$/, '')
+  const url = new URL(`${base}${path}`)
+
+  Object.entries(query).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== '') {
+      url.searchParams.set(key, String(value))
+    }
+  })
+
+  return url.toString()
+}
+
+async function readApiJson(response) {
+  const data = await response.json().catch(() => null)
+  if (!response.ok) {
+    const error = new Error(data?.error || data?.message || `HTTP ${response.status}`)
+    error.status = response.status
+    error.data = data
+    throw error
+  }
+  return data
+}
+
 export const useBlogStore = defineStore('blog', {
   state: () => ({
     posts: [],
@@ -16,8 +41,6 @@ export const useBlogStore = defineStore('blog', {
 
   actions: {
     async getPosts(lang = 'uk', page = 1) {
-      const config = useRuntimeConfig()
-
       const currentPage = Math.max(1, Number(page) || 1)
       const currentLimit = Math.max(1, Number(this.limit) || 6)
 
@@ -25,13 +48,12 @@ export const useBlogStore = defineStore('blog', {
       this.error = null
 
       try {
-        const res = await $fetch(`${config.public.apiBase}/blog/list.php`, {
-          query: {
-            lang,
-            page: currentPage,
-            limit: currentLimit
-          }
-        })
+        const response = await fetch(buildApiUrl('/blog/list.php', {
+          lang,
+          page: currentPage,
+          limit: currentLimit
+        }))
+        const res = await readApiJson(response)
 
         // если API уже новый
         if (res && Array.isArray(res.posts)) {
@@ -74,19 +96,13 @@ export const useBlogStore = defineStore('blog', {
     },
 
     async getPost(slug, lang = 'uk') {
-      const config = useRuntimeConfig()
-
       this.isLoading = true
       this.error = null
       this.post = null
 
       try {
-        const data = await $fetch(`${config.public.apiBase}/blog/article.php`, {
-          query: {
-            slug,
-            lang
-          }
-        })
+        const response = await fetch(buildApiUrl('/blog/article.php', { slug, lang }))
+        const data = await readApiJson(response)
 
         this.post = data
         return data

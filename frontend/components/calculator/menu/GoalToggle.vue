@@ -1,31 +1,27 @@
 <template>
   <div class="goal-toggle">
-    <button
+    <input type = "button"
       class="btn gender-btn"
       :class="{ active: value === 'loss' }"
       @click="emitGoal('loss')"
-      type="button"
-    >
-      {{ t('result.loss') }}
-    </button>
+      :value = "t('result.loss')"
+    />
 
-    <button
+    <input
       class="btn gender-btn"
       :class="{ active: value === 'maintenance' }"
       @click="emitGoal('maintenance')"
       type="button"
-    >
-      {{ t('result.maintenance') }}
-    </button>
+      :value = "t('result.maintenance')"
+    />
 
-    <button
+    <input
       class="btn gender-btn"
       :class="{ active: value === 'gain' }"
       @click="emitGoal('gain')"
       type="button"
-    >
-      {{ t('result.gain') }}
-    </button>
+      :value = " t('result.gain')"
+    />
   </div>
 </template>
 
@@ -48,6 +44,7 @@
   .goal-toggle {
     display: contents;
     .gender-btn {
+      min-width: 167px;
       &.active {
         background: $color-orange-gr;
       }

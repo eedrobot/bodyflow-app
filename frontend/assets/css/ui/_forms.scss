@@ -11,6 +11,11 @@
             @include flex(column, stretch, stretch);
             font-weight: 600;
             margin: 20px 0;
+            & input {
+                 &::placeholder {
+                    font-size: $fs-small;
+                }
+            }
             & input,
             & select,
             & textarea {
@@ -25,30 +30,70 @@
             }
             input[aria-invalid="true"],
             textarea[aria-invalid="true"] {
-                    border-color: #b00020;
+                    border-color: $color-red;
                 }
             .field-error {
                 display: block;
                 margin-top: 0.35rem;
                 font-size: 0.85rem;
-                color: #b00020;
+                color: $color-red;
             }
         }
-        .form-input-inline {
-            @include flex(row, center, start);
-            .label-agree {
+        .agreement-error {
+            text-align:center;
+            font-size: $fs-small;
+            line-height: 1.3rem;
+            color: $color-red;
+            border-radius: $b-r;
+            border: 1px solid $color-red;
+            padding: 0.5rem 2rem;
+        }
+        .agreement-block {
+            display: grid;
+            gap: 8px;
+
+            .agreement-label {
+                @include flex(row, flex-start, flex-start);
+                gap: 12px;
+                cursor: pointer;
+
+                .agreement-checkbox {
+                margin-top: 3px;
+                flex: 0 0 auto;
+                width: 16px;
+                height: 16px;
+                }
+
+                .agreement-text {
                 font-size: $fs-small;
+                line-height: 1.3rem;
                 color: $color-dg;
                 font-weight: 400;
-                a {
-                    color: $color-sb;
+
+                .agreement-link {
+                    color: inherit;
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                    transition: opacity 0.2s ease;
+
+                    &:hover {
+                    opacity: 0.75;
+                    }
+                }
                 }
             }
-            input {
-                margin-right: 5px;
+
+            .agreement-error {
+                text-align:center;
+                font-size: $fs-small;
+                line-height: 1.3rem;
+                color: $color-red;
+                border-radius: $b-r;
+                border: 1px solid $color-red;
+                padding: 0.5rem 2rem;
             }
         }
-}
+    }
 
 @media (max-width: 991.98px) {
     .content-form {

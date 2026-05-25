@@ -14,6 +14,11 @@ export const menuPagesFooter = [
     key: 'terms',
     titleKey: 'pages.title.terms',
     routeName: 'terms'     // совпадает с i18n.pages.nutrition
+  },
+  {
+    key: 'offer',
+    titleKey: 'pages.title.offer',
+    routeName: 'offer'     // совпадает с i18n.pages.nutrition
   }
   // сюда можно добавить ещё пункты, если нужно
 ]

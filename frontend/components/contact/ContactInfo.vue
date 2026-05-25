@@ -35,7 +35,7 @@
 const { t } = useI18n()
 
 const contactInfo = [
-//   { id: 1, labelKey: 'contact.labels.fop', valueKey: 'contact.values.fop' },
+  { id: 1, labelKey: 'contact.labels.fop', valueKey: 'contact.values.fop' },
   { id: 2, labelKey: 'contact.labels.country', valueKey: 'contact.values.country' },
   { id: 3, labelKey: 'contact.labels.city', valueKey: 'contact.values.city' },
   { id: 4, labelKey: 'contact.labels.email', value: 'support@bodyflow.com.ua', type: "email" },
@@ -48,6 +48,7 @@ const contactInfo = [
     .contact-info {
         grid-area: info;
         width: 100%;
+        max-width: 100%;
         h2 {
             font-weight: 700;
             color: $color-navy;
@@ -76,6 +77,17 @@ const contactInfo = [
             }
         }
     }
+    @media (max-width: 991.98px) {
+        .contact-info {
+          width: 80%;
+        }
+      }
+
+       @media (max-width: 575.98px) {
+            .contact-info {
+            width: 100%;
+            }
+       }
 
   </style>
   

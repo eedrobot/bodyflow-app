@@ -140,6 +140,50 @@
           "item_6_a": "The service provides informational recommendations. If you have chronic health conditions or medical restrictions, we recommend consulting a healthcare professional."
         }
       },
+       "payment_success": {
+          "title_1": "Payment completed successfully",
+          "descr_1": "Generating your PDF report...",
+          "title_2": "PDF report is ready",
+          "descr_2": "Download PDF",
+          "title_3": "Error"
+        },
+        "payment_failed": {
+          "title": "Payment was not completed",
+          "descr": "Unfortunately, the payment was not completed or was canceled. You can go back and try again.",
+          "btn": "Go back"
+        },
+        "app_error": {
+          "payment_failed": {
+            "title": "Payment was not completed",
+            "description": "Unfortunately, the payment was not completed or was canceled. You can go back and try again.",
+            "button": "Go back"
+          },
+          "download_limit": {
+            "title": "Download limit exceeded",
+            "description": "This PDF report has already been downloaded the maximum number of times.",
+            "button": "Go back"
+          },
+          "pdf_not_found": {
+            "title": "PDF report was not found",
+            "description": "We could not find the PDF report for this order. Please contact support if the payment was completed.",
+            "button": "Go back"
+          },
+          "order_not_paid": {
+            "title": "Order is not paid",
+            "description": "We could not confirm a successful payment for this order.",
+            "button": "Go back"
+          },
+          "payment_pending": {
+            "title": "Payment confirmation is pending",
+            "description": "The payment system has not confirmed this order yet. Please refresh the success page in a minute.",
+            "button": "Go back"
+          },
+          "unknown": {
+            "title": "Something went wrong",
+            "description": "An unexpected error occurred. Please try again later.",
+            "button": "Go back"
+          }
+        },
     "result": {
       "title": "Calculation Results",
       "description": "The calculation is based on the data you provided and generally accepted formulas. You can change the parameters at any time",

@@ -5,6 +5,17 @@ import {
   getProductDataFromApi
 } from '@/utils/api'
 
+async function readApiJson(response) {
+  const data = await response.json().catch(() => null)
+  if (!response.ok) {
+    const error = new Error(data?.error || data?.message || `HTTP ${response.status}`)
+    error.status = response.status
+    error.data = data
+    throw error
+  }
+  return data
+}
+
 export const useNutritionData = defineStore('nutrition', {
   state: () => ({
     categoriesData: [],
@@ -58,7 +69,8 @@ export const useNutritionData = defineStore('nutrition', {
 
     this.isLoading = true
     try {
-      const data = await getCategoriesDataFromApi(lang)
+      const response = await getCategoriesDataFromApi(lang)
+      const data = await readApiJson(response)
       this.categoriesData = data
       this.categoriesDataLoadedAt = now
       this.lastLang = lang
@@ -86,7 +98,8 @@ export const useNutritionData = defineStore('nutrition', {
 
   this.isLoading = true
   try {
-    const data = await getProductsDataFromApi(catId, lang)
+    const response = await getProductsDataFromApi(catId, lang)
+    const data = await readApiJson(response)
 
     if (!this.productsByCategories[catId] || typeof this.productsByCategories[catId] !== 'object') {
       this.productsByCategories[catId] = {}
@@ -135,7 +148,8 @@ export const useNutritionData = defineStore('nutrition', {
       this.isLoading = true
       try {
         // getProductDataFromApi должен уметь принимать {slug, lang}
-        const data = await getProductDataFromApi({ slug: safeSlug, lang: safeLang })
+        const response = await getProductDataFromApi({ slug: safeSlug, lang: safeLang })
+        const data = await readApiJson(response)
 
         this.productCache[cacheKey] = data
         if (!this.productCacheLoadedAt || typeof this.productCacheLoadedAt !== 'object') {

@@ -1,9 +1,10 @@
-export function useSeo(options = {}) {
+export function useSeo(options: Record<string, any> = {}) {
   const route = useRoute()
   const { t, locale } = useI18n()
   const switchLocalePath = useSwitchLocalePath()
+  const config = useRuntimeConfig()
 
-  const baseUrl = 'https://bodyflow.com.ua'
+  const baseUrl = String(config.public.siteUrl || 'http://localhost:3000').replace(/\/$/, '')
   const locales = ['ru', 'en', 'uk']
 
   const title = computed(() => {
@@ -26,13 +27,27 @@ export function useSeo(options = {}) {
 
   const image = computed(() => {
     const v = options.image ? unref(options.image) : ''
-    return v || '/og/default.png'
+    const src = v || '/seo/main-og.png'
+    if (/^https?:\/\//i.test(src)) return src
+    return baseUrl + (src.startsWith('/') ? src : `/${src}`)
   })
 
-  const canonical = computed(() => baseUrl + route.path)
+  const canonical = computed(() => {
+    const path = options.canonicalPath ? unref(options.canonicalPath) : route.path
+    if (/^https?:\/\//i.test(path)) return path
+    return baseUrl + (path.startsWith('/') ? path : `/${path}`)
+  })
   const currentLang = computed(() => locale.value)
+  const type = computed(() => options.type ? unref(options.type) : 'website')
 
   const schema = computed(() => (options.schema ? unref(options.schema) : null))
+  const alternatePaths = computed(() => (options.alternatePaths ? unref(options.alternatePaths) : null))
+  const xDefaultLocale = computed(() => (options.xDefaultLocale ? unref(options.xDefaultLocale) : 'uk'))
+
+  const absoluteUrl = (path: string) => {
+    if (/^https?:\/\//i.test(path)) return path
+    return baseUrl + (path.startsWith('/') ? path : `/${path}`)
+  }
 
   useHead({
     title,
@@ -45,13 +60,13 @@ export function useSeo(options = {}) {
       ...locales.map(code => ({
         rel: 'alternate',
         hreflang: code,
-        href: baseUrl + switchLocalePath(code)
+        href: absoluteUrl(alternatePaths.value?.[code] || switchLocalePath(code))
       })),
 
       {
         rel: 'alternate',
         hreflang: 'x-default',
-        href: baseUrl + switchLocalePath('en')
+        href: absoluteUrl(alternatePaths.value?.[xDefaultLocale.value] || switchLocalePath(xDefaultLocale.value))
       }
     ]),
 
@@ -61,7 +76,7 @@ export function useSeo(options = {}) {
 
       { property: 'og:title', content: title },
       { property: 'og:description', content: description },
-      { property: 'og:type', content: 'article' },
+      { property: 'og:type', content: type },
       { property: 'og:url', content: canonical },
       { property: 'og:image', content: image },
 

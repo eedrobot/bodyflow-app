@@ -11,9 +11,13 @@
 	cursor: pointer;
 	font-weight: 600;
 	font-size: $fs-one;
-	max-height: 40.4px;
 	transition: all ease-in-out 0.2s;
 	text-align: center;
+	&.menu-btn {
+		width:37vw;
+		margin: 0 auto;
+		display: block;
+	}
 	a {
 		color: $color-white;
 	}
@@ -32,9 +36,37 @@
 			background: $color-sb;
 		}
 	}
+	&.grey {
+		background: $color-mg;
+		color: black;
+		&:hover {
+			background: $color-sb;
+			color: $color-white;
+		}
+	}
 }
+.back {
+	border: none;
+	outline: none;
+	color: $color-navy-d;
+	background: transparent;
+	font-size: $fs-middle;
+	cursor: pointer;
+	margin-top: 20px;
+}
+ @media (max-width: 991.98px) {
+        .btn {
+			.menu-btn {
+				width: 70%;
+			}
+        }
+    }
+
 @media (max-width: 575.98px) {
 	.btn {
 		width: 100%;
+		&.menu-btn {
+			width: 100%;
+		}
 	}
 }

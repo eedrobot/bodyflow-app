@@ -81,34 +81,33 @@
       aria-hidden="true"
     />
 
+     <!-- кнопка -->
+    <button type="submit" class="btn" :disabled="!contact.canSubmit">
+      <span v-if="!contact.isLoading">{{ t('form.send') }}</span>
+      <span v-else>...</span>
+    </button>
+
     <!-- CONSENT -->
-    <div class="form-input-inline">
-      <input
-        type="checkbox"
-        name="agree-privacy"
-        id="agree-privacy"
-        v-model="contact.form.consent"
-        @change="onChangeConsent"
-      />
-      <label for="agree-privacy" class="label-agree">
-        <span>
+    <div class="agreement-block">
+      <label class = "agreement-label">
+         <input
+          type="checkbox"
+          name="agree-privacy"
+          class="agreement-checkbox"
+          v-model="contact.form.consent"
+          @change="onChangeConsent"
+        />
+        <span class = "agreement-text">
           {{ t('form.privacy.text') }}
           <NuxtLink :to="localePath('privacy-policy')">
             {{ t('pages.title.privacy') }}
           </NuxtLink>
         </span>
       </label>
+       <p v-if="contact.touched.consent && contact.errors.consent" class="agreement-error">
+        {{ t(`form.errors.${contact.errors.consent}`) }}
+      </p>
     </div>
-
-    <small v-if="contact.touched.consent && contact.errors.consent" class="field-error">
-      {{ t(`form.errors.${contact.errors.consent}`) }}
-    </small>
-
-    <!-- кнопка -->
-    <button type="submit" class="btn" :disabled="!contact.canSubmit">
-      <span v-if="!contact.isLoading">{{ t('form.send') }}</span>
-      <span v-else>...</span>
-    </button>
 
     <!-- статусы -->
     <p v-if="contact.status === 'success'" class="form-success">

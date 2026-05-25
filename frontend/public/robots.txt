@@ -2,8 +2,5 @@ User-agent: *
 Allow: /
 
 Disallow: /api/
-Disallow: /_nuxt/
-Disallow: /__sitemap__/
 
 Sitemap: https://bodyflow.com.ua/sitemap_index.xml
-

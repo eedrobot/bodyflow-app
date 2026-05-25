@@ -7,7 +7,9 @@ export const useUiStore = defineStore('ui', {
 
     activeMenuDayTab: 0,
 
-    isMenuOpen: false
+    isMenuOpen: false,
+
+    activeModal: null
 
   }),
   actions: {
@@ -30,6 +32,18 @@ export const useUiStore = defineStore('ui', {
     resetMenuUi() {
       this.activeMenuDayTab = 0
       this.isMenuOpen = false
+    },
+
+    openModal(name) {
+      this.activeModal = name
+    },
+
+    closeModal() {
+      this.activeModal = null
+    },
+
+    isModalActive(name) {
+      return this.activeModal === name
     }
   }
 })

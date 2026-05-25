@@ -14,11 +14,13 @@
     .result-title {
         color: $color-green;
         font-weight: 700;
+        padding: 0 1rem;
     }
     .result-description {
         color: $color-navy-d;
         font-size: $fs-middle;
         line-height: 1.5rem;
+        padding: 0 1rem;
     }
     .result-box {
         background: $color-white;
@@ -146,7 +148,7 @@
         }
         &.result-calories {
             display: grid;
-            grid-template-columns: repeat(4, minmax(60px, 1fr));
+            grid-template-columns: repeat(4, minmax(85px, 1fr));
             grid-template-rows: max-content;
             .result-calories-container {
                 @include flex(column, stretch, start);
@@ -218,6 +220,7 @@
         margin-top: 3rem;
         h2 {
             font-size: $fs-middle;
+            margin-top: 1rem;
         }
         .result-box {
             .result-box-item {
