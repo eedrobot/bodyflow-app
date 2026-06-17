@@ -102,7 +102,7 @@ await useAsyncData('order-restore', async () => {
 /* ---------- tariff ----------- */
 const tariff1 = computed(() => ({
   title: t('adv_result.tariff_1.title'),
-  price: '20 грн.',
+  price: '149 грн.',
   description: t('adv_result.tariff_1.description'),
   items: [
     t('adv_result.tariff_1.item_1'),
