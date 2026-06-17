@@ -1,5 +1,10 @@
 .env
+.env.*
+!.env.example
+public/api/config.local.php
 *.log
 logs/
 cache/
 tmp/
+vendor/
+public/storage/

@@ -31,24 +31,11 @@
 require_once __DIR__ . '/cors.php';
 require_once __DIR__ . '/db.php';
 
-$DB_HOST = 'localhost';
-$DB_NAME = 'nutrition_bd';
-$DB_USER = 'root';
-$DB_PASS = '';
-
 $days     = isset($_GET['days']) ? max(1, (int)$_GET['days']) : 5;
 $langCode = $_GET['lang'] ?? 'uk';
 
 try {
-    $pdo = new PDO(
-        "mysql:host={$DB_HOST};dbname={$DB_NAME};charset=utf8mb4",
-        $DB_USER,
-        $DB_PASS,
-        [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        ]
-    );
+    $pdo = $pdoNutrition;
 
     // -------------------------------
     // Lang IDs for ru/uk/en
@@ -884,6 +871,7 @@ try {
     echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 
 } catch (Throwable $e) {
+    error_log('menu error: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => $e->getMessage()], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['error' => 'Failed to build menu'], JSON_UNESCAPED_UNICODE);
 }
